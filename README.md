@@ -19,6 +19,8 @@ RedisMQ队列、代码生成(单表、主附表、树表、列表和表单、增
 
 开源版暂不开放模块：dubbo、工作流、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、图表统计、地图统计、vue.js)
 
+企业版：包含开源版、Dubbo、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、dubbo、图表统计、地图统计、vue.js)、工作流
+
 特别鸣谢
 -----------------------------------
 <a href="#">springboot springcloud dubbo activeMQ redis jeesite jeeplus</a>
