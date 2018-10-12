@@ -1,4 +1,4 @@
-JeeSpringCloudV2.5-互联网云快速开发框架
+JeeSpringCloudV3.0-互联网云快速开发框架
 ===============
 
   （一款免费开源的JAVA互联网云快速开发平台）
