@@ -65,7 +65,7 @@ public class SyncOnlineSessionFilter extends PathMatchingFilter
             // session停止时间，如果stopTimestamp不为null，则代表已停止
             if (session != null && session.getUserId() != null && session.getStopTimestamp() == null)
             {
-                //sysUserOnlineService.syncToDb(session);
+                sysUserOnlineService.syncToDb(session);
             }
             return true;
         }catch (Exception e){
