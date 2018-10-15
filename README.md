@@ -21,7 +21,7 @@ RedisMQ队列、代码生成(单表、主附表、树表、列表和表单、增
 开源版：包含定时任务调度、服务器监控、平台监控、异常邮件监控、服务器Down机邮件监控、平台设置、开发平台、邮件监控、图表监控、地图监控、单点登录、Redis分布式高速缓存、ActiveMQ队列、会员、营销、在线用户、日志、在线人数、访问次数、调用次数、直接集群、接口文档、生成模块、代码实例、安装视频、教程文档、springCloud、RedisMQ队列（待开发）、代码生成(增删改查单表、redis高速缓存对接代码)
 
 企业版：包含开源版、Dubbo、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、dubbo、图表统计、地图统计、vue.js)、工作流<br>
-<a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages">企业版</a><br>
+<a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages">企业版说明</a><br>
 
 特别鸣谢
 -----------------------------------
