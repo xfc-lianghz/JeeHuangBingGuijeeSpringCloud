@@ -51,7 +51,11 @@ public class GenUtils
                     column.setJavaType("java.util.Date");
                     column.setShowType("dateselect");
                 } else
-                if(StringUtils.startsWithIgnoreCase(column.getJdbcType(), "BIGINT") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "NUMBER") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "DECIMAL") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "INT"))
+                if(StringUtils.startsWithIgnoreCase(column.getJdbcType(), "BIGINT")
+                        || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "NUMBER")
+                        || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "DECIMAL")
+                        || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "INT")
+                        || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "TINYINT"))
                 {
                     String ss[] = StringUtils.split(StringUtils.substringBetween(column.getJdbcType(), "(", ")"), ",");
                     if(ss != null && ss.length == 2 && Integer.parseInt(ss[1]) > 0)
@@ -61,6 +65,9 @@ public class GenUtils
                         column.setJavaType("Integer");
                     else
                         column.setJavaType("Long");
+                }
+                if(column.getJavaType()==null||"".equals(column.getJavaType())){
+                    column.setJavaType("String");
                 }
                 column.setJavaField(StringUtils.toCamelCase(column.getName()));
                 column.setIsPk(genTable.getPkList().contains(column.getName()) ? "1" : "0");
