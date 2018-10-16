@@ -317,13 +317,13 @@ public class GenUtils
     public static String generateToFile(GenTemplate tpl, Map model, boolean isReplaceFile)
     {
     	String fileName = Global.getProjectPath() + File.separator + 
-    		      StringUtils.replaceEach(FreeMarkers.renderString(new StringBuilder(String.valueOf(tpl.getFilePath())).append("/").toString(), model), 
+    		      StringUtils.replaceEach(FreeMarkers.renderString(tpl.getFileName(),new StringBuilder(String.valueOf(tpl.getFilePath())).append("/").toString(), model),
     		      new String[] { "//", "/", ".." ,"."}, new String[] { File.separator, File.separator, "__",File.separator }).replace("__", "..") + 
-    		      FreeMarkers.renderString(tpl.getFileName(), model);
+    		      FreeMarkers.renderString(tpl.getFileName(),tpl.getFileName(), model);
     		    logger.debug(" fileName === " + fileName);
     		    
 
-    		    String content = FreeMarkers.renderString(StringUtils.trimToEmpty(tpl.getContent()), model);
+    		    String content = FreeMarkers.renderString(tpl.getFileName(),StringUtils.trimToEmpty(tpl.getContent()), model);
     		    logger.debug(" content === \r\n" + content);
     		    if (isReplaceFile) {
     		      FileUtils.deleteFile(fileName);
