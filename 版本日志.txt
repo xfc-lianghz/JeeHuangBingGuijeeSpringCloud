@@ -5,7 +5,6 @@ JeeSpringV3.0.1-2018-10-22
 开源版：包含定时任务调度、服务器监控、平台监控、异常邮件监控、服务器Down机邮件监控、平台设置、开发平台、邮件监控、图表监控、地图监控、单点登录、Redis分布式高速缓存、ActiveMQ队列、会员、营销、在线用户、日志、在线人数、访问次数、调用次数、直接集群、接口文档、生成模块、代码实例、安装视频、教程文档、springCloud、RedisMQ队列（待开发）、代码生成(增删改查单表、redis高速缓存对接代码、dubbo、增删改查云接口、图表统计、地图统计、vue.js)、工作流、CMS
 
 企业版：包含开源版、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、dubbo、图表统计、地图统计、vue.js)
-企业版详细说明：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages?title=JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88&parent=
 
 JeeSpringV3.0.0-2018-10-12
 开源版：提供了全新界面
@@ -14,4 +13,3 @@ JeeSpringV3.0.0-2018-10-12
 开源版：包含定时任务调度、服务器监控、平台监控、异常邮件监控、服务器Down机邮件监控、平台设置、开发平台、邮件监控、图表监控、地图监控、单点登录、Redis分布式高速缓存、ActiveMQ队列、会员、营销、在线用户、日志、在线人数、访问次数、调用次数、直接集群、接口文档、生成模块、代码实例、安装视频、教程文档、springCloud、RedisMQ队列（待开发）、代码生成(增删改查单表、redis高速缓存对接代码)
 
 企业版：包含开源版、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、dubbo、图表统计、地图统计、vue.js)、工作流、CMS
-企业版详细说明：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages?title=JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88&parent=
