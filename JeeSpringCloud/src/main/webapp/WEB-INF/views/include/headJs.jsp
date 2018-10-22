@@ -8,10 +8,10 @@
 <link href="${ctxJeeSpringStatic}/bower_components/PACE/themes/blue/pace-theme-bounce.css" rel="stylesheet"/>
 <script src="/jeeSpringStatic/jeeSpring.js"></script>
 <!-- jQuery 3 {ctxJeeSpringStatic} -->
-<script src="/jeeSpringStatic/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/jeeSpringStatic/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/jeeSpringStatic/plugs/layer-v3.1.1/layer/layer.js"></script>
-<script src="/jeeSpringStatic/plugs/jquery-toastr/2.0/toastr.js"></script>
-<link href="/jeeSpringStatic/plugs/jquery-toastr/2.0/toastr.css" rel="stylesheet" type="text/css" />
+<script src="/jeeSpringStatic/plugs/jquery-toastr/2.0/toastr.min.js"></script>
+<link href="/jeeSpringStatic/plugs/jquery-toastr/2.0/toastr.min.css" rel="stylesheet" type="text/css" />
 <!-- 引入iCheck插件 -->
 <script src="/jeeSpringStatic/plugs/iCheck/icheck.min.js"></script>
 <script src="/jeeSpringStatic/plugs/iCheck/icheck-init.js"></script>

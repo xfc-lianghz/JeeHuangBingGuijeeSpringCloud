@@ -40,10 +40,11 @@ public class CgAutoListController extends AbstractBaseController
     @ModelAttribute
     public GenScheme get(@RequestParam(required=true) String id)
     {
-        if(StringUtils.isNotBlank(id))
+        if(StringUtils.isNotBlank(id)) {
             return genSchemeService.get(id);
-        else
+        } else {
             return new GenScheme();
+        }
     }
 
     @RequestMapping(value={"list"})

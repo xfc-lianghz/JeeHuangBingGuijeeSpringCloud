@@ -14,7 +14,8 @@ public class MailAuthenticator extends Authenticator{
         this.userName = username;    
         this.password = password;    
     }    
-    protected PasswordAuthentication getPasswordAuthentication(){   
+    @Override
+    protected PasswordAuthentication getPasswordAuthentication(){
         return new PasswordAuthentication(userName, password);   
     }   
 }   

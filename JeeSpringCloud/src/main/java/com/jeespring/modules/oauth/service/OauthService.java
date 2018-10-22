@@ -33,7 +33,9 @@ public class OauthService {
         SysConfig sysConfigOauth=new SysConfig();
         sysConfigOauth.setType("oauthOpen");
         SysConfig sysConfigsOauth=sysConfigService.findListFirstCache(sysConfigOauth);
-        if(sysConfigsOauth.getValue().equals("true")) return true;
+        if("true".equals(sysConfigsOauth.getValue())) {
+            return true;
+        }
         return false;
     }
 
@@ -137,8 +139,9 @@ public class OauthService {
         int countShiro=redisUtils.getCountShiro();
         Subject subject = SecurityUtils.getSubject();
         String key=null;
-        if (subject != null && subject.getSession() != null)
-            key=redisUtils.SHIRO_REDIS+":"+subject.getSession().getId().toString();
+        if (subject != null && subject.getSession() != null) {
+            key = redisUtils.SHIRO_REDIS + ":" + subject.getSession().getId().toString();
+        }
         if(Integer.valueOf(userOnlineAmount.getValue())<countShiro && key!=null){
             redisUtils.remove(key);
             return ResultFactory.getErrorResult("在线控制：在线"+countShiro+"人/总控制"+userOnlineAmount.getValue()+"人");
@@ -167,8 +170,12 @@ public class OauthService {
         String redisKeyMonth="ApiTimeMonth";
         Object apiTimeDay=redisUtils.get(redisKeyDay);
         Object apiTimeMonth=redisUtils.get(redisKeyMonth);
-        if(apiTimeDay==null) apiTimeDay="0";
-        if(apiTimeMonth==null) apiTimeMonth="0";
+        if(apiTimeDay==null) {
+            apiTimeDay = "0";
+        }
+        if(apiTimeMonth==null) {
+            apiTimeMonth = "0";
+        }
         return ResultFactory.getSuccessResult("Day:"+apiTimeDay+" Time;Month:"+apiTimeMonth+" Time");
     }
     public Result setApiTime(){
@@ -178,8 +185,12 @@ public class OauthService {
         Object apiTimeMonth=redisUtils.get(redisKeyMonth);
         Long apiTimeDayLong=0L;
         Long apiTimeMonthLong=0L;
-        if(apiTimeDay==null) apiTimeDay=0;
-        if(apiTimeMonth==null) apiTimeMonth=0;
+        if(apiTimeDay==null) {
+            apiTimeDay = 0;
+        }
+        if(apiTimeMonth==null) {
+            apiTimeMonth = 0;
+        }
         if(apiTimeDay!=null){
             apiTimeDayLong=Long.valueOf(apiTimeDay.toString());
             apiTimeDayLong=apiTimeDayLong+1;
@@ -212,7 +223,7 @@ public class OauthService {
         if(apiTimeLimis.size()>0){
             apiTimeLongSysConfig=Long.valueOf(apiTimeLimis.get(0).getValue());
         }
-        if(apiTimeLongSysConfig.equals("-1")){
+        if("-1".equals(apiTimeLongSysConfig)){
             apiTimeLongSysConfig=100000000L;
         }
         if(apiTimeLimis.size()==0){

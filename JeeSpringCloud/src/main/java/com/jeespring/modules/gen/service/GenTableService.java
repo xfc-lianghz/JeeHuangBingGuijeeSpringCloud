@@ -58,8 +58,9 @@ public class GenTableService extends AbstractService
 
     public boolean checkTableName(String tableName)
     {
-        if(StringUtils.isBlank(tableName))
+        if(StringUtils.isBlank(tableName)) {
             return true;
+        }
         GenTable genTable = new GenTable();
         genTable.setName(tableName);
         List list = genTableDao.findList(genTable);
@@ -68,8 +69,9 @@ public class GenTableService extends AbstractService
 
     public boolean checkTableNameFromDB(String tableName)
     {
-        if(StringUtils.isBlank(tableName))
+        if(StringUtils.isBlank(tableName)) {
             return true;
+        }
         GenTable genTable = new GenTable();
         genTable.setName(tableName);
         List list = genDataBaseDictDao.findTableList(genTable);
@@ -86,8 +88,9 @@ public class GenTableService extends AbstractService
                 if(StringUtils.isBlank(genTable.getId()))
                 {
                     genTable = (GenTable)list.get(0);
-                    if(StringUtils.isBlank(genTable.getComments()))
+                    if(StringUtils.isBlank(genTable.getComments())) {
                         genTable.setComments(genTable.getName());
+                    }
                     genTable.setClassName(StringUtils.toCapitalizeCamelCase(genTable.getName()));
                 }
                 List columnList = genDataBaseDictDao.findTableColumnList(genTable);
@@ -98,12 +101,14 @@ public class GenTableService extends AbstractService
                     for(Iterator iterator2 = genTable.getColumnList().iterator(); iterator2.hasNext();)
                     {
                         GenTableColumn e = (GenTableColumn)iterator2.next();
-                        if(e.getName() != null && e.getName().equals(column.getName()))
+                        if(e.getName() != null && e.getName().equals(column.getName())) {
                             b = true;
+                        }
                     }
 
-                    if(!b)
+                    if(!b) {
                         genTable.getColumnList().add(column);
+                    }
                 }
 
                 for(Iterator iterator1 = genTable.getColumnList().iterator(); iterator1.hasNext();)
@@ -113,12 +118,14 @@ public class GenTableService extends AbstractService
                     for(Iterator iterator3 = columnList.iterator(); iterator3.hasNext();)
                     {
                         GenTableColumn column = (GenTableColumn)iterator3.next();
-                        if(column.getName().equals(e.getName()))
+                        if(column.getName().equals(e.getName())) {
                             b = true;
+                        }
                     }
 
-                    if(!b)
+                    if(!b) {
                         e.setDelFlag("1");
+                    }
                 }
 
                 genTable.setPkList(genDataBaseDictDao.findTablePK(genTable));
@@ -152,15 +159,17 @@ public class GenTableService extends AbstractService
                     } else
                     {
                         GenTableColumn oldColumn = genTableColumnDao.get(column.getId());
-                        if(!oldColumn.getName().equals(column.getName()) || !oldColumn.getJdbcType().equals(column.getJdbcType()) || !oldColumn.getIsPk().equals(column.getIsPk()) || !oldColumn.getComments().equals(column.getComments()))
+                        if(!oldColumn.getName().equals(column.getName()) || !oldColumn.getJdbcType().equals(column.getJdbcType()) || !oldColumn.getIsPk().equals(column.getIsPk()) || !oldColumn.getComments().equals(column.getComments())) {
                             isSync = false;
+                        }
                     }
                 }
 
             }
         }
-        if(!isSync)
+        if(!isSync) {
             genTable.setIsSync("0");
+        }
         if(StringUtils.isBlank(genTable.getId()))
         {
             genTable.preInsert();

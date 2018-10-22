@@ -82,11 +82,13 @@ public class Office extends TreeEntity<Office> {
 
 //	@JsonBackReference
 //	@NotNull
-	public Office getParent() {
+	@Override
+    public Office getParent() {
 		return parent;
 	}
 
-	public void setParent(Office parent) {
+	@Override
+    public void setParent(Office parent) {
 		this.parent = parent;
 	}
 //

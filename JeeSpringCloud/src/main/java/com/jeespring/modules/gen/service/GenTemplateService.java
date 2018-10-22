@@ -39,8 +39,9 @@ public class GenTemplateService extends AbstractService
     @Transactional(readOnly=false)
     public void save(GenTemplate genTemplate)
     {
-        if(genTemplate.getContent() != null)
+        if(genTemplate.getContent() != null) {
             genTemplate.setContent(StringEscapeUtils.unescapeHtml4(genTemplate.getContent()));
+        }
         if(StringUtils.isBlank(genTemplate.getId()))
         {
             genTemplate.preInsert();

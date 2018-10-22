@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import io.swagger.models.auth.In;
 import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Lists;
@@ -40,7 +41,16 @@ public class DictUtils {
 	}
 
 	public static String getDictLabel(Long value, String type, String defaultValue){
-		if(value==null) return "";
+		if(value==null) {
+            return "";
+        }
+		return getDictLabel(value.toString(),type,defaultValue);
+	}
+
+	public static String getDictLabel(Integer value, String type, String defaultValue){
+		if(value==null) {
+            return "";
+        }
 		return getDictLabel(value.toString(),type,defaultValue);
 	}
 
@@ -56,7 +66,16 @@ public class DictUtils {
 	}
 
 	public static String getDictPicture(Long value, String type, String defaultValue){
-		if(value==null) return "";
+		if(value==null) {
+            return "";
+        }
+		return getDictPicture(value.toString(),type,defaultValue);
+	}
+
+	public static String getDictPicture(Integer value, String type, String defaultValue){
+		if(value==null) {
+            return "";
+        }
 		return getDictPicture(value.toString(),type,defaultValue);
 	}
 

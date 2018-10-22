@@ -107,9 +107,9 @@ public class OaNotifyController extends AbstractBaseController {
 	@RequiresPermissions("oa:oaNotify:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		
-	
-		String idArray[] =ids.split(",");
+
+
+        String[] idArray = ids.split(",");
 		long successCount=0,failureCount=0;
 		String failureMsg="";
 		

@@ -162,7 +162,7 @@ public class MailComposeController extends AbstractBaseController {
 		model.addAttribute("mailDraftCount", mailComposeService.getCount(serachBox4));
 		
 		
-		if(mailCompose.getStatus()== null || mailCompose.getStatus().equals("0")){
+		if(mailCompose.getStatus()== null || "0".equals(mailCompose.getStatus())){
 			return "modules/iim/mailDraftList";//草稿箱
 		}
 		return "modules/iim/mailComposeList";//已发送
@@ -244,7 +244,7 @@ public class MailComposeController extends AbstractBaseController {
 			mailComposeService.save(mailCompose);//0 显示在草稿箱，1 显示在已发送需同时保存到收信人的收件箱。
 		
 		
-			if(mailCompose.getStatus().equals("1"))//已发送，同时保存到收信人的收件箱
+			if("1".equals(mailCompose.getStatus()))//已发送，同时保存到收信人的收件箱
 			{
 				MailBox mailBox = new MailBox();
 				mailBox.setReadstatus("0");
@@ -272,7 +272,7 @@ public class MailComposeController extends AbstractBaseController {
 	 */
 	@RequestMapping(value = "deleteAllCompose")
 	public String deleteAllCompose(String ids, Model model, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			mailComposeService.delete(mailComposeService.get(id));
 		}
@@ -289,7 +289,7 @@ public class MailComposeController extends AbstractBaseController {
 	 */
 	@RequestMapping(value = "deleteAllDraft")
 	public String deleteAllDraft(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			mailComposeService.delete(mailComposeService.get(id));
 		}

@@ -40,7 +40,9 @@ public abstract class AbstractBaseEntity<T> extends AbstractEntity<T> {
 	protected String totalType;
 
 	public void setExtendMap(String item,Object object) {
-		if(extendMap==null) extendMap = new HashMap<String, Object>();
+		if(extendMap==null) {
+            extendMap = new HashMap<String, Object>();
+        }
 		extendMap.put(item,object);
 	}
 
@@ -49,7 +51,9 @@ public abstract class AbstractBaseEntity<T> extends AbstractEntity<T> {
 	}
 
 	public JSONObject setExtendObject(String item,Object object){
-		if(jsonObject==null) jsonObject= JSON.parseObject(JSON.toJSONString(this));
+		if(jsonObject==null) {
+            jsonObject = JSON.parseObject(JSON.toJSONString(this));
+        }
 		jsonObject.put(item,object);
 		return jsonObject;
 	}
@@ -144,7 +148,9 @@ public abstract class AbstractBaseEntity<T> extends AbstractEntity<T> {
 	@JSONField(serialize=false)
 	@Length(min=1, max=1)
 	public String getDelFlag() {
-		if(delFlag==null) delFlag="0";
+		if(delFlag==null) {
+            delFlag = "0";
+        }
 		return delFlag;
 	}
 

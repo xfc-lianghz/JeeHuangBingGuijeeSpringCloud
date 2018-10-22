@@ -31,8 +31,9 @@ public class Exceptions {
      * 将ErrorStack转化为String.
      */
     public static String getStackTraceAsString(Throwable e) {
-        if (e == null)
+        if (e == null) {
             return "";
+        }
         StringWriter stringWriter = new StringWriter();
         e.printStackTrace(new PrintWriter(stringWriter));
         return stringWriter.toString();
@@ -45,9 +46,11 @@ public class Exceptions {
 	public static boolean isCausedBy(Exception ex, Class<? extends Exception>... causeExceptionClasses) {
         Throwable cause = ex.getCause();
         while (cause != null) {
-            for (Class<? extends Exception> causeClass : causeExceptionClasses)
-                if (causeClass.isInstance(cause))
+            for (Class<? extends Exception> causeClass : causeExceptionClasses) {
+                if (causeClass.isInstance(cause)) {
                     return true;
+                }
+            }
             cause = cause.getCause();
         }
         return false;

@@ -12,13 +12,20 @@ $(function () {
         url: '/admin/home',
         urlType: "http"
     });
-    addTabs({
+    /*addTabs({
         id: '10009',
         title: '论坛社区',
         close: false,
         url: 'https://jeespring.kf5.com/hc/community/topic/',
         urlType: "http"
-    });
+    });*/
+    /*addTabs({
+        id: '10010',
+        title: '网站首页',
+        close: false,
+        url: '/cms',
+        urlType: "http"
+    });*/
     activeTabByPageId(10008);
 })
 

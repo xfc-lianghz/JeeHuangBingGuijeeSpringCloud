@@ -37,16 +37,20 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 	@Autowired
 	private RedisUtils redisUtils;
 
+	@Override
 	public FormLeave get(String id) {
 		//获取数据库数据
 		FormLeave  formLeave=super.get(id);
 		return formLeave;
 	}
 
+	@Override
 	public FormLeave getCache(String id) {
 		//获取缓存数据
 		FormLeave formLeave=(FormLeave)redisUtils.get(RedisUtils.getIdKey(FormLeaveService.class.getName(),id));
-		if( formLeave!=null) return  formLeave;
+		if( formLeave!=null) {
+            return formLeave;
+        }
 		//获取数据库数据
 		formLeave=super.get(id);
 		//设置缓存数据
@@ -54,17 +58,21 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 		return formLeave;
 	}
 
+	@Override
 	public List<FormLeave> total(FormLeave formLeave) {
 		//获取数据库数据
 		List<FormLeave> formLeaveList=super.total(formLeave);
 		return formLeaveList;
 	}
 
+	@Override
 	public List<FormLeave> totalCache(FormLeave formLeave) {
 		//获取缓存数据
 		String totalKey = RedisUtils.getTotalKey(FormLeaveService.class.getName(),JSON.toJSONString(formLeave));
 		List<FormLeave> formLeaveList=(List<FormLeave>)redisUtils.get(totalKey);
-		if(formLeaveList!=null) return formLeaveList;
+		if(formLeaveList!=null) {
+            return formLeaveList;
+        }
 		//获取数据库数据
 		formLeaveList=super.total(formLeave);
 		//设置缓存数据
@@ -72,6 +80,7 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 		return formLeaveList;
 	}
 
+	@Override
 	public List<FormLeave> findList(FormLeave formLeave) {
 		//获取数据库数据
 		List<FormLeave> formLeaveList=super.findList(formLeave);
@@ -79,11 +88,14 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 		return formLeaveList;
 	}
 
+	@Override
 	public List<FormLeave> findListCache(FormLeave formLeave) {
 		//获取缓存数据
 		String findListKey = RedisUtils.getFindListKey(FormLeaveService.class.getName(),JSON.toJSONString(formLeave));
 		List<FormLeave> formLeaveList=(List<FormLeave>)redisUtils.get(findListKey);
-		if(formLeaveList!=null) return formLeaveList;
+		if(formLeaveList!=null) {
+            return formLeaveList;
+        }
 		//获取数据库数据
 		formLeaveList=super.findList(formLeave);
 		//设置缓存数据
@@ -94,7 +106,9 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 	public FormLeave findListFirst(FormLeave formLeave) {;
 		//获取数据库数据
 		List<FormLeave> formLeaveList=super.findList(formLeave);
-		if(formLeaveList.size()>0) formLeave=formLeaveList.get(0);
+		if(formLeaveList.size()>0) {
+            formLeave = formLeaveList.get(0);
+        }
 		return formLeave;
 	}
 
@@ -102,27 +116,36 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 		//获取缓存数据
 		String findListFirstKey = RedisUtils.getFindListFirstKey(FormLeaveService.class.getName(),JSON.toJSONString(formLeave));
 		FormLeave formLeaveRedis=(FormLeave)redisUtils.get(findListFirstKey);
-		if(formLeaveRedis!=null) return formLeaveRedis;
+		if(formLeaveRedis!=null) {
+            return formLeaveRedis;
+        }
 		//获取数据库数据
 		List<FormLeave> formLeaveList=super.findList(formLeave);
-		if(formLeaveList.size()>0) formLeave=formLeaveList.get(0);
-		else formLeave=new FormLeave();
+		if(formLeaveList.size()>0) {
+            formLeave = formLeaveList.get(0);
+        } else {
+            formLeave = new FormLeave();
+        }
 		//设置缓存数据
 		redisUtils.set(findListFirstKey,formLeave);
 		return formLeave;
 	}
 
+	@Override
 	public Page<FormLeave> findPage(Page<FormLeave> page, FormLeave formLeave) {
 		//获取数据库数据
 		Page<FormLeave> pageReuslt=super.findPage(page, formLeave);
 		return pageReuslt;
 	}
 
+	@Override
 	public Page<FormLeave> findPageCache(Page<FormLeave> page, FormLeave formLeave) {
 		//获取缓存数据
 		String findPageKey =  RedisUtils.getFindPageKey(FormLeaveService.class.getName(),JSON.toJSONString(page)+JSON.toJSONString(formLeave));
 		Page<FormLeave> pageReuslt=(Page<FormLeave>)redisUtils.get(findPageKey);
-		if(pageReuslt!=null) return pageReuslt;
+		if(pageReuslt!=null) {
+            return pageReuslt;
+        }
 		//获取数据库数据
 		pageReuslt=super.findPage(page, formLeave);
 		//设置缓存数据
@@ -130,6 +153,7 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 		return pageReuslt;
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void save(FormLeave formLeave) {
 		//保存数据库记录
@@ -141,6 +165,7 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(FormLeaveService.class.getName()));
 	}
 	
+	@Override
 	@Transactional(readOnly = false)
 	public void delete(FormLeave formLeave) {
 		//清除记录缓存数据
@@ -152,6 +177,7 @@ public class FormLeaveService extends AbstractBaseService<FormLeaveDao, FormLeav
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(FormLeaveService.class.getName()));
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void deleteByLogic(FormLeave formLeave) {
 		//清除记录缓存数据

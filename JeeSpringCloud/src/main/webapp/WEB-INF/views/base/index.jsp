@@ -42,9 +42,9 @@
     <!-- Logo -->
     <a class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><img id="logo" class="img-circle" src="/static/common/login/images/flat-avatar3.png">${fns:getConfig('productName')}</span>
+      <span class="logo-mini"><img id="logo" class="img-circle" src="/staticViews/index/images/flat-avatar1.png">${fns:getConfig('productName')}</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><img id="logo" class="img-circle" src="/static/common/login/images/flat-avatar3.png">${fns:getConfig('productName')}</span>
+      <span class="logo-lg"><img id="logo" class="img-circle" src="/staticViews/index/images/flat-avatar1.png">${fns:getConfig('productName')}</span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -57,6 +57,12 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+          <li>
+            <a href="/cms" target="_blank">
+              <i class="fa fa-home"></i>
+              <span class="hidden-xs">网站首页</span>
+            </a>
+          </li>
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

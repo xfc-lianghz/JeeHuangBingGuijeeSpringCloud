@@ -74,8 +74,8 @@ public interface InterfaceBaseService<T> {
      * @param entity
      * @return
      * @see public int delete(T entity)
+     * @Deprecated
      */
-    @Deprecated
     void delete(T entity);
 
 	/**
@@ -83,8 +83,8 @@ public interface InterfaceBaseService<T> {
 	 * @param entity
 	 * @see public int delete(T entity)
 	 * @return
+     * 	@Deprecated
 	 */
-	@Deprecated
     void deleteByLogic(T entity);
 
 

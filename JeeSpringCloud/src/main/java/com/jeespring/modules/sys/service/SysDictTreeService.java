@@ -22,23 +22,27 @@ import com.jeespring.modules.sys.dao.SysDictTreeDao;
 @Transactional(readOnly = true)
 public class SysDictTreeService extends TreeService<SysDictTreeDao, SysDictTree> {
 
-	public SysDictTree get(String id) {
+	@Override
+    public SysDictTree get(String id) {
 		return super.get(id);
 	}
 	
-	public List<SysDictTree> findList(SysDictTree sysDict) {
+	@Override
+    public List<SysDictTree> findList(SysDictTree sysDict) {
 		if (StringUtils.isNotBlank(sysDict.getParentIds())){
 			sysDict.setParentIds(","+sysDict.getParentIds()+",");
 		}
 		return super.findList(sysDict);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(SysDictTree sysDict) {
 		super.save(sysDict);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(SysDictTree sysDict) {
 		super.delete(sysDict);
 	}

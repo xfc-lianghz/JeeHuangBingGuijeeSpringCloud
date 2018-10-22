@@ -38,11 +38,12 @@ public class GenUtils
             GenTableColumn column = (GenTableColumn)iterator.next();
             if(!StringUtils.isNotBlank(column.getId()))
             {
-                if(StringUtils.isBlank(column.getComments()))
+                if(StringUtils.isBlank(column.getComments())) {
                     column.setComments(column.getName());
-                if(StringUtils.startsWithIgnoreCase(column.getJdbcType(), "CHAR") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "VARCHAR") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "NARCHAR"))
+                }
+                if(StringUtils.startsWithIgnoreCase(column.getJdbcType(), "CHAR") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "VARCHAR") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "NARCHAR")) {
                     column.setJavaType("String");
-                else if(StringUtils.startsWithIgnoreCase(column.getJdbcType(), "BLOB")){
+                } else if(StringUtils.startsWithIgnoreCase(column.getJdbcType(), "BLOB")){
                     column.setJavaType("byte[]");
                 }
                 else
@@ -57,14 +58,15 @@ public class GenUtils
                         || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "INT")
                         || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "TINYINT"))
                 {
-                    String ss[] = StringUtils.split(StringUtils.substringBetween(column.getJdbcType(), "(", ")"), ",");
-                    if(ss != null && ss.length == 2 && Integer.parseInt(ss[1]) > 0)
+                    String[] ss = StringUtils.split(StringUtils.substringBetween(column.getJdbcType(), "(", ")"), ",");
+                    if(ss != null && ss.length == 2 && Integer.parseInt(ss[1]) > 0) {
                         column.setJavaType("Double");
-                    else
-                    if(ss != null && ss.length == 1 && Integer.parseInt(ss[0]) <= 10)
+                    } else
+                    if(ss != null && ss.length == 1 && Integer.parseInt(ss[0]) <= 10) {
                         column.setJavaType("Integer");
-                    else
+                    } else {
                         column.setJavaType("Long");
+                    }
                 }
                 if(column.getJavaType()==null||"".equals(column.getJavaType())){
                     column.setJavaType("String");
@@ -75,22 +77,26 @@ public class GenUtils
                     column.setJavaField("id");
                 }
                 column.setIsInsert("1");
-                if(!StringUtils.equalsIgnoreCase(column.getName(), "id") && !StringUtils.equalsIgnoreCase(column.getName(), "create_by") && !StringUtils.equalsIgnoreCase(column.getName(), "create_date") && !StringUtils.equalsIgnoreCase(column.getName(), "del_flag"))
+                if(!StringUtils.equalsIgnoreCase(column.getName(), "id") && !StringUtils.equalsIgnoreCase(column.getName(), "create_by") && !StringUtils.equalsIgnoreCase(column.getName(), "create_date") && !StringUtils.equalsIgnoreCase(column.getName(), "del_flag")) {
                     column.setIsEdit("1");
-                else
+                } else {
                     column.setIsEdit("0");
-                if(StringUtils.equalsIgnoreCase(column.getName(), "name") || StringUtils.equalsIgnoreCase(column.getName(), "title") || StringUtils.equalsIgnoreCase(column.getName(), "remarks") || StringUtils.equalsIgnoreCase(column.getName(), "update_date"))
+                }
+                if(StringUtils.equalsIgnoreCase(column.getName(), "name") || StringUtils.equalsIgnoreCase(column.getName(), "title") || StringUtils.equalsIgnoreCase(column.getName(), "remarks") || StringUtils.equalsIgnoreCase(column.getName(), "update_date")) {
                     column.setIsList("1");
-                else
+                } else {
                     column.setIsList("0");
-                if(StringUtils.equalsIgnoreCase(column.getName(), "name") || StringUtils.equalsIgnoreCase(column.getName(), "title"))
+                }
+                if(StringUtils.equalsIgnoreCase(column.getName(), "name") || StringUtils.equalsIgnoreCase(column.getName(), "title")) {
                     column.setIsQuery("1");
-                else
+                } else {
                     column.setIsQuery("0");
-                if(StringUtils.equalsIgnoreCase(column.getName(), "name") || StringUtils.equalsIgnoreCase(column.getName(), "title"))
+                }
+                if(StringUtils.equalsIgnoreCase(column.getName(), "name") || StringUtils.equalsIgnoreCase(column.getName(), "title")) {
                     column.setQueryType("like");
-                else
+                } else {
                     column.setQueryType("=");
+                }
 
                 if(StringUtils.startsWithIgnoreCase(column.getJdbcType(), "DATETIME") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "DATE") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "TIMESTAMP")) {
                     column.setQueryType("between");
@@ -120,12 +126,12 @@ public class GenUtils
                     column.setJavaField((new StringBuilder(String.valueOf(column.getJavaField()))).append(".id").toString());
                     column.setShowType("input");
                 } else
-                if(StringUtils.startsWithIgnoreCase(column.getName(), "create_date") || StringUtils.startsWithIgnoreCase(column.getName(), "update_date"))
+                if(StringUtils.startsWithIgnoreCase(column.getName(), "create_date") || StringUtils.startsWithIgnoreCase(column.getName(), "update_date")) {
                     column.setShowType("dateselect");
-                else
-                if(StringUtils.equalsIgnoreCase(column.getName(), "remarks") || StringUtils.equalsIgnoreCase(column.getName(), "content"))
+                } else
+                if(StringUtils.equalsIgnoreCase(column.getName(), "remarks") || StringUtils.equalsIgnoreCase(column.getName(), "content")) {
                     column.setShowType("textarea");
-                else
+                } else
                 if(StringUtils.equalsIgnoreCase(column.getName(), "parent_id"))
                 {
                     column.setJavaType("This");
@@ -143,8 +149,9 @@ public class GenUtils
                     column.setDictType("del_flag");
                 } else
                 {
-                    if(column.getShowType()=="" || column.getShowType()==null)
-                    column.setShowType("input");
+                    if(column.getShowType()=="" || column.getShowType()==null) {
+                        column.setShowType("input");
+                    }
                 }
                 if(column.getName().toLowerCase().contains("remark") || StringUtils.startsWithIgnoreCase(column.getJdbcType(), "TEXT")){
                     column.setShowType("textarea");
@@ -174,7 +181,7 @@ public class GenUtils
                     }
                 }
 
-                if(column.getName().toLowerCase().contains("_state") || column.getName().toLowerCase().equals("state")){
+                if(column.getName().toLowerCase().contains("_state") || "state".equals(column.getName().toLowerCase())){
                     column.setShowType("select");
                     if(dictList.contains(column.getName()) || dictList.contains(StringUtils.toCapitalizeCamelCase(column.getName()))){
                         column.setDictType(column.getName());
@@ -184,7 +191,7 @@ public class GenUtils
                     column.setQueryType("like");
                 }
 
-                if(column.getAutoIncrement().equals("1")){
+                if("1".equals(column.getAutoIncrement())){
                     column.setIsInsert("0");
                 }
 
@@ -205,12 +212,13 @@ public class GenUtils
         try
         {
             File file = (new DefaultResourceLoader()).getResource("").getFile();
-            if(file != null)
-                return (new StringBuilder(String.valueOf(file.getAbsolutePath()))).append(File.separator).append(StringUtils.replaceEach(GenUtils.class.getName(), new String[] {
-                    (new StringBuilder("util.")).append(GenUtils.class.getSimpleName()).toString(), "."
-                }, new String[] {
-                    "template", File.separator
+            if(file != null) {
+                return (new StringBuilder(String.valueOf(file.getAbsolutePath()))).append(File.separator).append(StringUtils.replaceEach(GenUtils.class.getName(), new String[]{
+                        (new StringBuilder("util.")).append(GenUtils.class.getSimpleName()).toString(), "."
+                }, new String[]{
+                        "template", File.separator
                 })).toString();
+            }
         }
         catch(Exception e)
         {
@@ -231,14 +239,17 @@ public class GenUtils
             do
             {
                 String line = br.readLine();
-                if(line == null)
+                if(line == null) {
                     break;
+                }
                 sb.append(line).append("\r\n");
             } while(true);
-            if(is != null)
+            if(is != null) {
                 is.close();
-            if(br != null)
+            }
+            if(br != null) {
                 br.close();
+            }
             return JaxbMapper.fromXml(sb.toString(), clazz);
         }
         catch(IOException e)
@@ -264,10 +275,11 @@ public class GenUtils
                 if(category.equals(e.getValue()))
                 {
                     List list = null;
-                    if(!isChildTable)
+                    if(!isChildTable) {
                         list = e.getTemplate();
-                    else
+                    } else {
                         list = e.getChildTableTemplate();
+                    }
                     if(list != null)
                     {
                         for(Iterator iterator1 = list.iterator(); iterator1.hasNext();)
@@ -279,8 +291,9 @@ public class GenUtils
                             } else
                             {
                                 GenTemplate template = (GenTemplate)fileToObject(s, GenTemplate.class);
-                                if(template != null)
+                                if(template != null) {
                                     templateList.add(template);
+                                }
                             }
                         }
 
@@ -338,7 +351,7 @@ public class GenUtils
     		    return "文件已存在：" + fileName + "<br/>";
     }
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         try
         {

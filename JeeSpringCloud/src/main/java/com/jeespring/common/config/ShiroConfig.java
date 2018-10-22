@@ -225,7 +225,7 @@ public class ShiroConfig {
             ) {
         DefaultWebSecurityManager defaultWebSecurityManager = new DefaultWebSecurityManager();
         defaultWebSecurityManager.setSessionManager(sessionManager);
-        if(redisRun.equals("true") && "true".equals(shiroRedis)){
+        if("true".equals(redisRun) && "true".equals(shiroRedis)){
             try{
                 // 加入缓存管理器
                 defaultWebSecurityManager.setCacheManager(redisCacheManager(redisHostName,reidsPassword,redisPort,expireTimeShiro));

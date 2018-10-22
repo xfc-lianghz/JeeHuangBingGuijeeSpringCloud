@@ -12,7 +12,8 @@ import com.jeespring.modules.act.utils.ProcessDefUtils;
 
 public class ChainedActivitiesCreator extends RuntimeActivityCreatorSupport implements RuntimeActivityCreator {
 	
-	@SuppressWarnings("unchecked")
+	@Override
+    @SuppressWarnings("unchecked")
 	public ActivityImpl[] createActivities(ProcessEngine processEngine, ProcessDefinitionEntity processDefinition,
 			RuntimeActivityDefinitionEntity info) {
 		info.setFactoryName(ChainedActivitiesCreator.class.getName());

@@ -96,25 +96,28 @@ public class CKFinderConfig extends Configuration {
 
             for (int i = 0; i < nodeList.getLength(); ++i) {
                 Node childNode = nodeList.item(i);
-                if (childNode.getNodeName().equals("enabled"))
+                if ("enabled".equals(childNode.getNodeName())) {
                     this.enabled = Boolean.valueOf(childNode.getTextContent().trim()).booleanValue();
+                }
 
-                if (childNode.getNodeName().equals("baseDir")) {
+                if ("baseDir".equals(childNode.getNodeName())) {
                     this.baseDir = childNode.getTextContent().trim();
                     this.baseDir = PathUtils.escape(this.baseDir);
                     this.baseDir = PathUtils.addSlashToEnd(this.baseDir);
                 }
-                if (childNode.getNodeName().equals("baseURL")) {
+                if ("baseURL".equals(childNode.getNodeName())) {
                     this.baseURL = childNode.getTextContent().trim();
                     this.baseURL = PathUtils.escape(this.baseURL);
                     this.baseURL = PathUtils.addSlashToEnd(this.baseURL);
                 }
-                if (childNode.getNodeName().equals("licenseName"))
+                if ("licenseName".equals(childNode.getNodeName())) {
                     this.licenseName = childNode.getTextContent().trim();
-                if (childNode.getNodeName().equals("licenseKey"))
+                }
+                if ("licenseKey".equals(childNode.getNodeName())) {
                     this.licenseKey = childNode.getTextContent().trim();
+                }
                 String value;
-                if (childNode.getNodeName().equals("imgWidth")) {
+                if ("imgWidth".equals(childNode.getNodeName())) {
                     value = childNode.getTextContent().trim();
                     value = value.replaceAll("//D", "");
 
@@ -124,14 +127,14 @@ public class CKFinderConfig extends Configuration {
                         this.imgWidth = null;
                     }
                 }
-                if (childNode.getNodeName().equals("imgQuality")) {
+                if ("imgQuality".equals(childNode.getNodeName())) {
                     value = childNode.getTextContent().trim();
                     value = value.replaceAll("//D", "");
                     method = clazz.getDeclaredMethod("adjustQuality", new Class[]{String.class});
                     method.setAccessible(true);
                     this.imgQuality = Float.parseFloat(method.invoke(this, value).toString());
                 }
-                if (childNode.getNodeName().equals("imgHeight")) {
+                if ("imgHeight".equals(childNode.getNodeName())) {
                     value = childNode.getTextContent().trim();
                     value = value.replaceAll("//D", "");
                     try {
@@ -140,63 +143,72 @@ public class CKFinderConfig extends Configuration {
                         this.imgHeight = null;
                     }
                 }
-                if (childNode.getNodeName().equals("thumbs")) {
+                if ("thumbs".equals(childNode.getNodeName())) {
                     method = clazz.getDeclaredMethod("setThumbs", new Class[]{NodeList.class});
                     method.setAccessible(true);
                     method.invoke(this, childNode.getChildNodes());
                 }
-                if (childNode.getNodeName().equals("accessControls")) {
+                if ("accessControls".equals(childNode.getNodeName())) {
                     method = clazz.getDeclaredMethod("setACLs", new Class[]{NodeList.class});
                     method.setAccessible(true);
                     method.invoke(this, childNode.getChildNodes());
                 }
-                if (childNode.getNodeName().equals("hideFolders")) {
+                if ("hideFolders".equals(childNode.getNodeName())) {
                     method = clazz.getDeclaredMethod("setHiddenFolders", new Class[]{NodeList.class});
                     method.setAccessible(true);
                     method.invoke(this, childNode.getChildNodes());
                 }
-                if (childNode.getNodeName().equals("hideFiles")) {
+                if ("hideFiles".equals(childNode.getNodeName())) {
                     method = clazz.getDeclaredMethod("setHiddenFiles", new Class[]{NodeList.class});
                     method.setAccessible(true);
                     method.invoke(this, childNode.getChildNodes());
                 }
-                if (childNode.getNodeName().equals("checkDoubleExtension"))
+                if ("checkDoubleExtension".equals(childNode.getNodeName())) {
                     this.doubleExtensions = Boolean.valueOf(childNode.getTextContent().trim()).booleanValue();
-                if (childNode.getNodeName().equals("disallowUnsafeCharacters"))
+                }
+                if ("disallowUnsafeCharacters".equals(childNode.getNodeName())) {
                     this.disallowUnsafeCharacters = Boolean.valueOf(childNode.getTextContent().trim()).booleanValue();
-                if (childNode.getNodeName().equals("forceASCII"))
+                }
+                if ("forceASCII".equals(childNode.getNodeName())) {
                     this.forceASCII = Boolean.valueOf(childNode.getTextContent().trim()).booleanValue();
-                if (childNode.getNodeName().equals("checkSizeAfterScaling"))
+                }
+                if ("checkSizeAfterScaling".equals(childNode.getNodeName())) {
                     this.checkSizeAfterScaling = Boolean.valueOf(childNode.getTextContent().trim()).booleanValue();
+                }
                 Scanner sc;
-                if (childNode.getNodeName().equals("htmlExtensions")) {
+                if ("htmlExtensions".equals(childNode.getNodeName())) {
                     value = childNode.getTextContent();
                     sc = (new Scanner(value)).useDelimiter(",");
                     while (sc.hasNext()) {
                         String val = sc.next();
-                        if (val != null && !val.equals(""))
+                        if (val != null && !"".equals(val)) {
                             this.htmlExtensions.add(val.trim().toLowerCase());
+                        }
                     }
                 }
-                if (childNode.getNodeName().equals("secureImageUploads"))
+                if ("secureImageUploads".equals(childNode.getNodeName())) {
                     this.secureImageUploads = Boolean.valueOf(childNode.getTextContent().trim()).booleanValue();
-                if (childNode.getNodeName().equals("uriEncoding"))
+                }
+                if ("uriEncoding".equals(childNode.getNodeName())) {
                     this.uriEncoding = childNode.getTextContent().trim();
-                if (childNode.getNodeName().equals("userRoleSessionVar"))
+                }
+                if ("userRoleSessionVar".equals(childNode.getNodeName())) {
                     this.userRoleSessionVar = childNode.getTextContent().trim();
-                if (childNode.getNodeName().equals("defaultResourceTypes")) {
+                }
+                if ("defaultResourceTypes".equals(childNode.getNodeName())) {
                     value = childNode.getTextContent().trim();
                     sc = (new Scanner(value)).useDelimiter(",");
-                    while (sc.hasNext())
+                    while (sc.hasNext()) {
                         this.defaultResourceTypes.add(sc.next());
+                    }
                 }
-                if (childNode.getNodeName().equals("plugins")) {
+                if ("plugins".equals(childNode.getNodeName())) {
                     method = clazz.getDeclaredMethod("setPlugins", new Class[]{Node.class});
                     method.setAccessible(true);
                     method.invoke(this, childNode);
 
                 }
-                if (childNode.getNodeName().equals("basePathBuilderImpl")) {
+                if ("basePathBuilderImpl".equals(childNode.getNodeName())) {
                     method = clazz.getDeclaredMethod("setBasePathImpl", new Class[]{String.class});
                     method.setAccessible(true);
                     method.invoke(this, childNode.getTextContent().trim());

@@ -27,11 +27,11 @@
 <body>
 
 <!-- PRE LOADER -->
-<div class="preloader">
+<!--div class="preloader" style="display:none">
     <div class="spinner">
         <span class="sk-inner-circle"></span>
     </div>
-</div>
+</div-->
 
 
 <!-- MENU -->

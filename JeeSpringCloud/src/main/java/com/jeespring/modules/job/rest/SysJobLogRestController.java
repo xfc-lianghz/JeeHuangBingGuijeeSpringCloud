@@ -261,7 +261,7 @@ public class SysJobLogRestController extends AbstractBaseController {
 	}
 
 	private Result deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysJobLogService.delete(sysJobLogService.get(id));
 		}
@@ -290,7 +290,7 @@ public class SysJobLogRestController extends AbstractBaseController {
 	}
 
 	private Result deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysJobLogService.deleteByLogic(sysJobLogService.get(id));
 		}

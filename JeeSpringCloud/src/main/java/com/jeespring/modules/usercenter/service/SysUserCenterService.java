@@ -31,10 +31,13 @@ public class SysUserCenterService extends AbstractBaseService<SysUserCenterDao, 
 	@Autowired
 	private RedisUtils redisUtils;
 
+	@Override
 	public SysUserCenter get(String id) {
 		//获取缓存数据
 		SysUserCenter sysUserCenter=(SysUserCenter)redisUtils.get(RedisUtils.getIdKey(SysUserCenterService.class.getName(),id));
-		if( sysUserCenter!=null) return  sysUserCenter;
+		if( sysUserCenter!=null) {
+			return sysUserCenter;
+		}
 		//获取数据库数据
 		sysUserCenter=super.get(id);
 		//设置缓存数据
@@ -52,11 +55,14 @@ public class SysUserCenterService extends AbstractBaseService<SysUserCenterDao, 
 		return null;
 	}
 
+	@Override
 	public List<SysUserCenter> findList(SysUserCenter sysUserCenter) {
 		//获取缓存数据
 		String findListKey = RedisUtils.getFindListKey(SysUserCenterService.class.getName(),JSON.toJSONString(sysUserCenter));
 		List<SysUserCenter> sysUserCenterList=(List<SysUserCenter>)redisUtils.get(findListKey);
-		if(sysUserCenterList!=null) return sysUserCenterList;
+		if(sysUserCenterList!=null) {
+			return sysUserCenterList;
+		}
 		//获取数据库数据
 		sysUserCenterList=super.findList(sysUserCenter);
 		//设置缓存数据
@@ -69,11 +75,14 @@ public class SysUserCenterService extends AbstractBaseService<SysUserCenterDao, 
 		return null;
 	}
 
+	@Override
 	public Page<SysUserCenter> findPage(Page<SysUserCenter> page, SysUserCenter sysUserCenter) {
 		//获取缓存数据
 		String findPageKey =  RedisUtils.getFindPageKey(SysUserCenterService.class.getName(),JSON.toJSONString(page)+JSON.toJSONString(sysUserCenter));
 		Page<SysUserCenter> pageReuslt=(Page<SysUserCenter>)redisUtils.get(findPageKey);
-		if(pageReuslt!=null) return pageReuslt;
+		if(pageReuslt!=null) {
+			return pageReuslt;
+		}
 		//获取数据库数据
 		pageReuslt=super.findPage(page, sysUserCenter);
 		//设置缓存数据
@@ -86,6 +95,7 @@ public class SysUserCenterService extends AbstractBaseService<SysUserCenterDao, 
 		return null;
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void save(SysUserCenter sysUserCenter) {
 		//保存数据库记录
@@ -97,6 +107,7 @@ public class SysUserCenterService extends AbstractBaseService<SysUserCenterDao, 
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysUserCenterService.class.getName()));
 	}
 	
+	@Override
 	@Transactional(readOnly = false)
 	public void delete(SysUserCenter sysUserCenter) {
 		//清除记录缓存数据
@@ -108,6 +119,7 @@ public class SysUserCenterService extends AbstractBaseService<SysUserCenterDao, 
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysUserCenterService.class.getName()));
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void deleteByLogic(SysUserCenter sysUserCenter) {
 		//清除记录缓存数据

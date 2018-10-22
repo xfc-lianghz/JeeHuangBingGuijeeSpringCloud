@@ -49,23 +49,31 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 	@Autowired
 	private TestDataChild3Dao testDataChild3Dao;
 	
+	@Override
 	public TestDataMain get(String id) {
 		//获取数据库数据
 		TestDataMain testDataMain = super.get(id);
-		if(testDataMain ==null) return new TestDataMain();
+		if(testDataMain ==null) {
+            return new TestDataMain();
+        }
 		testDataMain.setTestDataChildList(testDataChildDao.findList(new TestDataChild(testDataMain)));
 		testDataMain.setTestDataChild2List(testDataChild2Dao.findList(new TestDataChild2(testDataMain)));
 		testDataMain.setTestDataChild3List(testDataChild3Dao.findList(new TestDataChild3(testDataMain)));
 		return testDataMain;
 	}
 
+	@Override
 	public TestDataMain getCache(String id) {
 		//获取缓存数据
 		TestDataMain testDataMain=(TestDataMain)redisUtils.get(RedisUtils.getIdKey(TestDataMainService.class.getName(),id));
-		if( testDataMain!=null) return  testDataMain;
+		if( testDataMain!=null) {
+            return testDataMain;
+        }
 		//获取数据库数据
 		testDataMain = super.get(id);
-		if(testDataMain ==null) return new TestDataMain();
+		if(testDataMain ==null) {
+            return new TestDataMain();
+        }
 		testDataMain.setTestDataChildList(testDataChildDao.findList(new TestDataChild(testDataMain)));
 		testDataMain.setTestDataChild2List(testDataChild2Dao.findList(new TestDataChild2(testDataMain)));
 		testDataMain.setTestDataChild3List(testDataChild3Dao.findList(new TestDataChild3(testDataMain)));
@@ -74,17 +82,21 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 		return testDataMain;
 	}
 
+	@Override
 	public List<TestDataMain> total(TestDataMain testDataMain) {
 		//获取数据库数据
 		List<TestDataMain> testDataMainList=super.total(testDataMain);
 		return testDataMainList;
 	}
 
+	@Override
 	public List<TestDataMain> totalCache(TestDataMain testDataMain) {
 		//获取缓存数据
 		String totalKey = RedisUtils.getTotalKey(TestDataMainService.class.getName(),JSON.toJSONString(testDataMain));
 		List<TestDataMain> testDataMainList=(List<TestDataMain>)redisUtils.get(totalKey);
-		if(testDataMainList!=null) return testDataMainList;
+		if(testDataMainList!=null) {
+            return testDataMainList;
+        }
 		//获取数据库数据
 		testDataMainList=super.total(testDataMain);
 		//设置缓存数据
@@ -95,7 +107,9 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 	public TestDataMain findListFirst(TestDataMain testDataMain) {
 		//获取数据库数据
 		List<TestDataMain> testDataMainList=super.findList(testDataMain);
-		if(testDataMainList.size()>0) testDataMain=testDataMainList.get(0);
+		if(testDataMainList.size()>0) {
+            testDataMain = testDataMainList.get(0);
+        }
 		return testDataMain;
 	}
 
@@ -103,21 +117,29 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 		//获取缓存数据
 		String findListFirstKey = RedisUtils.getFindListFirstKey(TestDataMainService.class.getName(),JSON.toJSONString(testDataMain));
 		TestDataMain testDataMainRedis=(TestDataMain)redisUtils.get(findListFirstKey);
-		if(testDataMainRedis!=null) return testDataMainRedis;
+		if(testDataMainRedis!=null) {
+            return testDataMainRedis;
+        }
 		//获取数据库数据
 		List<TestDataMain> testDataMainList=super.findList(testDataMain);
-		if(testDataMainList.size()>0) testDataMain=testDataMainList.get(0);
-		else testDataMain=new TestDataMain();
+		if(testDataMainList.size()>0) {
+            testDataMain = testDataMainList.get(0);
+        } else {
+            testDataMain = new TestDataMain();
+        }
 		//设置缓存数据
 		redisUtils.set(findListFirstKey,testDataMain);
 		return testDataMain;
 	}
 
+	@Override
 	public List<TestDataMain> findList(TestDataMain testDataMain) {
 		//获取缓存数据
 		String findListKey = RedisUtils.getFindListKey(TestDataMainService.class.getName(),JSON.toJSONString(testDataMain));
 		List<TestDataMain> testDataMainList=(List<TestDataMain>)redisUtils.get(findListKey);
-		if(testDataMainList!=null) return testDataMainList;
+		if(testDataMainList!=null) {
+            return testDataMainList;
+        }
 		//获取数据库数据
 		testDataMainList=super.findList(testDataMain);
 		//设置缓存数据
@@ -125,11 +147,14 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 		return testDataMainList;
 	}
 
+	@Override
 	public List<TestDataMain> findListCache(TestDataMain testDataMain) {
 		//获取缓存数据
 		String findListKey = RedisUtils.getFindListKey(TestDataMainService.class.getName(),JSON.toJSONString(testDataMain));
 		List<TestDataMain> testDataMainList=(List<TestDataMain>)redisUtils.get(findListKey);
-		if(testDataMainList!=null) return testDataMainList;
+		if(testDataMainList!=null) {
+            return testDataMainList;
+        }
 		//获取数据库数据
 		testDataMainList=super.findList(testDataMain);
 		//设置缓存数据
@@ -137,17 +162,21 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 		return testDataMainList;
 	}
 
+	@Override
 	public Page<TestDataMain> findPage(Page<TestDataMain> page, TestDataMain testDataMain) {
 		//获取数据库数据
 		Page<TestDataMain> pageReuslt=super.findPage(page, testDataMain);
 		return pageReuslt;
 	}
 
+	@Override
 	public Page<TestDataMain> findPageCache(Page<TestDataMain> page, TestDataMain testDataMain) {
 		//获取缓存数据
 		String findPageKey =  RedisUtils.getFindPageKey(TestDataMainService.class.getName(),JSON.toJSONString(page)+JSON.toJSONString(testDataMain));
 		Page<TestDataMain> pageReuslt=(Page<TestDataMain>)redisUtils.get(findPageKey);
-		if(pageReuslt!=null) return pageReuslt;
+		if(pageReuslt!=null) {
+            return pageReuslt;
+        }
 		//获取数据库数据
 		pageReuslt=super.findPage(page, testDataMain);
 		//设置缓存数据
@@ -155,6 +184,7 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 		return pageReuslt;
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void save(TestDataMain testDataMain) {
 		//保存数据库记录
@@ -217,6 +247,7 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(TestDataMainService.class.getName()));
 	}
 	
+	@Override
 	@Transactional(readOnly = false)
 	public void delete(TestDataMain testDataMain) {
 		//清除记录缓存数据
@@ -231,6 +262,7 @@ public class TestDataMainService extends AbstractBaseService<TestDataMainDao, Te
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(TestDataMainService.class.getName()));
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void deleteByLogic(TestDataMain testDataMain) {
 		//清除记录缓存数据

@@ -79,7 +79,9 @@ public class oauthRestController extends AbstractBaseController {
 	@ApiOperation(value="授权平台调用次数失败(Content-Type为application/html)", notes="授权平台调用次数失败(Content-Type为application/html)")
 	public Result apiTimeLimiFaild( HttpServletRequest request, HttpServletResponse response){
 		String apiTimeLimi=request.getParameter("apiTimeLimi");
-		if(apiTimeLimi==null) apiTimeLimi="";
+		if(apiTimeLimi==null) {
+            apiTimeLimi = "";
+        }
 		return ResultFactory.getErrorResult("调用失败，接口允许最多调用"+apiTimeLimi+"次数！15分钟后解锁！");
 	}
 	@RequestMapping(value = {"userOnlineAmountFaild"},method ={RequestMethod.POST,RequestMethod.GET})

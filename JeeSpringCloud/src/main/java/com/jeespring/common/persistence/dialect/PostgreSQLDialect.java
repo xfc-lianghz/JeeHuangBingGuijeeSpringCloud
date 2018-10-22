@@ -13,6 +13,7 @@ import com.jeespring.common.persistence.dialect.Dialect;
  */
 public class PostgreSQLDialect implements Dialect {
 
+    @Override
     public boolean supportsLimit() {
         return true;
     }

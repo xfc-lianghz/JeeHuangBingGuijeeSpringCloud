@@ -14,6 +14,7 @@ import com.jeespring.common.persistence.dialect.Dialect;
  */
 public class H2Dialect implements Dialect {
 
+    @Override
     public boolean supportsLimit() {
         return true;
     }

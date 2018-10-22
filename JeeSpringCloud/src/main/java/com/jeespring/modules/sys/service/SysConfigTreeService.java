@@ -22,23 +22,27 @@ import com.jeespring.modules.sys.dao.SysConfigTreeDao;
 @Transactional(readOnly = true)
 public class SysConfigTreeService extends TreeService<SysConfigTreeDao, SysConfigTree> {
 
-	public SysConfigTree get(String id) {
+	@Override
+    public SysConfigTree get(String id) {
 		return super.get(id);
 	}
 	
-	public List<SysConfigTree> findList(SysConfigTree sysConfig) {
+	@Override
+    public List<SysConfigTree> findList(SysConfigTree sysConfig) {
 		if (StringUtils.isNotBlank(sysConfig.getParentIds())){
 			sysConfig.setParentIds(","+sysConfig.getParentIds()+",");
 		}
 		return super.findList(sysConfig);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(SysConfigTree sysConfig) {
 		super.save(sysConfig);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(SysConfigTree sysConfig) {
 		super.delete(sysConfig);
 	}

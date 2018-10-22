@@ -25,11 +25,13 @@ import com.jeespring.modules.iim.entity.MailPage;
 public class MailComposeService extends AbstractBaseService<MailComposeDao, MailCompose> {
 	@Autowired
 	private MailComposeDao mailComposeDao;
-	public MailCompose get(String id) {
+	@Override
+    public MailCompose get(String id) {
 		return super.get(id);
 	}
 	
-	public List<MailCompose> findList(MailCompose mailCompose) {
+	@Override
+    public List<MailCompose> findList(MailCompose mailCompose) {
 		return super.findList(mailCompose);
 	}
 	
@@ -37,12 +39,14 @@ public class MailComposeService extends AbstractBaseService<MailComposeDao, Mail
 		return super.findPage(page, mailCompose);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(MailCompose mailCompose) {
 		super.save(mailCompose);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(MailCompose mailCompose) {
 		super.delete(mailCompose);
 	}

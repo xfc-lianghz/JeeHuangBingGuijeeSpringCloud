@@ -22,24 +22,29 @@ import com.jeespring.modules.mvvmoa.dao.FormLeavemDao;
 @Transactional(readOnly = true)
 public class FormLeavemService extends AbstractBaseService<FormLeavemDao, FormLeavem> {
 
-	public FormLeavem get(String id) {
+	@Override
+    public FormLeavem get(String id) {
 		return super.get(id);
 	}
 	
-	public List<FormLeavem> findList(FormLeavem formLeavem) {
+	@Override
+    public List<FormLeavem> findList(FormLeavem formLeavem) {
 		return super.findList(formLeavem);
 	}
 	
-	public Page<FormLeavem> findPage(Page<FormLeavem> page, FormLeavem formLeavem) {
+	@Override
+    public Page<FormLeavem> findPage(Page<FormLeavem> page, FormLeavem formLeavem) {
 		return super.findPage(page, formLeavem);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(FormLeavem formLeavem) {
 		super.save(formLeavem);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(FormLeavem formLeavem) {
 		super.delete(formLeavem);
 	}

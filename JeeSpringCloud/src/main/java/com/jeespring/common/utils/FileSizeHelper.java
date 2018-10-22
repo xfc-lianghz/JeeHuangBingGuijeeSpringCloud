@@ -19,7 +19,9 @@ public class FileSizeHelper {
 	public static long ONE_PB = ONE_TB * (long)1024;
 
 	public static String getHumanReadableFileSize(Long fileSize) {
-		if(fileSize == null) return null;
+		if(fileSize == null) {
+            return null;
+        }
 		return getHumanReadableFileSize(fileSize.longValue());
 	}
 
@@ -52,7 +54,9 @@ public class FileSizeHelper {
 	}
 
 	private static String getHumanReadableFileSize(long fileSize, long unit, String unitName) {
-		if(fileSize == 0) return "0";
+		if(fileSize == 0) {
+            return "0";
+        }
 
 		if(fileSize / unit >= 1) {
 			double value = fileSize / (double)unit;

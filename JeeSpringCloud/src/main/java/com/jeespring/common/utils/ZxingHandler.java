@@ -23,7 +23,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 /**
  * 条形码和二维码编码解码
  * 
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2014-02-28
  */
 public class ZxingHandler {

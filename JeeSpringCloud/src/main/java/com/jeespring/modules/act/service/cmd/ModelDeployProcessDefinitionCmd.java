@@ -23,7 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * 模型部署或更新到流程定义
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2016年8月2日
  */
 public class ModelDeployProcessDefinitionCmd implements Command<Void> {
@@ -43,13 +43,13 @@ public class ModelDeployProcessDefinitionCmd implements Command<Void> {
 		RepositoryService repositoryService = Context.getProcessEngineConfiguration()
 				.getRepositoryService();
 		try{
-			// 生成部署名称和数据 ThinkGem
+			// 生成部署名称和数据 JeeSpring
 			JsonNode editorNode = new ObjectMapper().readTree(repositoryService
 						.getModelEditorSource(modelId));
 			BpmnModel bpmnModel = new BpmnJsonConverter().convertToBpmnModel(editorNode);
 			byte[] bpmnBytes = new BpmnXMLConverter().convertToXML(bpmnModel);
 			
-			// 查询流程定义是否已经存在了 ThinkGem
+			// 查询流程定义是否已经存在了 JeeSpring
 			ProcessDefinition processDefinition = Context.getProcessEngineConfiguration()
 					.getRepositoryService().createProcessDefinitionQuery()
 					.processDefinitionKey(procDefKey).latestVersion().singleResult();
@@ -82,7 +82,7 @@ public class ModelDeployProcessDefinitionCmd implements Command<Void> {
 				deployment.addResource(diagramResource);
 				resourceEntityManager.insertResource(diagramResource);
 			}
-			// 不存在部署一个新的流程 ThinkGem
+			// 不存在部署一个新的流程 JeeSpring
 			else{ 
 				repositoryService.createDeployment().name(procDefName).addInputStream(
 						procDefName + ".bpmn20.xml", new ByteArrayInputStream(bpmnBytes)).deploy();

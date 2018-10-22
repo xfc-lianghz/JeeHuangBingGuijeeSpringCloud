@@ -68,7 +68,8 @@ public class SessionManager extends DefaultWebSessionManager {
 		super.validateSessions();
 	}
 	
-	protected Session retrieveSession(SessionKey sessionKey) {
+	@Override
+    protected Session retrieveSession(SessionKey sessionKey) {
 		try{
 			return super.retrieveSession(sessionKey);
 		}catch (UnknownSessionException e) {
@@ -77,6 +78,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
 	}
 
+    @Override
     public Date getStartTimestamp(SessionKey key) {
     	try{
     		return super.getStartTimestamp(key);
@@ -86,6 +88,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public Date getLastAccessTime(SessionKey key) {
     	try{
     		return super.getLastAccessTime(key);
@@ -95,6 +98,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public long getTimeout(SessionKey key){
     	try{
     		return super.getTimeout(key);
@@ -104,6 +108,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public void setTimeout(SessionKey key, long maxIdleTimeInMillis) {
     	try{
     		super.setTimeout(key, maxIdleTimeInMillis);
@@ -112,6 +117,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public void touch(SessionKey key) {
     	try{
 	    	super.touch(key);
@@ -120,6 +126,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public String getHost(SessionKey key) {
     	try{
     		return super.getHost(key);
@@ -129,6 +136,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public Collection<Object> getAttributeKeys(SessionKey key) {
     	try{
     		return super.getAttributeKeys(key);
@@ -138,6 +146,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public Object getAttribute(SessionKey sessionKey, Object attributeKey) {
     	try{
     		return super.getAttribute(sessionKey, attributeKey);
@@ -147,6 +156,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public void setAttribute(SessionKey sessionKey, Object attributeKey, Object value) {
     	try{
     		super.setAttribute(sessionKey, attributeKey, value);
@@ -155,6 +165,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public Object removeAttribute(SessionKey sessionKey, Object attributeKey) {
     	try{
     		return super.removeAttribute(sessionKey, attributeKey);
@@ -164,6 +175,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
 
+    @Override
     public void stop(SessionKey key) {
     	try{
     		super.stop(key);
@@ -172,6 +184,7 @@ public class SessionManager extends DefaultWebSessionManager {
 		}
     }
     
+    @Override
     public void checkValid(SessionKey key) {
     	try{
     		super.checkValid(key);

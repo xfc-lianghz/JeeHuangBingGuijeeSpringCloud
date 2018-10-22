@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.common.persistence;
 
@@ -10,7 +10,7 @@ import com.jeespring.modules.act.entity.Act;
 
 /**
  * Activiti Entity类
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2013-05-28
  */
 public abstract class ActEntity<T> extends AbstractBaseEntity<T> implements Serializable {

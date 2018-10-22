@@ -44,10 +44,11 @@ public class GenSchemeController extends AbstractBaseController
     @ModelAttribute
     public GenScheme get(@RequestParam(required=true) String id)
     {
-        if(StringUtils.isNotBlank(id))
+        if(StringUtils.isNotBlank(id)) {
             return genSchemeService.get(id);
-        else
+        } else {
             return new GenScheme();
+        }
     }
 
     @RequiresPermissions(value={"gen:genScheme:view"})
@@ -55,8 +56,9 @@ public class GenSchemeController extends AbstractBaseController
     public String list(GenScheme genScheme, HttpServletRequest request, HttpServletResponse response, Model model)
     {
         User user = UserUtils.getUser();
-        if(!user.isAdmin())
+        if(!user.isAdmin()) {
             genScheme.setCreateBy(user);
+        }
         Page page = genSchemeService.find(new Page(request, response), genScheme);
         model.addAttribute("page", page);
         return "modules/gen/genSchemeList";
@@ -66,8 +68,9 @@ public class GenSchemeController extends AbstractBaseController
     @RequestMapping(value={"form"})
     public String form(GenScheme genScheme, Model model)
     {
-        if(StringUtils.isBlank(genScheme.getPackageName()))
+        if(StringUtils.isBlank(genScheme.getPackageName())) {
             genScheme.setPackageName("com.jeespring.modules");
+        }
         model.addAttribute("genScheme", genScheme);
         model.addAttribute("config", GenUtils.getConfig());
         model.addAttribute("tableList", genTableService.findAll());

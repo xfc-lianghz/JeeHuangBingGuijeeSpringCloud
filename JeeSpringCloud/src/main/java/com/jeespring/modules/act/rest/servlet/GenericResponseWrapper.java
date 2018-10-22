@@ -22,15 +22,18 @@ public class GenericResponseWrapper extends HttpServletResponseWrapper {
 		return output.toByteArray();
 	}
 
-	public ServletOutputStream getOutputStream() {
+	@Override
+    public ServletOutputStream getOutputStream() {
 		return new FilterServletOutputStream(output);
 	}
 
-	public PrintWriter getWriter() {
+	@Override
+    public PrintWriter getWriter() {
 		return new PrintWriter(getOutputStream(), true);
 	}
 
-	public void setContentLength(int length) {
+	@Override
+    public void setContentLength(int length) {
 		this.contentLength = length;
 		super.setContentLength(length);
 	}
@@ -39,12 +42,14 @@ public class GenericResponseWrapper extends HttpServletResponseWrapper {
 		return contentLength;
 	}
 
-	public void setContentType(String type) {
+	@Override
+    public void setContentType(String type) {
 		this.contentType = type;
 		super.setContentType(type);
 	}
 
-	public String getContentType() {
+	@Override
+    public String getContentType() {
 		return contentType;
 	}
 }

@@ -131,7 +131,7 @@ public class MenuController extends AbstractBaseController {
 //		if (Menu.isRoot(id)){
 //			addMessage(redirectAttributes, "删除菜单失败, 不允许删除顶级菜单或编号为空");
 //		}else{
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			Menu menu = systemService.getMenu(id);
 			if(menu != null){
@@ -191,7 +191,7 @@ public class MenuController extends AbstractBaseController {
 		for (int i=0; i<list.size(); i++){
 			Menu e = list.get(i);
 			if (StringUtils.isBlank(extId) || (extId!=null && !extId.equals(e.getId()) && e.getParentIds().indexOf(","+extId+",")==-1)){
-				if(isShowHide != null && isShowHide.equals("0") && e.getIsShow().equals("0")){
+				if(isShowHide != null && "0".equals(isShowHide) && "0".equals(e.getIsShow())){
 					continue;
 				}
 				Map<String, Object> map = Maps.newHashMap();

@@ -57,7 +57,9 @@ public class Menu extends AbstractBaseEntity<Menu> {
 
 	@Length(min=1, max=2000)
 	public String getParentIds() {
-		if(parentIds==null) parentIds="0,";
+		if(parentIds==null) {
+            parentIds = "0,";
+        }
 		return parentIds;
 	}
 
@@ -137,9 +139,11 @@ public class Menu extends AbstractBaseEntity<Menu> {
 		if(children == null || children.size() == 0){
 			return false;
 		}
-		if(children.toString().contains("查看")) return false;
+		if(children.toString().contains("查看")) {
+            return false;
+        }
 		for(Menu child:children){
-			if(child.getIsShow().equals("1")){
+			if("1".equals(child.getIsShow())){
 				return true;
 			}
 		}
@@ -149,8 +153,9 @@ public class Menu extends AbstractBaseEntity<Menu> {
 	public boolean hasPermisson(){
 		List<Menu> menuList = UserUtils.getMenuList();
 		for(Menu menu:menuList){
-			if(menu.getId().equals(this.getId()))
-				return true;
+			if(menu.getId().equals(this.getId())) {
+                return true;
+            }
 		}
 		return false;
 	}

@@ -108,7 +108,7 @@ public class SystemInfo {
 	public static List<Map> cpuInfos(Sigar sigar) {
 		List<Map> monitorMaps = new ArrayList<Map>();
 		try {
-			CpuPerc cpuList[] = sigar.getCpuPercList();
+            CpuPerc[] cpuList = sigar.getCpuPercList();
 			for (CpuPerc cpuPerc : cpuList) {
 				Map<String, Comparable> monitorMap = new HashMap();
 				monitorMap.put("cpuUserUse", Math.round(cpuPerc.getUser()*100));// 用户使用率
@@ -125,7 +125,7 @@ public class SystemInfo {
 
 	public List<Map> diskInfos(Sigar sigar) throws Exception {
 		List<Map> monitorMaps = new ArrayList<Map>();
-		FileSystem fslist[] = sigar.getFileSystemList();
+        FileSystem[] fslist = sigar.getFileSystemList();
 		for (int i = 0; i < fslist.length; i++) {
 			Map<Object, Object> monitorMap = new HashMap();
 			FileSystem fs = fslist[i];

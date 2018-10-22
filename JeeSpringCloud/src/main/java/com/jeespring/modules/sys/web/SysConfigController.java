@@ -146,7 +146,7 @@ public class SysConfigController extends AbstractBaseController {
 			return "redirect:" + adminPath + "/sys/sysConfig/?repage";
 		}
 
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysConfigService.delete(sysConfigService.get(id));
 		}
@@ -165,7 +165,7 @@ public class SysConfigController extends AbstractBaseController {
 			return "redirect:" + adminPath + "/sys/sysConfig/?repage";
 		}
 
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysConfigService.deleteByLogic(sysConfigService.get(id));
 		}

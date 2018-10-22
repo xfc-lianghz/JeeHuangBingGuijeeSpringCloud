@@ -56,7 +56,8 @@ public class WebSockertFilter{
 
 		Timer timer = new Timer();
 		timer.scheduleAtFixedRate(new TimerTask() {
-			public void run() {
+			@Override
+            public void run() {
 				
 				//PersonService personService = (PersonService)ApplicationContext.getBean("personService");
 

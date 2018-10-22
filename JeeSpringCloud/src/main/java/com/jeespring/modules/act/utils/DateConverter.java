@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.modules.act.utils;
 
@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 日期转换类
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2013-11-03
  */
 public class DateConverter implements Converter {
@@ -30,7 +30,8 @@ public class DateConverter implements Converter {
 
 	private static final String MONTH_PATTERN = "yyyy-MM";
 
-	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Override
+    @SuppressWarnings({ "rawtypes", "unchecked" })
 	public Object convert(Class type, Object value) {
 		Object result = null;
 		if (type == Date.class) {

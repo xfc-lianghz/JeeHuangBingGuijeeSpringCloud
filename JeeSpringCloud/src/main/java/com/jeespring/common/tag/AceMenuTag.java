@@ -34,11 +34,13 @@ public class AceMenuTag extends TagSupport {
 		this.menu = menu;
 	}
 
-	public int doStartTag() throws JspTagException {
+	@Override
+    public int doStartTag() throws JspTagException {
 		return EVAL_PAGE;
 	}
 
-	public int doEndTag() throws JspTagException {
+	@Override
+    public int doEndTag() throws JspTagException {
 		try {
 			JspWriter out = this.pageContext.getOut();
 			String menu = (String) this.pageContext.getSession().getAttribute(
@@ -69,8 +71,9 @@ public class AceMenuTag extends TagSupport {
 	private static String getChildOfTree(Menu parent, int level,  List<Menu> menuList) {
 		StringBuffer menuString = new StringBuffer();
 		String href = "";
-		if (!parent.hasPermisson())
-			return "";
+		if (!parent.hasPermisson()) {
+            return "";
+        }
 
 		ServletContext context = SpringContextHolder
 				.getBean(ServletContext.class);
@@ -88,7 +91,7 @@ public class AceMenuTag extends TagSupport {
 
 		if (level > 0) {// level 为0是功能菜单
 			menuString.append("<li>");
-			if ((parent.getHref() == null || parent.getHref().trim().equals("")) && parent.getIsShow().equals("1")) {
+			if ((parent.getHref() == null || "".equals(parent.getHref().trim())) && "1".equals(parent.getIsShow())) {
 				menuString.append("<a  href=\"" + href
 						+ "\" class=\"dropdown-toggle\">");
 			} else {
@@ -98,13 +101,13 @@ public class AceMenuTag extends TagSupport {
 			menuString.append("<i class=\"menu-icon fa " + parent.getIcon()
 					+ "\"></i>");
 			menuString.append("<span class=\"menu-text\">"+parent.getName()+"</span>");
-			if ((parent.getHref() == null || parent.getHref().trim().equals("")) && parent.getIsShow().equals("1")) {
+			if ((parent.getHref() == null || "".equals(parent.getHref().trim())) && "1".equals(parent.getIsShow())) {
 				menuString.append("<b class=\"arrow fa fa-angle-down\"></b>");
 			}
 			menuString.append("</a>");
 			menuString.append("<b class=\"arrow\"></b>");
 		}
-		if ((parent.getHref() == null || parent.getHref().trim().equals("")) && parent.getIsShow().equals("1")) {
+		if ((parent.getHref() == null || "".equals(parent.getHref().trim())) && "1".equals(parent.getIsShow())) {
 			if (level == 0) {
 				menuString.append("<ul class=\"nav nav-list\">");
 			} else {
@@ -113,7 +116,7 @@ public class AceMenuTag extends TagSupport {
 
 			for (Menu child : menuList) {
 
-				if (child.getParentId().equals(parent.getId())&&child.getIsShow().equals("1")) {
+				if (child.getParentId().equals(parent.getId())&& "1".equals(child.getIsShow())) {
 					menuString.append(getChildOfTree(child, level + 1, menuList));
 				}
 

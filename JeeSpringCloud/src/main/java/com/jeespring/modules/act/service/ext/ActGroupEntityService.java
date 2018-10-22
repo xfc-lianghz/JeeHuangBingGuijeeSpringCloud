@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.modules.act.service.ext;
 
@@ -23,7 +23,7 @@ import com.jeespring.modules.sys.service.SystemService;
 
 /**
  * Activiti Group Entity Service
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2013-12-05
  */
 @Service
@@ -38,11 +38,13 @@ public class ActGroupEntityService extends GroupEntityManager {
 		return systemService;
 	}
 	
-	public Group createNewGroup(String groupId) {
+	@Override
+    public Group createNewGroup(String groupId) {
 		return new GroupEntity(groupId);
 	}
 
-	public void insertGroup(Group group) {
+	@Override
+    public void insertGroup(Group group) {
 //		getDbSqlSession().insert((PersistentObject) group);
 		throw new RuntimeException("not implement method.");
 	}
@@ -54,30 +56,35 @@ public class ActGroupEntityService extends GroupEntityManager {
 		throw new RuntimeException("not implement method.");
 	}
 
-	public void deleteGroup(String groupId) {
+	@Override
+    public void deleteGroup(String groupId) {
 //		GroupEntity group = getDbSqlSession().selectById(GroupEntity.class, groupId);
 //		getDbSqlSession().delete("deleteMembershipsByGroupId", groupId);
 //		getDbSqlSession().delete(group);
 		throw new RuntimeException("not implement method.");
 	}
 
-	public GroupQuery createNewGroupQuery() {
+	@Override
+    public GroupQuery createNewGroupQuery() {
 //		return new GroupQueryImpl(Context.getProcessEngineConfiguration().getCommandExecutorTxRequired());
 		throw new RuntimeException("not implement method.");
 	}
 
 //	@SuppressWarnings("unchecked")
-	public List<Group> findGroupByQueryCriteria(GroupQueryImpl query, Page page) {
+	@Override
+    public List<Group> findGroupByQueryCriteria(GroupQueryImpl query, Page page) {
 //		return getDbSqlSession().selectList("selectGroupByQueryCriteria", query, page);
 		throw new RuntimeException("not implement method.");
 	}
 
-	public long findGroupCountByQueryCriteria(GroupQueryImpl query) {
+	@Override
+    public long findGroupCountByQueryCriteria(GroupQueryImpl query) {
 //		return (Long) getDbSqlSession().selectOne("selectGroupCountByQueryCriteria", query);
 		throw new RuntimeException("not implement method.");
 	}
 
-	public List<Group> findGroupsByUser(String userId) {
+	@Override
+    public List<Group> findGroupsByUser(String userId) {
 //		return getDbSqlSession().selectList("selectGroupsByUserId", userId);
 		List<Group> list = Lists.newArrayList();
 		User user = getSystemService().getUserByLoginName(userId);
@@ -89,12 +96,14 @@ public class ActGroupEntityService extends GroupEntityManager {
 		return list;
 	}
 
-	public List<Group> findGroupsByNativeQuery(Map<String, Object> parameterMap, int firstResult, int maxResults) {
+	@Override
+    public List<Group> findGroupsByNativeQuery(Map<String, Object> parameterMap, int firstResult, int maxResults) {
 //		return getDbSqlSession().selectListWithRawParameter("selectGroupByNativeQuery", parameterMap, firstResult, maxResults);
 		throw new RuntimeException("not implement method.");
 	}
 
-	public long findGroupCountByNativeQuery(Map<String, Object> parameterMap) {
+	@Override
+    public long findGroupCountByNativeQuery(Map<String, Object> parameterMap) {
 //		return (Long) getDbSqlSession().selectOne("selectGroupCountByNativeQuery", parameterMap);
 		throw new RuntimeException("not implement method.");
 	}

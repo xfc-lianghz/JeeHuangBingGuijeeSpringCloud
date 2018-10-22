@@ -22,28 +22,33 @@ import com.jeespring.modules.iim.entity.ChatHistory;
 @Transactional(readOnly = true)
 public class ChatHistoryService extends AbstractBaseService<ChatHistoryDao, ChatHistory> {
 
-	public ChatHistory get(String id) {
+	@Override
+    public ChatHistory get(String id) {
 		return super.get(id);
 	}
 	
-	public List<ChatHistory> findList(ChatHistory chatHistory) {
+	@Override
+    public List<ChatHistory> findList(ChatHistory chatHistory) {
 		return super.findList(chatHistory);
 	}
 	
 	
-	public Page<ChatHistory> findPage(Page<ChatHistory> page, ChatHistory entity) {
+	@Override
+    public Page<ChatHistory> findPage(Page<ChatHistory> page, ChatHistory entity) {
 		entity.setPage(page);
 		page.setList(dao.findLogList(entity));
 		return page;
 	}
 	
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(ChatHistory chatHistory) {
 		super.save(chatHistory);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(ChatHistory chatHistory) {
 		super.delete(chatHistory);
 	}

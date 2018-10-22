@@ -41,7 +41,8 @@ public class ValidateCodeServlet extends HttpServlet {
 		super();
 	}
 	
-	public void destroy() {
+	@Override
+    public void destroy() {
 		super.destroy(); 
 	}
 	
@@ -50,7 +51,8 @@ public class ValidateCodeServlet extends HttpServlet {
 		return validateCode.toUpperCase().equals(code); 
 	}
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response)
+	@Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String validateCode = request.getParameter(VALIDATE_CODE); // AJAX验证，成功返回true
 		if (StringUtils.isNotBlank(validateCode)){
@@ -60,7 +62,8 @@ public class ValidateCodeServlet extends HttpServlet {
 		}
 	}
 
-	public void doPost(HttpServletRequest request, HttpServletResponse response)
+	@Override
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		createImage(request,response);
 	}

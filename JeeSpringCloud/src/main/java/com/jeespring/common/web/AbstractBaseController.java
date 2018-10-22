@@ -195,23 +195,31 @@ public abstract class AbstractBaseController {
             if(!RedisUtils.isShireRedis()){ return;}
             if(!oauthService.isOauthOpen()){ return;}
             //if(request.getRequestURI().indexOf("/rest/")<0) return;
-            if(request.getRequestURI().indexOf("/rest/oauth/apiTimeLimiFaild")>=0) return;
-            if(request.getRequestURI().indexOf("/admin?login")>=0) return;
-            if(request.getRequestURI().indexOf("/admin/login")>=0) return;
-            if(request.getRequestURI().equals("/admin")){
+            if(request.getRequestURI().indexOf("/rest/oauth/apiTimeLimiFaild")>=0) {
+                return;
+            }
+            if(request.getRequestURI().indexOf("/admin?login")>=0) {
+                return;
+            }
+            if(request.getRequestURI().indexOf("/admin/login")>=0) {
+                return;
+            }
+            if("/admin".equals(request.getRequestURI())){
                 Result result=oauthService.userOnlineAmount();
-                if(result.getResultCode().equals("-1"))
+                if("-1".equals(result.getResultCode())) {
                     response.sendRedirect("/rest/oauth/userOnlineAmountFaild");
+                }
                 return;
             }
             oauthService.setApiTime();
             Result result = oauthService.ApiTimeLimi(request.getRemoteAddr());
             if(result.getResultCoe().toString()=="-1"){
                 //response.sendRedirect("../error/403");
-                if(request.getRequestURI().indexOf("/rest/")>0)
-                    response.sendRedirect("/rest/oauth/apiTimeLimiFaild?apiTimeLimi="+result.getResultObject());
-                else
-                    response.sendRedirect("/rest/oauth/apiTimeLimiFaild?apiTimeLimi="+result.getResultObject());
+                if(request.getRequestURI().indexOf("/rest/")>0) {
+                    response.sendRedirect("/rest/oauth/apiTimeLimiFaild?apiTimeLimi=" + result.getResultObject());
+                } else {
+                    response.sendRedirect("/rest/oauth/apiTimeLimiFaild?apiTimeLimi=" + result.getResultObject());
+                }
                 //response.sendRedirect("/rest/oauth/apiTimeLimifaild");
             }
         }catch (Exception e){
@@ -226,10 +234,18 @@ public abstract class AbstractBaseController {
         try{
             if(!RedisUtils.isShireRedis()){ return;}
             if(!oauthService.isOauthOpen()){ return;}
-            if(request.getRequestURI().indexOf("/rest/")<0) return;
-            if(request.getRequestURI().indexOf("/rest/oauth/token")>=0) return;
-            if(request.getRequestURI().indexOf("/rest/oauth/faild")>=0) return;
-            if(request.getRequestURI().indexOf("/rest/oauth/checkToken")>=0) return;
+            if(request.getRequestURI().indexOf("/rest/")<0) {
+                return;
+            }
+            if(request.getRequestURI().indexOf("/rest/oauth/token")>=0) {
+                return;
+            }
+            if(request.getRequestURI().indexOf("/rest/oauth/faild")>=0) {
+                return;
+            }
+            if(request.getRequestURI().indexOf("/rest/oauth/checkToken")>=0) {
+                return;
+            }
             Result result = oauthService.checkToken(request.getParameter("token"),request.getRemoteAddr());
             if(result.getResultCoe().toString()=="-1"){
                 //response.sendRedirect("../error/403");

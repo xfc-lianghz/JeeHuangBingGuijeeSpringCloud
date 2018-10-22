@@ -164,8 +164,9 @@ public class TestDataMainController extends AbstractBaseController {
 	public String form(TestDataMain testDataMain, Model model, HttpServletRequest request, HttpServletResponse response) {
 		model.addAttribute("action", request.getParameter("action"));
 		model.addAttribute("testDataMain", testDataMain);
-		if(request.getParameter("ViewFormType")!=null && request.getParameter("ViewFormType").equals("FormTwo"))
-			return "modules/test/onetomany/testDataMainFormTwo";
+		if(request.getParameter("ViewFormType")!=null && "FormTwo".equals(request.getParameter("ViewFormType"))) {
+            return "modules/test/onetomany/testDataMainFormTwo";
+        }
 		return "modules/test/onetomany/testDataMainForm";
 	}
 
@@ -211,7 +212,7 @@ public class TestDataMainController extends AbstractBaseController {
 	@RequiresPermissions("test:onetomany:testDataMain:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+		String[] idArray = ids.split(",");
 		for(String id : idArray){
 			testDataMainService.delete(testDataMainService.get(id));
 		}
@@ -225,7 +226,7 @@ public class TestDataMainController extends AbstractBaseController {
 	@RequiresPermissions(value={"test:onetomany:testDataMain:del","test:onetomany:testDataMain:delByLogic"},logical=Logical.OR)
 	@RequestMapping(value = "deleteAllByLogic")
 	public String deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+		String[] idArray = ids.split(",");
 		for(String id : idArray){
 			testDataMainService.deleteByLogic(testDataMainService.get(id));
 		}

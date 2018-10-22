@@ -5,8 +5,8 @@
 <head>
 	<title>首页</title>
 	<meta name="decorator" content="cms_default_${site.theme}" />
-	<meta name="description" content="JeeSite ${site.description}" />
-	<meta name="keywords" content="JeeSite ${site.keywords}" />
+	<meta name="description" content="JeeSpring ${site.description}" />
+	<meta name="keywords" content="JeeSpring ${site.keywords}" />
 	<style type="text/css">
 		@charset "utf-8";
 		*{margin:0;padding:0;}.wz_17_wrapper a{ display:block;color: #FFF;text-decoration: none;}

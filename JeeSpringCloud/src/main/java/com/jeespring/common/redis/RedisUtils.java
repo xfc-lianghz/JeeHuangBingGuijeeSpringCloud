@@ -52,17 +52,19 @@ public class RedisUtils {
     private StringRedisTemplate stringRedisTemplate;
 
     public static String getExpire(){
-        if(expireTime!=null)
-            return String.valueOf(expireTime/60)+"分钟";
-        else
+        if(expireTime!=null) {
+            return String.valueOf(expireTime / 60) + "分钟";
+        } else {
             return "0分钟";
+        }
     }
 
     public static String getExpireShiro(){
-        if(expireTimeShiro!=null)
-            return String.valueOf(expireTimeShiro/60)+"分钟";
-        else
+        if(expireTimeShiro!=null) {
+            return String.valueOf(expireTimeShiro / 60) + "分钟";
+        } else {
             return "0分钟";
+        }
     }
 
     public static String getKey(String className,String keyName,String keyId){
@@ -147,10 +149,13 @@ public class RedisUtils {
             return ;
         }
         try{
-            if(pattern==null) pattern="";
+            if(pattern==null) {
+                pattern = "";
+            }
             Set<String> keys=getKyes(pattern);
-            if (keys.size() > 0)
+            if (keys.size() > 0) {
                 redisTemplate.delete(keys);
+            }
         } catch (Exception e) {
             logger.error("RedisUtils removePattern:"+RUN_MESSAGE+e.getMessage(),RUN_MESSAGE+ e.getMessage());
         }
@@ -162,7 +167,9 @@ public class RedisUtils {
             return ;
         }
         try{
-            if(pattern==null) pattern="";
+            if(pattern==null) {
+                pattern = "";
+            }
             Set<String> keys=getKyesShiroReids(pattern);
             if (keys.size() > 0){
                 stringRedisTemplate.delete(keys);
@@ -203,10 +210,11 @@ public class RedisUtils {
             Iterator<String> it = keys.iterator();
             while (it.hasNext()) {
                 String tr = it.next();
-                if(tr.contains(SHIRO_REDIS))
+                if(tr.contains(SHIRO_REDIS)) {
                     keysnew.add(tr);
-                else if(tr.contains(SHIRO_REDIS_OBJECT))
+                } else if(tr.contains(SHIRO_REDIS_OBJECT)) {
                     keysnew.add(tr.substring(8));
+                }
             }
             return keysnew;
         } catch (Exception e) {
@@ -284,10 +292,11 @@ public class RedisUtils {
         if(!run()) { return false; }
         boolean retuslt=false;
         try{
-            if(key.contains(SHIRO_REDIS))
-                retuslt= stringRedisTemplate.hasKey(key);
-            else
-                retuslt= redisTemplate.hasKey(key);
+            if(key.contains(SHIRO_REDIS)) {
+                retuslt = stringRedisTemplate.hasKey(key);
+            } else {
+                retuslt = redisTemplate.hasKey(key);
+            }
         } catch (Exception e) {
             logger.error("RedisUtils exists:"+RUN_MESSAGE+e.getMessage(), RUN_MESSAGE+e.getMessage());
         }
@@ -399,8 +408,9 @@ public class RedisUtils {
     }
 
     private boolean listFlush(){
-        if(Global.getConfig("spring.redis.listFlush")=="true")
+        if(Global.getConfig("spring.redis.listFlush")=="true") {
             return true;
+        }
         return false;
     }
 }

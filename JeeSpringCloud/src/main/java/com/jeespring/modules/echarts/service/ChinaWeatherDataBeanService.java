@@ -22,24 +22,29 @@ import com.jeespring.modules.echarts.dao.ChinaWeatherDataBeanDao;
 @Transactional(readOnly = true)
 public class ChinaWeatherDataBeanService extends AbstractBaseService<ChinaWeatherDataBeanDao, ChinaWeatherDataBean> {
 
-	public ChinaWeatherDataBean get(String id) {
+	@Override
+    public ChinaWeatherDataBean get(String id) {
 		return super.get(id);
 	}
 	
-	public List<ChinaWeatherDataBean> findList(ChinaWeatherDataBean chinaWeatherDataBean) {
+	@Override
+    public List<ChinaWeatherDataBean> findList(ChinaWeatherDataBean chinaWeatherDataBean) {
 		return super.findList(chinaWeatherDataBean);
 	}
 	
-	public Page<ChinaWeatherDataBean> findPage(Page<ChinaWeatherDataBean> page, ChinaWeatherDataBean chinaWeatherDataBean) {
+	@Override
+    public Page<ChinaWeatherDataBean> findPage(Page<ChinaWeatherDataBean> page, ChinaWeatherDataBean chinaWeatherDataBean) {
 		return super.findPage(page, chinaWeatherDataBean);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(ChinaWeatherDataBean chinaWeatherDataBean) {
 		super.save(chinaWeatherDataBean);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(ChinaWeatherDataBean chinaWeatherDataBean) {
 		super.delete(chinaWeatherDataBean);
 	}

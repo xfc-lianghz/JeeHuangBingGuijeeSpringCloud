@@ -45,8 +45,11 @@
                         <div class="col-sm-9 col-lg-10 col-xs-12">
                             <form:input path="packageName" htmlEscape="false" maxlength="500"
                                         class="required form-control"/>
-                            <span class="help-inline">建议项目模块包：com.company.project.modules</span>
-                            <span class="help-inline">建议框架模块包：com.jeespring.modules</span>
+                            <span class="help-inline">建议项目模块包：com.company.project.modules;</span>
+                            <span class="help-inline">建议框架模块包：com.jeespring.modules;</span><br>
+                            <span class="help-inline">如果自定义框架模块包：com.*.*;</span><br>
+                            <span class="help-inline">需要在application.xml内配置type-aliases-package:com.jeespring,com.company,com.*.*;</span><br>
+                            <span class="help-inline">需要在JeeSpringDriver.java里面配置@ServletComponentScan;@ComponentScan;@MapperScan</span>
                         </div>
                     </div>
                     <div class="form-group">

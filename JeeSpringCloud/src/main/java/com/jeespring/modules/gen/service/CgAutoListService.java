@@ -55,8 +55,9 @@ public class CgAutoListService extends AbstractService
 
     public boolean checkTableName(String tableName)
     {
-        if(StringUtils.isBlank(tableName))
+        if(StringUtils.isBlank(tableName)) {
             return true;
+        }
         GenTable genTable = new GenTable();
         genTable.setName(tableName);
         List list = genTableDao.findList(genTable);
@@ -65,8 +66,9 @@ public class CgAutoListService extends AbstractService
 
     public boolean checkTableNameFromDB(String tableName)
     {
-        if(StringUtils.isBlank(tableName))
+        if(StringUtils.isBlank(tableName)) {
             return true;
+        }
         GenTable genTable = new GenTable();
         genTable.setName(tableName);
         List list = genDataBaseDictDao.findTableList(genTable);

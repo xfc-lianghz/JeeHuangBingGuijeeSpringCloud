@@ -33,22 +33,26 @@ public class MailService extends AbstractBaseService<MailDao, Mail> {
 	@Autowired
 	private MailComposeDao mailComposeDao;
 	
-	public Mail get(String id) {
+	@Override
+    public Mail get(String id) {
 		Mail mail = super.get(id);
 		mail.setMailBoxList(mailBoxDao.findList(new MailBox(mail)));
 		mail.setMailComposeList(mailComposeDao.findList(new MailCompose(mail)));
 		return mail;
 	}
 	
-	public List<Mail> findList(Mail mail) {
+	@Override
+    public List<Mail> findList(Mail mail) {
 		return super.findList(mail);
 	}
 	
-	public Page<Mail> findPage(Page<Mail> page, Mail mail) {
+	@Override
+    public Page<Mail> findPage(Page<Mail> page, Mail mail) {
 		return super.findPage(page, mail);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(Mail mail) {
 		super.save(mail);
 		for (MailBox mailBox : mail.getMailBoxList()){
@@ -125,7 +129,8 @@ public class MailService extends AbstractBaseService<MailDao, Mail> {
 		}
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(Mail mail) {
 		super.delete(mail);
 		mailBoxDao.delete(new MailBox(mail));

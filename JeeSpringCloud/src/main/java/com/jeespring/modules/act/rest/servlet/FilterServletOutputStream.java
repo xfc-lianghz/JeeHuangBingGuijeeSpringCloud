@@ -15,15 +15,18 @@ public class FilterServletOutputStream extends ServletOutputStream {
 		stream = new DataOutputStream(output);
 	}
 
-	public void write(int b) throws IOException {
+	@Override
+    public void write(int b) throws IOException {
 		stream.write(b);
 	}
 
-	public void write(byte[] b) throws IOException {
+	@Override
+    public void write(byte[] b) throws IOException {
 		stream.write(b);
 	}
 
-	public void write(byte[] b, int off, int len) throws IOException {
+	@Override
+    public void write(byte[] b, int off, int len) throws IOException {
 		stream.write(b, off, len);
 	}
 

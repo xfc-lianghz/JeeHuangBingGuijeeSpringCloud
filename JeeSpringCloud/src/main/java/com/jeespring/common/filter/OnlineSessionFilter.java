@@ -66,8 +66,9 @@ public class OnlineSessionFilter //extends AccessControlFilter
                 {
                     onlineSession.setUserId(user.getId());
                     onlineSession.setLoginName(user.getLoginName());
-                    if(user.getOffice()!=null)
+                    if(user.getOffice()!=null) {
                         onlineSession.setDeptName(user.getOffice().getName());
+                    }
                     onlineSession.markAttributeChanged();
                     UserAgent userAgent = UserAgent.parseUserAgentString(ServletUtils.getRequest().getHeader("User-Agent"));
                     // 获取客户端操作系统

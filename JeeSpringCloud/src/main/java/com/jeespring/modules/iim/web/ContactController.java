@@ -85,7 +85,7 @@ public class ContactController extends AbstractBaseController {
 	 */
 	@RequestMapping(value = "addFriend")
 	public String addFriend(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		User currentUser =  UserUtils.getUser();
 		for(String id : idArray){
 			 if(userDao.findFriend(currentUser.getId(), id) == null){

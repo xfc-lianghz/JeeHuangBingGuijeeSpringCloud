@@ -35,11 +35,13 @@ public class MenuTag extends TagSupport {
 		this.menu = menu;
 	}
 
-	public int doStartTag() throws JspTagException {
+	@Override
+    public int doStartTag() throws JspTagException {
 		return EVAL_PAGE;
 	}
 
-	public int doEndTag() throws JspTagException {
+	@Override
+    public int doEndTag() throws JspTagException {
 		try {
 			JspWriter out = this.pageContext.getOut();
 			String menu = (String) this.pageContext.getSession().getAttribute("menu");
@@ -68,14 +70,17 @@ public class MenuTag extends TagSupport {
 	private static String getChildOfTree(Menu parent, int level) {
 		StringBuffer menuString = new StringBuffer();
 		String href = "";
-		if (!parent.hasPermisson())
-			return "";
+		if (!parent.hasPermisson()) {
+            return "";
+        }
 		if (level > 0) {//level 为0是功能菜单
 			if(parent.hasChildren())
 				//menu-open
-				menuString.append("<li class=\"treeview\">");
-			else
-				menuString.append("<li>");
+            {
+                menuString.append("<li class=\"treeview\">");
+            } else {
+                menuString.append("<li>");
+            }
 
 			ServletContext context = SpringContextHolder
 					.getBean(ServletContext.class);
@@ -115,7 +120,7 @@ public class MenuTag extends TagSupport {
 				menuString.append("<ul class=\"nav nav-fifth-level treeview-menu\" >");
 			}
 			for (Menu child : parent.getChildren()) {
-				if (child.getIsShow().equals("1")) {
+				if ("1".equals(child.getIsShow())) {
 					menuString.append(getChildOfTree(child, level + 1));
 				}
 			}

@@ -10,7 +10,7 @@ import com.company.project.modules.ylttrip.entity.TfTicket;
 /**
  * 订单DAO接口
  * @author JeeSpring
- * @version 2018-10-12
+ * @version 2018-10-15
  */
 @Mapper
 public interface TfTicketDao extends InterfaceBaseDao<TfTicket> {

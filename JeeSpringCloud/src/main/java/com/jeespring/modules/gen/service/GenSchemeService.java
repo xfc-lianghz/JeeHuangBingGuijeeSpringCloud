@@ -82,16 +82,18 @@ public class GenSchemeService extends AbstractService
             genScheme.setGenTable(childTable);
             Map childTableModel = GenUtils.getDataModel(genScheme);
             GenTemplate tpl;
-            for(Iterator iterator2 = childTableTemplateList.iterator(); iterator2.hasNext(); result.append(GenUtils.generateToFile(tpl, childTableModel, true)))
-                tpl = (GenTemplate)iterator2.next();
+            for(Iterator iterator2 = childTableTemplateList.iterator(); iterator2.hasNext(); result.append(GenUtils.generateToFile(tpl, childTableModel, true))) {
+                tpl = (GenTemplate) iterator2.next();
+            }
 
         }
 
         genScheme.setGenTable(genTable);
         Map model = GenUtils.getDataModel(genScheme);
         GenTemplate tpl;
-        for(Iterator iterator1 = templateList.iterator(); iterator1.hasNext(); result.append(GenUtils.generateToFile(tpl, model, true)))
-            tpl = (GenTemplate)iterator1.next();
+        for(Iterator iterator1 = templateList.iterator(); iterator1.hasNext(); result.append(GenUtils.generateToFile(tpl, model, true))) {
+            tpl = (GenTemplate) iterator1.next();
+        }
 
         return result.toString();
     }

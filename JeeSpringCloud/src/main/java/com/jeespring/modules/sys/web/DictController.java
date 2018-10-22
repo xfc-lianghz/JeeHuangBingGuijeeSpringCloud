@@ -107,7 +107,7 @@ public class DictController extends AbstractBaseController {
 			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
 			return "redirect:" + adminPath + "/sys/dict/?repage";
 		}
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			Dict dict = dictService.get(id);
 			dictService.delete(dict);

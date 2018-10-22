@@ -23,24 +23,29 @@ import com.jeespring.modules.iim.entity.MyCalendar;
 @Transactional(readOnly = true)
 public class MyCalendarService extends AbstractBaseService<MyCalendarDao, MyCalendar> {
 
-	public MyCalendar get(String id) {
+	@Override
+    public MyCalendar get(String id) {
 		return super.get(id);
 	}
 	
-	public List<MyCalendar> findList(MyCalendar myCalendar) {
+	@Override
+    public List<MyCalendar> findList(MyCalendar myCalendar) {
 		return super.findList(myCalendar);
 	}
 	
-	public Page<MyCalendar> findPage(Page<MyCalendar> page, MyCalendar myCalendar) {
+	@Override
+    public Page<MyCalendar> findPage(Page<MyCalendar> page, MyCalendar myCalendar) {
 		return super.findPage(page, myCalendar);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(MyCalendar myCalendar) {
 		super.save(myCalendar);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(MyCalendar myCalendar) {
 		super.delete(myCalendar);
 	}

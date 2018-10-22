@@ -34,8 +34,8 @@ public class MyBeanUtils
 
       // Copy the properties, converting as necessary
       if (orig instanceof DynaBean) {
-          DynaProperty origDescriptors[] =
-              ( (DynaBean) orig).getDynaClass().getDynaProperties();
+          DynaProperty[] origDescriptors =
+                  ((DynaBean) orig).getDynaClass().getDynaProperties();
           for (int i = 0; i < origDescriptors.length; i++) {
               String name = origDescriptors[i].getName();
               if (PropertyUtils.isWriteable(dest, name)) {
@@ -69,8 +69,8 @@ public class MyBeanUtils
       else
       /* if (orig is a standard JavaBean) */
       {
-          PropertyDescriptor origDescriptors[] =
-              PropertyUtils.getPropertyDescriptors(orig);
+          PropertyDescriptor[] origDescriptors =
+                  PropertyUtils.getPropertyDescriptors(orig);
           for (int i = 0; i < origDescriptors.length; i++) {
               String name = origDescriptors[i].getName();
 //              String type = origDescriptors[i].getPropertyType().toString();
@@ -108,7 +108,7 @@ public class MyBeanUtils
 	 */
   public static void copyBeanNotNull2Bean(Object databean,Object tobean)throws Exception
   {
-	  PropertyDescriptor origDescriptors[] = PropertyUtils.getPropertyDescriptors(databean);
+      PropertyDescriptor[] origDescriptors = PropertyUtils.getPropertyDescriptors(databean);
       for (int i = 0; i < origDescriptors.length; i++) {
           String name = origDescriptors[i].getName();
 //          String type = origDescriptors[i].getPropertyType().toString();
@@ -192,8 +192,8 @@ public class MyBeanUtils
                   continue;
               }
               String className = clazz.getName();
-              if (className.equalsIgnoreCase("java.sql.Timestamp")) {
-                  if (value == null || value.equals("")) {
+              if ("java.sql.Timestamp".equalsIgnoreCase(className)) {
+                  if (value == null || "".equals(value)) {
                       continue;
                   }
               }
@@ -241,7 +241,7 @@ public class MyBeanUtils
               }
               String className = clazz.getName();
               // 临时对策（如果不处理默认的类型转换时会出错）
-              if (className.equalsIgnoreCase("java.util.Date")) {
+              if ("java.util.Date".equalsIgnoreCase(className)) {
                   value = new java.util.Date(((java.sql.Timestamp)value).getTime());// wait to do：貌似有时区问题, 待进一步确认
               }
 //              if (className.equalsIgnoreCase("java.sql.Timestamp")) {
@@ -287,12 +287,12 @@ public class MyBeanUtils
                   continue;
               }
               String className = clazz.getName();
-              if (className.equalsIgnoreCase("java.sql.Timestamp")) {
-                  if (value == null || value.equals("")) {
+              if ("java.sql.Timestamp".equalsIgnoreCase(className)) {
+                  if (value == null || "".equals(value)) {
                       continue;
                   }
               }
-              if (className.equalsIgnoreCase("java.lang.String")) {
+              if ("java.lang.String".equalsIgnoreCase(className)) {
                   if (value == null) {
                       value = defaultValue;
                   }

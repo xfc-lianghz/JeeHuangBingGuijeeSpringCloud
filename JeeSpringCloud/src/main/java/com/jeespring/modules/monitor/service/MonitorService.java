@@ -22,24 +22,29 @@ import com.jeespring.modules.monitor.dao.MonitorDao;
 @Transactional(readOnly = true)
 public class MonitorService extends AbstractBaseService<MonitorDao, Monitor> {
 
-	public Monitor get(String id) {
+	@Override
+    public Monitor get(String id) {
 		return super.get(id);
 	}
 	
-	public List<Monitor> findList(Monitor monitor) {
+	@Override
+    public List<Monitor> findList(Monitor monitor) {
 		return super.findList(monitor);
 	}
 	
-	public Page<Monitor> findPage(Page<Monitor> page, Monitor monitor) {
+	@Override
+    public Page<Monitor> findPage(Page<Monitor> page, Monitor monitor) {
 		return super.findPage(page, monitor);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(Monitor monitor) {
 		super.save(monitor);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(Monitor monitor) {
 		super.delete(monitor);
 	}

@@ -110,7 +110,9 @@ public class FaceRecognitionRestController extends AbstractBaseController {
             //判断分数值
             if(score >= 80){
                 result = ResultFactory.getSuccessResult("检测成功！");
-            }else result = ResultFactory.getErrorResult("检测失败，请重新扫描!！");
+            }else {
+                result = ResultFactory.getErrorResult("检测失败，请重新扫描!！");
+            }
 
             return result;
         } catch (Exception e) {
@@ -141,7 +143,9 @@ public class FaceRecognitionRestController extends AbstractBaseController {
             String baiDuResult = HttpUtil.post(url, token, "application/json", param);
             if (baiDuResult.contains("SUCCESS")) {
                 result = ResultFactory.getSuccessResult("注册成功！");
-            } else result = ResultFactory.getErrorResult("注册失败！");
+            } else {
+                result = ResultFactory.getErrorResult("注册失败！");
+            }
             return result;
         } catch (Exception e) {
             logger.info(e.toString());

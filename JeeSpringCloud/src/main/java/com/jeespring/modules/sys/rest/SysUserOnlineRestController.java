@@ -261,7 +261,7 @@ public class SysUserOnlineRestController extends AbstractBaseController {
 	}
 
 	private Result deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserOnlineService.delete(sysUserOnlineService.get(id));
 		}
@@ -290,7 +290,7 @@ public class SysUserOnlineRestController extends AbstractBaseController {
 	}
 
 	private Result deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserOnlineService.deleteByLogic(sysUserOnlineService.get(id));
 		}

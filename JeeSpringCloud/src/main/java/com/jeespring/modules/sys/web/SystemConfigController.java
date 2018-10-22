@@ -108,7 +108,7 @@ public class SystemConfigController extends AbstractBaseController {
 	@RequiresPermissions("sys:systemConfig:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			systemConfigService.delete(systemConfigService.get(id));
 		}

@@ -6447,7 +6447,7 @@ button.close {
   height: 108px;
 }
 .login-page {
-  background-image: url(../login/images/loginImg1.jpg);
+  /*background-image: url(../login/images/loginImg1.jpg);*/
   position: absolute;
   top: 0;
   left: 0;

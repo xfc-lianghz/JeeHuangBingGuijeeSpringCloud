@@ -32,7 +32,8 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 	@Autowired
 	private RedisUtils redisUtils;
 
-	public SysJobLog get(String id) {
+	@Override
+    public SysJobLog get(String id) {
 		//获取数据库数据
 		SysJobLog  sysJobLog=super.get(id);
 		return sysJobLog;
@@ -41,7 +42,9 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 	public SysJobLog getCache(String id) {
 		//获取缓存数据
 		SysJobLog sysJobLog=(SysJobLog)redisUtils.get(RedisUtils.getIdKey(SysJobLogService.class.getName(),id));
-		if( sysJobLog!=null) return  sysJobLog;
+		if( sysJobLog!=null) {
+            return sysJobLog;
+        }
 		//获取数据库数据
 		sysJobLog=super.get(id);
 		//设置缓存数据
@@ -49,7 +52,8 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		return sysJobLog;
 	}
 
-	public List<SysJobLog> total(SysJobLog sysJobLog) {
+	@Override
+    public List<SysJobLog> total(SysJobLog sysJobLog) {
 		//获取数据库数据
 		List<SysJobLog> sysJobLogList=super.total(sysJobLog);
 		return sysJobLogList;
@@ -59,7 +63,9 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		//获取缓存数据
 		String totalKey = RedisUtils.getTotalKey(SysJobLogService.class.getName(),JSON.toJSONString(sysJobLog));
 		List<SysJobLog> sysJobLogList=(List<SysJobLog>)redisUtils.get(totalKey);
-		if(sysJobLogList!=null) return sysJobLogList;
+		if(sysJobLogList!=null) {
+            return sysJobLogList;
+        }
 		//获取数据库数据
 		sysJobLogList=super.total(sysJobLog);
 		//设置缓存数据
@@ -67,7 +73,8 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		return sysJobLogList;
 	}
 
-	public List<SysJobLog> findList(SysJobLog sysJobLog) {
+	@Override
+    public List<SysJobLog> findList(SysJobLog sysJobLog) {
 		//获取数据库数据
 		List<SysJobLog> sysJobLogList=super.findList(sysJobLog);
 		//设置缓存数据
@@ -78,7 +85,9 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		//获取缓存数据
 		String findListKey = RedisUtils.getFindListKey(SysJobLogService.class.getName(),JSON.toJSONString(sysJobLog));
 		List<SysJobLog> sysJobLogList=(List<SysJobLog>)redisUtils.get(findListKey);
-		if(sysJobLogList!=null) return sysJobLogList;
+		if(sysJobLogList!=null) {
+            return sysJobLogList;
+        }
 		//获取数据库数据
 		sysJobLogList=super.findList(sysJobLog);
 		//设置缓存数据
@@ -89,7 +98,9 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 	public SysJobLog findListFirst(SysJobLog sysJobLog) {;
 		//获取数据库数据
 		List<SysJobLog> sysJobLogList=super.findList(sysJobLog);
-		if(sysJobLogList.size()>0) sysJobLog=sysJobLogList.get(0);
+		if(sysJobLogList.size()>0) {
+            sysJobLog = sysJobLogList.get(0);
+        }
 		return sysJobLog;
 	}
 
@@ -97,17 +108,23 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		//获取缓存数据
 		String findListFirstKey = RedisUtils.getFindListFirstKey(SysJobLogService.class.getName(),JSON.toJSONString(sysJobLog));
 		SysJobLog sysJobLogRedis=(SysJobLog)redisUtils.get(findListFirstKey);
-		if(sysJobLogRedis!=null) return sysJobLogRedis;
+		if(sysJobLogRedis!=null) {
+            return sysJobLogRedis;
+        }
 		//获取数据库数据
 		List<SysJobLog> sysJobLogList=super.findList(sysJobLog);
-		if(sysJobLogList.size()>0) sysJobLog=sysJobLogList.get(0);
-		else sysJobLog=new SysJobLog();
+		if(sysJobLogList.size()>0) {
+            sysJobLog = sysJobLogList.get(0);
+        } else {
+            sysJobLog = new SysJobLog();
+        }
 		//设置缓存数据
 		redisUtils.set(findListFirstKey,sysJobLog);
 		return sysJobLog;
 	}
 
-	public Page<SysJobLog> findPage(Page<SysJobLog> page, SysJobLog sysJobLog) {
+	@Override
+    public Page<SysJobLog> findPage(Page<SysJobLog> page, SysJobLog sysJobLog) {
 		//获取数据库数据
 		Page<SysJobLog> pageReuslt=super.findPage(page, sysJobLog);
 		return pageReuslt;
@@ -117,7 +134,9 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		//获取缓存数据
 		String findPageKey =  RedisUtils.getFindPageKey(SysJobLogService.class.getName(),JSON.toJSONString(page)+JSON.toJSONString(sysJobLog));
 		Page<SysJobLog> pageReuslt=(Page<SysJobLog>)redisUtils.get(findPageKey);
-		if(pageReuslt!=null) return pageReuslt;
+		if(pageReuslt!=null) {
+            return pageReuslt;
+        }
 		//获取数据库数据
 		pageReuslt=super.findPage(page, sysJobLog);
 		//设置缓存数据
@@ -125,7 +144,8 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		return pageReuslt;
 	}
 
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(SysJobLog sysJobLog) {
 		//保存数据库记录
 		super.save(sysJobLog);
@@ -136,7 +156,8 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysJobLogService.class.getName()));
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(SysJobLog sysJobLog) {
 		//清除记录缓存数据
 		redisUtils.remove(RedisUtils.getIdKey(SysJobLogService.class.getName(),sysJobLog.getId()));
@@ -147,7 +168,8 @@ public class SysJobLogService extends AbstractBaseService<SysJobLogDao, SysJobLo
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysJobLogService.class.getName()));
 	}
 
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void deleteByLogic(SysJobLog sysJobLog) {
 		//清除记录缓存数据
 		redisUtils.remove(RedisUtils.getIdKey(SysJobLogService.class.getName(),sysJobLog.getId()));

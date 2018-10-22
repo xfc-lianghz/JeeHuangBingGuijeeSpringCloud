@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.modules.act.service;
 
@@ -43,7 +43,7 @@ import com.jeespring.common.utils.StringUtils;
 
 /**
  * 流程定义相关Controller
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2013-11-03
  */
 @Service
@@ -114,9 +114,9 @@ public class ActProcessService extends AbstractService {
 		ProcessDefinition processDefinition = repositoryService.createProcessDefinitionQuery().processDefinitionId(procDefId).singleResult();
 		
 		String resourceName = "";
-		if (resType.equals("image")) {
+		if ("image".equals(resType)) {
 			resourceName = processDefinition.getDiagramResourceName();
-		} else if (resType.equals("xml")) {
+		} else if ("xml".equals(resType)) {
 			resourceName = processDefinition.getResourceName();
 		}
 		
@@ -140,14 +140,14 @@ public class ActProcessService extends AbstractService {
 			InputStream fileInputStream = file.getInputStream();
 			Deployment deployment;
 			String extension = FilenameUtils.getExtension(fileName);
-			if (extension.equals("zip") || extension.equals("bar")) {
+			if ("zip".equals(extension) || "bar".equals(extension)) {
 				ZipInputStream zip = new ZipInputStream(fileInputStream);
 				deployment = repositoryService.createDeployment().addZipInputStream(zip).deploy();
-			} else if (extension.equals("png")) {
+			} else if ("png".equals(extension)) {
 				deployment = repositoryService.createDeployment().addInputStream(fileName, fileInputStream).deploy();
 			} else if (fileName.indexOf("bpmn20.xml") != -1) {
 				deployment = repositoryService.createDeployment().addInputStream(fileName, fileInputStream).deploy();
-			} else if (extension.equals("bpmn")) { // bpmn扩展名特殊处理，转换为bpmn20.xml
+			} else if ("bpmn".equals(extension)) { // bpmn扩展名特殊处理，转换为bpmn20.xml
 				String baseName = FilenameUtils.getBaseName(fileName); 
 				deployment = repositoryService.createDeployment().addInputStream(baseName + ".bpmn20.xml", fileInputStream).deploy();
 			} else {
@@ -187,10 +187,10 @@ public class ActProcessService extends AbstractService {
 	 */
 	@Transactional(readOnly = false)
 	public String updateState(String state, String procDefId) {
-		if (state.equals("active")) {
+		if ("active".equals(state)) {
 			repositoryService.activateProcessDefinitionById(procDefId, true, null);
 			return "已激活ID为[" + procDefId + "]的流程定义。";
-		} else if (state.equals("suspend")) {
+		} else if ("suspend".equals(state)) {
 			repositoryService.suspendProcessDefinitionById(procDefId, true, null);
 			return "已挂起ID为[" + procDefId + "]的流程定义。";
 		}

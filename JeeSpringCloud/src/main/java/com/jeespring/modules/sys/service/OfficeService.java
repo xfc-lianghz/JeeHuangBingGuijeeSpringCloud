@@ -34,7 +34,8 @@ public class OfficeService extends TreeService<OfficeDao, Office> {
 		}
 	}
 	
-	@Transactional(readOnly = true)
+	@Override
+    @Transactional(readOnly = true)
 	public List<Office> findList(Office office){
 		office.setParentIds(office.getParentIds()+"%");
 		return dao.findByParentIdsLike(office);
@@ -46,13 +47,15 @@ public class OfficeService extends TreeService<OfficeDao, Office> {
 	}
 	
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(Office office) {
 		super.save(office);
 		UserUtils.removeCache(UserUtils.CACHE_OFFICE_LIST);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(Office office) {
 		super.delete(office);
 		UserUtils.removeCache(UserUtils.CACHE_OFFICE_LIST);

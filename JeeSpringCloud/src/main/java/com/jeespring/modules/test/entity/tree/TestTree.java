@@ -30,44 +30,53 @@ public class TestTree extends TreeEntity<TestTree> {
 		super(id);
 	}
 
-	@Length(min=1, max=100, message="名称长度必须介于 1 和 100 之间")
+	@Override
+    @Length(min=1, max=100, message="名称长度必须介于 1 和 100 之间")
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	@Override
+    public void setName(String name) {
 		this.name = name;
 	}
 	
-	@NotNull(message="排序不能为空")
+	@Override
+    @NotNull(message="排序不能为空")
 	public Integer getSort() {
 		return sort;
 	}
 
-	public void setSort(Integer sort) {
+	@Override
+    public void setSort(Integer sort) {
 		this.sort = sort;
 	}
 	
-	@JsonBackReference
+	@Override
+    @JsonBackReference
 	@NotNull(message="父级编号不能为空")
 	public TestTree getParent() {
 		return parent;
 	}
 
-	public void setParent(TestTree parent) {
+	@Override
+    public void setParent(TestTree parent) {
 		this.parent = parent;
 	}
 	
-	@Length(min=1, max=2000, message="所有父级编号长度必须介于 1 和 2000 之间")
+	@Override
+    @Length(min=1, max=2000, message="所有父级编号长度必须介于 1 和 2000 之间")
 	public String getParentIds() {
 		return parentIds;
 	}
 
-	public void setParentIds(String parentIds) {
+	@Override
+    public void setParentIds(String parentIds) {
 		this.parentIds = parentIds;
 	}
 	
-	public String getParentId() {
+	@Override
+    public String getParentId() {
 		return parent != null && parent.getId() != null ? parent.getId() : "0";
 	}
 }

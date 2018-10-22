@@ -21,6 +21,7 @@ public class MySQLDialect implements Dialect {
                 Integer.toString(limit));
     }
 
+    @Override
     public boolean supportsLimit() {
         return true;
     }

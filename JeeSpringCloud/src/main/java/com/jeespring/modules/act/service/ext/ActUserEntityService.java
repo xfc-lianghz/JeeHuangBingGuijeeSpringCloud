@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.modules.act.service.ext;
 
@@ -24,7 +24,7 @@ import com.jeespring.modules.sys.service.SystemService;
 
 /**
  * Activiti User Entity Service
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2013-11-03
  */
 @Service
@@ -39,11 +39,13 @@ public class ActUserEntityService extends UserEntityManager {
 		return systemService;
 	}
 
-	public User createNewUser(String userId) {
+	@Override
+    public User createNewUser(String userId) {
 		return new UserEntity(userId);
 	}
 
-	public void insertUser(User user) {
+	@Override
+    public void insertUser(User user) {
 //		getDbSqlSession().insert((PersistentObject) user);
 		throw new RuntimeException("not implement method.");
 	}
@@ -55,12 +57,14 @@ public class ActUserEntityService extends UserEntityManager {
 		throw new RuntimeException("not implement method.");
 	}
 
-	public UserEntity findUserById(String userId) {
+	@Override
+    public UserEntity findUserById(String userId) {
 //		return (UserEntity) getDbSqlSession().selectOne("selectUserById", userId);
 		return ActUtils.toActivitiUser(getSystemService().getUserByLoginName(userId));
 	}
 
-	public void deleteUser(String userId) {
+	@Override
+    public void deleteUser(String userId) {
 //		UserEntity user = findUserById(userId);
 //		if (user != null) {
 //			List<IdentityInfoEntity> identityInfos = getDbSqlSession().selectList("selectIdentityInfoByUserId", userId);
@@ -76,17 +80,20 @@ public class ActUserEntityService extends UserEntityManager {
 		}
 	}
 
-	public List<User> findUserByQueryCriteria(UserQueryImpl query, Page page) {
+	@Override
+    public List<User> findUserByQueryCriteria(UserQueryImpl query, Page page) {
 //		return getDbSqlSession().selectList("selectUserByQueryCriteria", query, page);
 		throw new RuntimeException("not implement method.");
 	}
 
-	public long findUserCountByQueryCriteria(UserQueryImpl query) {
+	@Override
+    public long findUserCountByQueryCriteria(UserQueryImpl query) {
 //		return (Long) getDbSqlSession().selectOne("selectUserCountByQueryCriteria", query);
 		throw new RuntimeException("not implement method.");
 	}
 
-	public List<Group> findGroupsByUser(String userId) {
+	@Override
+    public List<Group> findGroupsByUser(String userId) {
 //		return getDbSqlSession().selectList("selectGroupsByUserId", userId);
 		List<Group> list = Lists.newArrayList();
 		for (Role role : getSystemService().findRole(new Role(new com.jeespring.modules.sys.entity.User(null, userId)))){
@@ -95,12 +102,14 @@ public class ActUserEntityService extends UserEntityManager {
 		return list;
 	}
 
-	public UserQuery createNewUserQuery() {
+	@Override
+    public UserQuery createNewUserQuery() {
 //		return new UserQueryImpl(Context.getProcessEngineConfiguration().getCommandExecutorTxRequired());
 		throw new RuntimeException("not implement method.");
 	}
 
-	public IdentityInfoEntity findUserInfoByUserIdAndKey(String userId, String key) {
+	@Override
+    public IdentityInfoEntity findUserInfoByUserIdAndKey(String userId, String key) {
 //		Map<String, String> parameters = new HashMap<String, String>();
 //		parameters.put("userId", userId);
 //		parameters.put("key", key);
@@ -108,7 +117,8 @@ public class ActUserEntityService extends UserEntityManager {
 		throw new RuntimeException("not implement method.");
 	}
 
-	public List<String> findUserInfoKeysByUserIdAndType(String userId, String type) {
+	@Override
+    public List<String> findUserInfoKeysByUserIdAndType(String userId, String type) {
 //		Map<String, String> parameters = new HashMap<String, String>();
 //		parameters.put("userId", userId);
 //		parameters.put("type", type);
@@ -116,7 +126,8 @@ public class ActUserEntityService extends UserEntityManager {
 		throw new RuntimeException("not implement method.");
 	}
 
-	public Boolean checkPassword(String userId, String password) {
+	@Override
+    public Boolean checkPassword(String userId, String password) {
 //		User user = findUserById(userId);
 //		if ((user != null) && (password != null) && (password.equals(user.getPassword()))) {
 //			return true;
@@ -125,7 +136,8 @@ public class ActUserEntityService extends UserEntityManager {
 		throw new RuntimeException("not implement method.");
 	}
 
-	public List<User> findPotentialStarterUsers(String proceDefId) {
+	@Override
+    public List<User> findPotentialStarterUsers(String proceDefId) {
 //		Map<String, String> parameters = new HashMap<String, String>();
 //		parameters.put("procDefId", proceDefId);
 //		return (List<User>) getDbSqlSession().selectOne("selectUserByQueryCriteria", parameters);
@@ -133,12 +145,14 @@ public class ActUserEntityService extends UserEntityManager {
 
 	}
 
-	public List<User> findUsersByNativeQuery(Map<String, Object> parameterMap, int firstResult, int maxResults) {
+	@Override
+    public List<User> findUsersByNativeQuery(Map<String, Object> parameterMap, int firstResult, int maxResults) {
 //		return getDbSqlSession().selectListWithRawParameter("selectUserByNativeQuery", parameterMap, firstResult, maxResults);
 		throw new RuntimeException("not implement method.");
 	}
 
-	public long findUserCountByNativeQuery(Map<String, Object> parameterMap) {
+	@Override
+    public long findUserCountByNativeQuery(Map<String, Object> parameterMap) {
 //		return (Long) getDbSqlSession().selectOne("selectUserCountByNativeQuery", parameterMap);
 		throw new RuntimeException("not implement method.");
 	}

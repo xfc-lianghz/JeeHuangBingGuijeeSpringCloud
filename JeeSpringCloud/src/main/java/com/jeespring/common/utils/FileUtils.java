@@ -612,120 +612,121 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 	 */
 	public static String getContentType(String returnFileName) {
 		String contentType = "application/octet-stream";
-		if (returnFileName.lastIndexOf(".") < 0)
-			return contentType;
+		if (returnFileName.lastIndexOf(".") < 0) {
+            return contentType;
+        }
 		returnFileName = returnFileName.toLowerCase();
 		returnFileName = returnFileName.substring(returnFileName.lastIndexOf(".") + 1);
-		if (returnFileName.equals("html") || returnFileName.equals("htm") || returnFileName.equals("shtml")) {
+		if ("html".equals(returnFileName) || "htm".equals(returnFileName) || "shtml".equals(returnFileName)) {
 			contentType = "text/html";
-		} else if (returnFileName.equals("apk")) {
+		} else if ("apk".equals(returnFileName)) {
 			contentType = "application/vnd.android.package-archive";
-		} else if (returnFileName.equals("sis")) {
+		} else if ("sis".equals(returnFileName)) {
 			contentType = "application/vnd.symbian.install";
-		} else if (returnFileName.equals("sisx")) {
+		} else if ("sisx".equals(returnFileName)) {
 			contentType = "application/vnd.symbian.install";
-		} else if (returnFileName.equals("exe")) {
+		} else if ("exe".equals(returnFileName)) {
 			contentType = "application/x-msdownload";
-		} else if (returnFileName.equals("msi")) {
+		} else if ("msi".equals(returnFileName)) {
 			contentType = "application/x-msdownload";
-		} else if (returnFileName.equals("css")) {
+		} else if ("css".equals(returnFileName)) {
 			contentType = "text/css";
-		} else if (returnFileName.equals("xml")) {
+		} else if ("xml".equals(returnFileName)) {
 			contentType = "text/xml";
-		} else if (returnFileName.equals("gif")) {
+		} else if ("gif".equals(returnFileName)) {
 			contentType = "image/gif";
-		} else if (returnFileName.equals("jpeg") || returnFileName.equals("jpg")) {
+		} else if ("jpeg".equals(returnFileName) || "jpg".equals(returnFileName)) {
 			contentType = "image/jpeg";
-		} else if (returnFileName.equals("js")) {
+		} else if ("js".equals(returnFileName)) {
 			contentType = "application/x-javascript";
-		} else if (returnFileName.equals("atom")) {
+		} else if ("atom".equals(returnFileName)) {
 			contentType = "application/atom+xml";
-		} else if (returnFileName.equals("rss")) {
+		} else if ("rss".equals(returnFileName)) {
 			contentType = "application/rss+xml";
-		} else if (returnFileName.equals("mml")) {
+		} else if ("mml".equals(returnFileName)) {
 			contentType = "text/mathml";
-		} else if (returnFileName.equals("txt")) {
+		} else if ("txt".equals(returnFileName)) {
 			contentType = "text/plain";
-		} else if (returnFileName.equals("jad")) {
+		} else if ("jad".equals(returnFileName)) {
 			contentType = "text/vnd.sun.j2me.app-descriptor";
-		} else if (returnFileName.equals("wml")) {
+		} else if ("wml".equals(returnFileName)) {
 			contentType = "text/vnd.wap.wml";
-		} else if (returnFileName.equals("htc")) {
+		} else if ("htc".equals(returnFileName)) {
 			contentType = "text/x-component";
-		} else if (returnFileName.equals("png")) {
+		} else if ("png".equals(returnFileName)) {
 			contentType = "image/png";
-		} else if (returnFileName.equals("tif") || returnFileName.equals("tiff")) {
+		} else if ("tif".equals(returnFileName) || "tiff".equals(returnFileName)) {
 			contentType = "image/tiff";
-		} else if (returnFileName.equals("wbmp")) {
+		} else if ("wbmp".equals(returnFileName)) {
 			contentType = "image/vnd.wap.wbmp";
-		} else if (returnFileName.equals("ico")) {
+		} else if ("ico".equals(returnFileName)) {
 			contentType = "image/x-icon";
-		} else if (returnFileName.equals("jng")) {
+		} else if ("jng".equals(returnFileName)) {
 			contentType = "image/x-jng";
-		} else if (returnFileName.equals("bmp")) {
+		} else if ("bmp".equals(returnFileName)) {
 			contentType = "image/x-ms-bmp";
-		} else if (returnFileName.equals("svg")) {
+		} else if ("svg".equals(returnFileName)) {
 			contentType = "image/svg+xml";
-		} else if (returnFileName.equals("jar") || returnFileName.equals("var") 
-				|| returnFileName.equals("ear")) {
+		} else if ("jar".equals(returnFileName) || "var".equals(returnFileName)
+				|| "ear".equals(returnFileName)) {
 			contentType = "application/java-archive";
-		} else if (returnFileName.equals("doc")) {
+		} else if ("doc".equals(returnFileName)) {
 			contentType = "application/msword";
-		} else if (returnFileName.equals("pdf")) {
+		} else if ("pdf".equals(returnFileName)) {
 			contentType = "application/pdf";
-		} else if (returnFileName.equals("rtf")) {
+		} else if ("rtf".equals(returnFileName)) {
 			contentType = "application/rtf";
-		} else if (returnFileName.equals("xls")) {
+		} else if ("xls".equals(returnFileName)) {
 			contentType = "application/vnd.ms-excel";
-		} else if (returnFileName.equals("ppt")) {
+		} else if ("ppt".equals(returnFileName)) {
 			contentType = "application/vnd.ms-powerpoint";
-		} else if (returnFileName.equals("7z")) {
+		} else if ("7z".equals(returnFileName)) {
 			contentType = "application/x-7z-compressed";
-		} else if (returnFileName.equals("rar")) {
+		} else if ("rar".equals(returnFileName)) {
 			contentType = "application/x-rar-compressed";
-		} else if (returnFileName.equals("swf")) {
+		} else if ("swf".equals(returnFileName)) {
 			contentType = "application/x-shockwave-flash";
-		} else if (returnFileName.equals("rpm")) {
+		} else if ("rpm".equals(returnFileName)) {
 			contentType = "application/x-redhat-package-manager";
-		} else if (returnFileName.equals("der") || returnFileName.equals("pem")
-				|| returnFileName.equals("crt")) {
+		} else if ("der".equals(returnFileName) || "pem".equals(returnFileName)
+				|| "crt".equals(returnFileName)) {
 			contentType = "application/x-x509-ca-cert";
-		} else if (returnFileName.equals("xhtml")) {
+		} else if ("xhtml".equals(returnFileName)) {
 			contentType = "application/xhtml+xml";
-		} else if (returnFileName.equals("zip")) {
+		} else if ("zip".equals(returnFileName)) {
 			contentType = "application/zip";
-		} else if (returnFileName.equals("mid") || returnFileName.equals("midi") 
-				|| returnFileName.equals("kar")) {
+		} else if ("mid".equals(returnFileName) || "midi".equals(returnFileName)
+				|| "kar".equals(returnFileName)) {
 			contentType = "audio/midi";
-		} else if (returnFileName.equals("mp3")) {
+		} else if ("mp3".equals(returnFileName)) {
 			contentType = "audio/mpeg";
-		} else if (returnFileName.equals("ogg")) {
+		} else if ("ogg".equals(returnFileName)) {
 			contentType = "audio/ogg";
-		} else if (returnFileName.equals("m4a")) {
+		} else if ("m4a".equals(returnFileName)) {
 			contentType = "audio/x-m4a";
-		} else if (returnFileName.equals("ra")) {
+		} else if ("ra".equals(returnFileName)) {
 			contentType = "audio/x-realaudio";
-		} else if (returnFileName.equals("3gpp")
-				|| returnFileName.equals("3gp")) {
+		} else if ("3gpp".equals(returnFileName)
+				|| "3gp".equals(returnFileName)) {
 			contentType = "video/3gpp";
-		} else if (returnFileName.equals("mp4")) {
+		} else if ("mp4".equals(returnFileName)) {
 			contentType = "video/mp4";
-		} else if (returnFileName.equals("mpeg")
-				|| returnFileName.equals("mpg")) {
+		} else if ("mpeg".equals(returnFileName)
+				|| "mpg".equals(returnFileName)) {
 			contentType = "video/mpeg";
-		} else if (returnFileName.equals("mov")) {
+		} else if ("mov".equals(returnFileName)) {
 			contentType = "video/quicktime";
-		} else if (returnFileName.equals("flv")) {
+		} else if ("flv".equals(returnFileName)) {
 			contentType = "video/x-flv";
-		} else if (returnFileName.equals("m4v")) {
+		} else if ("m4v".equals(returnFileName)) {
 			contentType = "video/x-m4v";
-		} else if (returnFileName.equals("mng")) {
+		} else if ("mng".equals(returnFileName)) {
 			contentType = "video/x-mng";
-		} else if (returnFileName.equals("asx") || returnFileName.equals("asf")) {
+		} else if ("asx".equals(returnFileName) || "asf".equals(returnFileName)) {
 			contentType = "video/x-ms-asf";
-		} else if (returnFileName.equals("wmv")) {
+		} else if ("wmv".equals(returnFileName)) {
 			contentType = "video/x-ms-wmv";
-		} else if (returnFileName.equals("avi")) {
+		} else if ("avi".equals(returnFileName)) {
 			contentType = "video/x-msvideo";
 		}
 		return contentType;
@@ -780,7 +781,7 @@ public class FileUtils extends org.apache.commons.io.FileUtils {
 		RandomAccessFile raf = null; // 负责读取数据
 		OutputStream os = null; 	// 写出数据
 		OutputStream out = null; 	// 缓冲
-		byte b[] = new byte[1024]; 	// 暂存容器
+        byte[] b = new byte[1024]; 	// 暂存容器
 
 		if (request.getHeader("Range") != null) { // 客户端请求的下载的文件块的开始字节
 			response.setStatus(HttpServletResponse.SC_PARTIAL_CONTENT);

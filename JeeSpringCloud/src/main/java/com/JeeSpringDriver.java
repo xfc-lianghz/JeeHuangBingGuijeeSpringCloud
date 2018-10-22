@@ -11,6 +11,7 @@ import com.jeespring.modules.sys.service.SystemService;
 import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.catalina.connector.Connector;
 import org.apache.coyote.http11.Http11NioProtocol;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -36,49 +37,59 @@ import java.io.IOException;
  * springboot的启动类
  * * * @author 黄炳桂 516821420@qq.com
  * Created on 2017/1/8 16:20
+ *
+ * @EnableAutoConfiguration(exclude = {
+ * org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class,
+ * org.activiti.spring.boot.SecurityAutoConfiguration.class,
+ * })
+ * 使用lazyInit缩短Spring Boot启动时间//, lazyInit = true
  */
 @EnableCaching
 @SpringBootApplication
-@ServletComponentScan(value = {"com.jeespring","com.company"})
-@ComponentScan(value = {"com.jeespring","com.company"})//,lazyInit = true
+@ServletComponentScan(basePackages = {"com.jeespring", "com.company","cn.xxx"})
+@ComponentScan(basePackages = {"com.jeespring", "com.company","cn.xxx"})
+@MapperScan(basePackages={"com.jeespring.modules.**.dao","com.company.project.modules.*.dao","cn.xxx.xxx.modules.*.dao"})
 @EnableScheduling
 @ComponentScan
 @EnableAutoConfiguration
 @Configuration
-//@EnableAutoConfiguration(exclude = {
-//        org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration.class,
-//        org.activiti.spring.boot.SecurityAutoConfiguration.class,
-//})
 public class JeeSpringDriver {
 
     @Value("${http.port}")
     private Integer port;
 
     public static void main(String[] args) {
-    	//Spring boot run
+        //Spring boot run
         new SpringApplicationBuilder(JeeSpringDriver.class).web(true).run(args);
         SystemService.printKeyLoadMessage();
         //IM WebSocker
-        WebSockertFilter w=new WebSockertFilter();
+        WebSockertFilter w = new WebSockertFilter();
         w.startWebsocketChatServer();
         printGods();
+        printAnimalsGods();
+        printLadyGods();
+        printPoetries();
     }
 
     @Bean
     public EmbeddedServletContainerFactory servletContainer() {
         TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
-        tomcat.addAdditionalTomcatConnectors(createStandardConnector()); // 添加http
+        // 添加http
+        tomcat.addAdditionalTomcatConnectors(createStandardConnector());
         return tomcat;
     }
 
-    // 配置http
+    /**
+     * 配置http
+     * @return Connector
+     */
     private Connector createStandardConnector() {
         Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
         connector.setPort(port);
         return connector;
     }
 
-    public static void printGods(){
+    private static void printGods() {
         System.out.println(
                 "--------------- 佛祖保佑 神兽护体 女神助攻 流量冲天 ---------------\n" +
                         "                             _ooOoo_                                 \n" +
@@ -102,6 +113,9 @@ public class JeeSpringDriver {
                         "         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^          \n" +
                         "            佛祖保佑       永不宕机     永无BUG    流量冲天             \n" +
                         "");
+    }
+
+    private static void printAnimalsGods(){
         System.out.println(
                 "\n" +
                         "　　　　　　　  ┏┓             ┏┓+ +                                    \n" +
@@ -146,6 +160,9 @@ public class JeeSpringDriver {
                         "                  ┃ ┫  ┫    ┃  ┫ ┫   \n" +
                         "                  ┗━┻━┛   ┗━┻━┛   \n" +
                         "");
+    }
+
+    private static void printLadyGods(){
         System.out.println(
                 "\n" +
                         "                       .::::.                                     \n" +
@@ -167,6 +184,9 @@ public class JeeSpringDriver {
                         "    ```` ':.          ':::::::::'                  ::::..           \n" +
                         "                       '.:::::'                    ':'````..        \n" +
                         "");
+    }
+
+    private static void printPoetries() {
         System.out.println(
                 "\n" +
                         "           唐伯虎:\n" +

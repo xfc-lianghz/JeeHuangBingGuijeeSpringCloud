@@ -104,7 +104,7 @@ public class ChatHistoryController extends AbstractBaseController {
 	 */
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			chatHistoryService.delete(chatHistoryService.get(id));
 		}
@@ -138,7 +138,7 @@ public class ChatHistoryController extends AbstractBaseController {
 		Page<ChatHistory> page = chatHistoryService.findPage(new Page<ChatHistory>(request, response), chatHistory); 
 		List<ChatHistory> list = page.getList();
 		for(ChatHistory c : list){
-			if(c.getStatus().equals("0")){
+			if("0".equals(c.getStatus())){
 				if(c.getUserid2().equals(UserUtils.getUser().getLoginName())){//把发送给我的信息标记为已读
 					c.setStatus("1");//标记为已读
 					chatHistoryService.save(c);

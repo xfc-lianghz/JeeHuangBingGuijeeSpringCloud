@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.modules.act.service.ext;
 
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Activiti Group Entity Factory
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2013-11-03
  */
 public class ActGroupEntityServiceFactory implements SessionFactory {
@@ -18,12 +18,14 @@ public class ActGroupEntityServiceFactory implements SessionFactory {
 	@Autowired
 	private ActGroupEntityService actGroupEntityService;
 	
-	public Class<?> getSessionType() {
+	@Override
+    public Class<?> getSessionType() {
 		// 返回原始的GroupIdentityManager类型
 		return GroupIdentityManager.class;
 	}
 
-	public Session openSession() {
+	@Override
+    public Session openSession() {
 		// 返回自定义的GroupEntityManager实例
 		return actGroupEntityService;
 	}

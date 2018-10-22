@@ -41,10 +41,11 @@ public class GenTemplateController extends AbstractBaseController
     @ModelAttribute
     public GenTemplate get(@RequestParam(required=true) String id)
     {
-        if(StringUtils.isNotBlank(id))
+        if(StringUtils.isNotBlank(id)) {
             return genTemplateService.get(id);
-        else
+        } else {
             return new GenTemplate();
+        }
     }
 
     @RequiresPermissions(value={"gen:genTemplate:view"})
@@ -52,8 +53,9 @@ public class GenTemplateController extends AbstractBaseController
     public String list(GenTemplate genTemplate, HttpServletRequest request, HttpServletResponse response, Model model)
     {
         User user = UserUtils.getUser();
-        if(!user.isAdmin())
+        if(!user.isAdmin()) {
             genTemplate.setCreateBy(user);
+        }
         Page page = genTemplateService.find(new Page(request, response), genTemplate);
         model.addAttribute("page", page);
         return "modules/gen/genTemplateList";

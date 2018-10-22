@@ -82,7 +82,7 @@ public class MailController extends AbstractBaseController {
 	 */
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			mailService.delete(mailService.get(id));
 		}

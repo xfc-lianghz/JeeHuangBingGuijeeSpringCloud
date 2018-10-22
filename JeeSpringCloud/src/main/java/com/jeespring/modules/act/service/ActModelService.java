@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.modules.act.service;
 
@@ -35,7 +35,7 @@ import com.jeespring.common.service.AbstractService;
 
 /**
  * 流程模型相关Controller
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2013-11-03
  */
 @Service

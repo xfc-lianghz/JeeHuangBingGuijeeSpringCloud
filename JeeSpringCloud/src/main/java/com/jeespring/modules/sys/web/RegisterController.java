@@ -127,7 +127,7 @@ public class RegisterController extends AbstractBaseController {
 		// 修正引用赋值问题，不知道为何，Company和Office引用的一个实例地址，修改了一个，另外一个跟着修改。
 		Role role = systemService.getRoleByEnname(roleName);
 		String officeCode = "1000";
-		if(roleName.equals("patient")){
+		if("patient".equals(roleName)){
 			officeCode = "1001";
 		}
 		Office office = officeService.getByCode(officeCode);
@@ -204,7 +204,7 @@ public class RegisterController extends AbstractBaseController {
 		String randomCode = String.valueOf((int) (Math.random() * 9000 + 1000));
 		try {
 			String result =UserUtils.sendRandomCode(mobile, randomCode, mobile, randomCode);
-			if (!result.equals("100")) {
+			if (!"100".equals(result)) {
 				j.setSuccess(false);
 				j.setErrorCode("2");
 				j.setMsg("短信发送失败，错误代码："+result+"，请联系管理员。");

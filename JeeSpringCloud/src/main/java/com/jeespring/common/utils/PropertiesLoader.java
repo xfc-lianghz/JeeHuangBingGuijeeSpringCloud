@@ -181,8 +181,9 @@ public class PropertiesLoader {
                     String mapKey = currentkey + "." + key.toString();
                     values.put(mapKey, currentMap.get(key).toString());
                 }
-            } else
+            } else {
                 values.put(currentkey, String.valueOf(currentObj));
+            }
         }
         return values;
     }

@@ -24,7 +24,7 @@ import redis.clients.jedis.exceptions.JedisException;
 /**
  * Jedis Cache 工具类
  * 
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2014-6-29
  */
 public class JedisUtils {

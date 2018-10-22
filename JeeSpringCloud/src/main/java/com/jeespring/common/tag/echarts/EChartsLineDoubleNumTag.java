@@ -120,11 +120,13 @@ public class EChartsLineDoubleNumTag extends BodyTagSupport {
 		return Tag.EVAL_PAGE;// 继续处理页面
 	}
 
-	public String getId() {
+	@Override
+    public String getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	@Override
+    public void setId(String id) {
 		this.id = id;
 	}
 

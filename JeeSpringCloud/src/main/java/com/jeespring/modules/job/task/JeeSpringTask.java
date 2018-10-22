@@ -66,7 +66,7 @@ public class JeeSpringTask
         String message="";
         for (SysServer item:sysServers){
             item.getServerAddress();
-            if(HttpRequest.sendGet(item.getServerAddress(),"").equals("Down")){
+            if("Down".equals(HttpRequest.sendGet(item.getServerAddress(), ""))){
                 sysServersBug.add(item);
                 message=message+item.getName()+" "+item.getServerAddress()+" Down;<br>";
                 item.setStatus("off_line");

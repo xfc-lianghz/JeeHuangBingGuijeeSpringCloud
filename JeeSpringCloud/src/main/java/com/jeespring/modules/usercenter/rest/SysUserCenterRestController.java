@@ -238,7 +238,7 @@ public class SysUserCenterRestController extends AbstractBaseController {
 	@ApiOperation(value="批量删除用户中心(Content-Type为text/html)", notes="批量删除用户中心(Content-Type为text/html)")
 	@ApiImplicitParam(name = "ids", value = "用户中心ids,用,隔开", required = false, dataType = "String",paramType="query")
 	public Result deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserCenterService.delete(sysUserCenterService.get(id));
 		}
@@ -253,7 +253,7 @@ public class SysUserCenterRestController extends AbstractBaseController {
 	@ApiOperation(value="逻辑批量删除用户中心(Content-Type为text/html)", notes="逻辑批量删除用户中心(Content-Type为text/html)")
 	@ApiImplicitParam(name = "ids", value = "用户中心ids,用,隔开", required = false, dataType = "String",paramType="query")
 	public Result deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserCenterService.deleteByLogic(sysUserCenterService.get(id));
 		}
@@ -265,7 +265,7 @@ public class SysUserCenterRestController extends AbstractBaseController {
 	@ApiOperation(value="批量删除用户中心(Content-Type为application/json)", notes="批量删除用户中心(Content-Type为application/json)")
 	@ApiImplicitParam(name = "ids", value = "用户中心ids,用,隔开", required = false, dataType = "String",paramType="body")
 	public Result deleteAllJson(@RequestBody String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserCenterService.delete(sysUserCenterService.get(id));
 		}
@@ -280,7 +280,7 @@ public class SysUserCenterRestController extends AbstractBaseController {
 	@ApiOperation(value="逻辑批量删除用户中心(Content-Type为application/json)", notes="逻辑批量删除用户中心(Content-Type为application/json)")
 	@ApiImplicitParam(name = "ids", value = "用户中心ids,用,隔开", required = false, dataType = "String",paramType="body")
 	public Result deleteAllByLogicJson(@RequestBody String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserCenterService.deleteByLogic(sysUserCenterService.get(id));
 		}

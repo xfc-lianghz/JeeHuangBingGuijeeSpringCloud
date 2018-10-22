@@ -64,13 +64,17 @@ public class LogThread extends Thread {
                 }
                 // 如果有异常，设置异常信息
                 //log.setException(Exceptions.getStackTraceAsString(ex));
-                if(ex!=null)
+                if(ex!=null) {
                     log.setException(ex.getMessage());
+                }
                 // 如果无标题并无异常日志，则不保存信息
-                if (StringUtils.isBlank(log.getTitle()) && StringUtils.isBlank(log.getException()))
+                if (StringUtils.isBlank(log.getTitle()) && StringUtils.isBlank(log.getException())) {
                     continue;
+                }
                 log.setId(UUID.randomUUID().toString());
-                if(log.getParams()!=null && log.getParams().length()>=500)  log.setParams(log.getParams().substring(0,200));
+                if(log.getParams()!=null && log.getParams().length()>=500) {
+                    log.setParams(log.getParams().substring(0, 200));
+                }
                 logDao.insert(log);
             } catch (Exception e) {
                 e.printStackTrace(System.out);
@@ -123,11 +127,13 @@ public class LogThread extends Thread {
         if (menuNamePath == null) {
             for (String p : StringUtils.split(permission)) {
                 menuNamePath = menuMap.get(p);
-                if (StringUtils.isNotBlank(menuNamePath))
+                if (StringUtils.isNotBlank(menuNamePath)) {
                     break;
+                }
             }
-            if (menuNamePath == null)
+            if (menuNamePath == null) {
                 return "";
+            }
         }
         return menuNamePath;
     }

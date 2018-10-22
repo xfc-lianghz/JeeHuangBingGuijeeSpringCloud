@@ -73,7 +73,9 @@ public class Base64ImageUtils {
      */
     public static boolean saveImage(String imgStr,String imgFilePath) {
         if (imgStr == null) // 图像数据为空
+        {
             return false;
+        }
         BASE64Decoder decoder = new BASE64Decoder();
         try {
             // Base64解码

@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com.jeespring.>JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a>All rights reserved.
  */
 package com.jeespring.common.utils;
 
@@ -159,8 +159,9 @@ public class SendMailUtil {
 			hemail.setAuthentication(username, password);
 			hemail.setSubject(subject);
 			hemail.setMsg(message);
-			if(from.contains("@qq.com"))
-				hemail.setSSL(true);
+			if(from.contains("@qq.com")) {
+                hemail.setSSL(true);
+            }
 			hemail.send();
 			//System.out.println("email send true!");
 		} catch (Exception e) {
@@ -181,8 +182,9 @@ public class SendMailUtil {
 			hemail.setAuthentication(fromMailUsername, fromMailPassword);
 			hemail.setSubject(subject);
 			hemail.setMsg(message);
-			if(fromMailAddr.contains("@qq.com"))
-				hemail.setSSL(true);
+			if(fromMailAddr.contains("@qq.com")) {
+                hemail.setSSL(true);
+            }
 			hemail.send();
 			//System.out.println("email send true!");
 		} catch (Exception e) {
@@ -230,8 +232,9 @@ public class SendMailUtil {
 //	@SuppressWarnings("unchecked")
 	public static String getAppPath(Class<?> cls) {
 		// 检查用户传入的参数是否为空
-		if (cls == null)
-			throw new IllegalArgumentException("参数不能为空！");
+		if (cls == null) {
+            throw new IllegalArgumentException("参数不能为空！");
+        }
 		ClassLoader loader = cls.getClassLoader();
 		// 获得类的全名，包括包名
 		String clsName = cls.getName() + ".class";
@@ -242,14 +245,15 @@ public class SendMailUtil {
 		if (pack != null) {
 			String packName = pack.getName();
 			// 此处简单判定是否是Java基础类库，防止用户传入JDK内置的类库
-			if (packName.startsWith("java.") || packName.startsWith("javax."))
-				throw new IllegalArgumentException("不要传送系统类！");
+			if (packName.startsWith("java.") || packName.startsWith("javax.")) {
+                throw new IllegalArgumentException("不要传送系统类！");
+            }
 			// 在类的名称中，去掉包名的部分，获得类的文件名
 			clsName = clsName.substring(packName.length() + 1);
 			// 判定包名是否是简单包名，如果是，则直接将包名转换为路径，
-			if (packName.indexOf(".") < 0)
-				path = packName + "/";
-			else {// 否则按照包名的组成部分，将包名转换为路径
+			if (packName.indexOf(".") < 0) {
+                path = packName + "/";
+            } else {// 否则按照包名的组成部分，将包名转换为路径
 				int start = 0, end = 0;
 				end = packName.indexOf(".");
 				while (end != -1) {
@@ -266,14 +270,16 @@ public class SendMailUtil {
 		String realPath = url.getPath();
 		// 去掉路径信息中的协议名"file:"
 		int pos = realPath.indexOf("file:");
-		if (pos > -1)
-			realPath = realPath.substring(pos + 5);
+		if (pos > -1) {
+            realPath = realPath.substring(pos + 5);
+        }
 		// 去掉路径信息最后包含类文件信息的部分，得到类所在的路径
 		pos = realPath.indexOf(path + clsName);
 		realPath = realPath.substring(0, pos - 1);
 		// 如果类文件被打包到JAR等文件中时，去掉对应的JAR等打包文件名
-		if (realPath.endsWith("!"))
-			realPath = realPath.substring(0, realPath.lastIndexOf("/"));
+		if (realPath.endsWith("!")) {
+            realPath = realPath.substring(0, realPath.lastIndexOf("/"));
+        }
 		/*------------------------------------------------------------ 
 		 ClassLoader的getResource方法使用了utf-8对路径信息进行了编码，当路径 
 		  中存在中文和空格时，他会对这些字符进行转换，这样，得到的往往不是我们想要 

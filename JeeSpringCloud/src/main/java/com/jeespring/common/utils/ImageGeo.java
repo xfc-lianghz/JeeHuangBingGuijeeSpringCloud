@@ -20,10 +20,10 @@ public class ImageGeo {
 
 			GpsDirectory gpsdir = (GpsDirectory) metadata
 					.getDirectory(GpsDirectory.class);
-			Rational latpart[] = gpsdir
-					.getRationalArray(GpsDirectory.TAG_GPS_LATITUDE);
-			Rational lonpart[] = gpsdir
-					.getRationalArray(GpsDirectory.TAG_GPS_LONGITUDE);
+            Rational[] latpart = gpsdir
+                    .getRationalArray(GpsDirectory.TAG_GPS_LATITUDE);
+            Rational[] lonpart = gpsdir
+                    .getRationalArray(GpsDirectory.TAG_GPS_LONGITUDE);
 			String northing = gpsdir
 					.getString(GpsDirectory.TAG_GPS_LATITUDE_REF);
 			String easting = gpsdir
@@ -35,11 +35,13 @@ public class ImageGeo {
 			}
 
 			double latsign = 1.0d;
-			if (northing.equalsIgnoreCase("S"))
-				latsign = -1.0d;
+			if ("S".equalsIgnoreCase(northing)) {
+                latsign = -1.0d;
+            }
 			double lonsign = 1.0d;
-			if (easting.equalsIgnoreCase("W"))
-				lonsign = -1.0d;
+			if ("W".equalsIgnoreCase(easting)) {
+                lonsign = -1.0d;
+            }
 			lat = (Math.abs(latpart[0].doubleValue())
 					+ latpart[1].doubleValue() / 60.0d + latpart[2]
 					.doubleValue() / 3600.0d) * latsign;
@@ -47,8 +49,9 @@ public class ImageGeo {
 					+ lonpart[1].doubleValue() / 60.0d + lonpart[2]
 					.doubleValue() / 3600.0d) * lonsign;
 
-			if (Double.isNaN(lat) || Double.isNaN(lon))
-				error = true;
+			if (Double.isNaN(lat) || Double.isNaN(lon)) {
+                error = true;
+            }
 		} catch (Exception ex) {
 			error = true;
 		}

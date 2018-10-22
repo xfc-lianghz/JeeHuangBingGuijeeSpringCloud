@@ -19,10 +19,18 @@ public class MapApiService {
 
     //获取地址经纬度
     public Result getLocation(@RequestParam(required=false) String ak, @RequestParam(required=false) String output, @RequestParam(required=false) String address, @RequestParam(required=false) String city) {
-        if(ak=="" || ak==null) ak="2ae1130ce176b453fb29e59a69b18407";
-        if(output=="" || output==null) output="json";
-        if(address=="" || address==null) address="广州";
-        if(city=="" || city==null) city="广州";
+        if(ak=="" || ak==null) {
+            ak = "2ae1130ce176b453fb29e59a69b18407";
+        }
+        if(output=="" || output==null) {
+            output = "json";
+        }
+        if(address=="" || address==null) {
+            address = "广州";
+        }
+        if(city=="" || city==null) {
+            city = "广州";
+        }
         String url="http://api.map.baidu.com/geocoder/v2/?ak="+ak+"&callback=renderOption&output="+output+"&address="+address+"&city="+city;
         Result result;
         try{

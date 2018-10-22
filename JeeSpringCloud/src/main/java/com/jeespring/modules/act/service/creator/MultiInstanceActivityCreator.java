@@ -16,8 +16,9 @@ import com.jeespring.modules.act.utils.ProcessDefUtils;
 
 public class MultiInstanceActivityCreator extends RuntimeActivityCreatorSupport implements RuntimeActivityCreator {
 	
-	public ActivityImpl[] createActivities(ProcessEngine processEngine, ProcessDefinitionEntity processDefinition,
-			RuntimeActivityDefinitionEntity info) {
+	@Override
+    public ActivityImpl[] createActivities(ProcessEngine processEngine, ProcessDefinitionEntity processDefinition,
+                                           RuntimeActivityDefinitionEntity info) {
 		info.setFactoryName(MultiInstanceActivityCreator.class.getName());
 		RuntimeActivityDefinitionEntityIntepreter radei = new RuntimeActivityDefinitionEntityIntepreter(info);
 

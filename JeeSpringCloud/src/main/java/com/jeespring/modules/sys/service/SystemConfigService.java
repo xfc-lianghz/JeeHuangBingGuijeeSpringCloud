@@ -22,24 +22,29 @@ import com.jeespring.modules.sys.dao.SystemConfigDao;
 @Transactional(readOnly = true)
 public class SystemConfigService extends AbstractBaseService<SystemConfigDao, SystemConfig> {
 
-	public SystemConfig get(String id) {
+	@Override
+    public SystemConfig get(String id) {
 		return super.get(id);
 	}
 	
-	public List<SystemConfig> findList(SystemConfig systemConfig) {
+	@Override
+    public List<SystemConfig> findList(SystemConfig systemConfig) {
 		return super.findList(systemConfig);
 	}
 	
-	public Page<SystemConfig> findPage(Page<SystemConfig> page, SystemConfig systemConfig) {
+	@Override
+    public Page<SystemConfig> findPage(Page<SystemConfig> page, SystemConfig systemConfig) {
 		return super.findPage(page, systemConfig);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(SystemConfig systemConfig) {
 		super.save(systemConfig);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(SystemConfig systemConfig) {
 		super.delete(systemConfig);
 	}

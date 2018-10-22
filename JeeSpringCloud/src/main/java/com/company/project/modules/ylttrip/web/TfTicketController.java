@@ -32,14 +32,12 @@ import com.jeespring.common.utils.StringUtils;
 import com.jeespring.common.utils.excel.ExportExcel;
 import com.jeespring.common.utils.excel.ImportExcel;
 import com.company.project.modules.ylttrip.entity.TfTicket;
-import com.company.project.modules.ylttrip.service.TfTicketService;
 import com.company.project.modules.ylttrip.service.ITfTicketService;
-import com.alibaba.dubbo.config.annotation.Reference;
 
 /**
  * 订单Controller
  * @author JeeSpring
- * @version 2018-10-12
+ * @version 2018-10-15
  */
 @Controller
 @RequestMapping(value = "${adminPath}/ylttrip/tfTicket")
@@ -95,18 +93,21 @@ public class TfTicketController extends AbstractBaseController {
 			//x轴数据
 			xAxisData.add( tfTicketItem.getTotalDate());
 			countList.add(Double.valueOf(tfTicketItem.getTotalCount()));
-			if(tfTicketItem.getSumGoodsNum()!=null)
+			if(tfTicketItem.getSumGoodsNum()!=null) {
 				sumGoodsNumList.add(Double.valueOf(tfTicketItem.getSumGoodsNum()));
-			else
+			} else {
 				tfTicketItem.setSumGoodsNum(0D);
-			if(tfTicketItem.getSumPrice()!=null)
+			}
+			if(tfTicketItem.getSumPrice()!=null) {
 				sumPriceList.add(Double.valueOf(tfTicketItem.getSumPrice()));
-			else
+			} else {
 				tfTicketItem.setSumPrice(0D);
-			if(tfTicketItem.getSumSalePrice()!=null)
+			}
+			if(tfTicketItem.getSumSalePrice()!=null) {
 				sumSalePriceList.add(Double.valueOf(tfTicketItem.getSumSalePrice()));
-			else
+			} else {
 				tfTicketItem.setSumSalePrice(0D);
+			}
 		}
 		yAxisData.put("数量", countList);
 		yAxisData.put("商品数量", sumGoodsNumList);
@@ -197,8 +198,9 @@ public class TfTicketController extends AbstractBaseController {
 	public String form(TfTicket tfTicket, Model model, HttpServletRequest request, HttpServletResponse response) {
 		model.addAttribute("action", request.getParameter("action"));
 		model.addAttribute("tfTicket", tfTicket);
-		if(request.getParameter("ViewFormType")!=null && request.getParameter("ViewFormType").equals("FormTwo"))
+		if(request.getParameter("ViewFormType")!=null && "FormTwo".equals(request.getParameter("ViewFormType"))) {
 			return "modules/ylttrip/tfTicketFormTwo";
+		}
 		return "modules/ylttrip/tfTicketForm";
 	}
 
@@ -244,7 +246,7 @@ public class TfTicketController extends AbstractBaseController {
 	@RequiresPermissions("ylttrip:tfTicket:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+		String[] idArray = ids.split(",");
 		for(String id : idArray){
 			tfTicketService.delete(tfTicketService.get(id));
 		}
@@ -258,7 +260,7 @@ public class TfTicketController extends AbstractBaseController {
 	@RequiresPermissions(value={"ylttrip:tfTicket:del","ylttrip:tfTicket:delByLogic"},logical=Logical.OR)
 	@RequestMapping(value = "deleteAllByLogic")
 	public String deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+		String[] idArray = ids.split(",");
 		for(String id : idArray){
 			tfTicketService.deleteByLogic(tfTicketService.get(id));
 		}

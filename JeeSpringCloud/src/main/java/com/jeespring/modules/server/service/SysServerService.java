@@ -36,16 +36,20 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 	@Autowired
 	private RedisUtils redisUtils;
 
+	@Override
 	public SysServer get(String id) {
 		//获取数据库数据
 		SysServer  sysServer=super.get(id);
 		return sysServer;
 	}
 
+	@Override
 	public SysServer getCache(String id) {
 		//获取缓存数据
 		SysServer sysServer=(SysServer)redisUtils.get(RedisUtils.getIdKey(SysServerService.class.getName(),id));
-		if( sysServer!=null) return  sysServer;
+		if( sysServer!=null) {
+            return sysServer;
+        }
 		//获取数据库数据
 		sysServer=super.get(id);
 		//设置缓存数据
@@ -53,17 +57,21 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 		return sysServer;
 	}
 
+	@Override
 	public List<SysServer> total(SysServer sysServer) {
 		//获取数据库数据
 		List<SysServer> sysServerList=super.total(sysServer);
 		return sysServerList;
 	}
 
+	@Override
 	public List<SysServer> totalCache(SysServer sysServer) {
 		//获取缓存数据
 		String totalKey = RedisUtils.getTotalKey(SysServerService.class.getName(),JSON.toJSONString(sysServer));
 		List<SysServer> sysServerList=(List<SysServer>)redisUtils.get(totalKey);
-		if(sysServerList!=null) return sysServerList;
+		if(sysServerList!=null) {
+			return sysServerList;
+		}
 		//获取数据库数据
 		sysServerList=super.total(sysServer);
 		//设置缓存数据
@@ -71,6 +79,7 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 		return sysServerList;
 	}
 
+	@Override
 	public List<SysServer> findList(SysServer sysServer) {
 		//获取数据库数据
 		List<SysServer> sysServerList=super.findList(sysServer);
@@ -78,11 +87,14 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 		return sysServerList;
 	}
 
+	@Override
 	public List<SysServer> findListCache(SysServer sysServer) {
 		//获取缓存数据
 		String findListKey = RedisUtils.getFindListKey(SysServerService.class.getName(),JSON.toJSONString(sysServer));
 		List<SysServer> sysServerList=(List<SysServer>)redisUtils.get(findListKey);
-		if(sysServerList!=null) return sysServerList;
+		if(sysServerList!=null) {
+			return sysServerList;
+		}
 		//获取数据库数据
 		sysServerList=super.findList(sysServer);
 		//设置缓存数据
@@ -93,7 +105,9 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 	public SysServer findListFirst(SysServer sysServer) {;
 		//获取数据库数据
 		List<SysServer> sysServerList=super.findList(sysServer);
-		if(sysServerList.size()>0) sysServer=sysServerList.get(0);
+		if(sysServerList.size()>0) {
+			sysServer = sysServerList.get(0);
+		}
 		return sysServer;
 	}
 
@@ -101,27 +115,36 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 		//获取缓存数据
 		String findListFirstKey = RedisUtils.getFindListFirstKey(SysServerService.class.getName(),JSON.toJSONString(sysServer));
 		SysServer sysServerRedis=(SysServer)redisUtils.get(findListFirstKey);
-		if(sysServerRedis!=null) return sysServerRedis;
+		if(sysServerRedis!=null) {
+			return sysServerRedis;
+		}
 		//获取数据库数据
 		List<SysServer> sysServerList=super.findList(sysServer);
-		if(sysServerList.size()>0) sysServer=sysServerList.get(0);
-		else sysServer=new SysServer();
+		if(sysServerList.size()>0) {
+			sysServer = sysServerList.get(0);
+		} else {
+			sysServer = new SysServer();
+		}
 		//设置缓存数据
 		redisUtils.set(findListFirstKey,sysServer);
 		return sysServer;
 	}
 
+	@Override
 	public Page<SysServer> findPage(Page<SysServer> page, SysServer sysServer) {
 		//获取数据库数据
 		Page<SysServer> pageReuslt=super.findPage(page, sysServer);
 		return pageReuslt;
 	}
 
+	@Override
 	public Page<SysServer> findPageCache(Page<SysServer> page, SysServer sysServer) {
 		//获取缓存数据
 		String findPageKey =  RedisUtils.getFindPageKey(SysServerService.class.getName(),JSON.toJSONString(page)+JSON.toJSONString(sysServer));
 		Page<SysServer> pageReuslt=(Page<SysServer>)redisUtils.get(findPageKey);
-		if(pageReuslt!=null) return pageReuslt;
+		if(pageReuslt!=null) {
+			return pageReuslt;
+		}
 		//获取数据库数据
 		pageReuslt=super.findPage(page, sysServer);
 		//设置缓存数据
@@ -129,6 +152,7 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 		return pageReuslt;
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void save(SysServer sysServer) {
 		//保存数据库记录
@@ -140,6 +164,7 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysServerService.class.getName()));
 	}
 	
+	@Override
 	@Transactional(readOnly = false)
 	public void delete(SysServer sysServer) {
 		//清除记录缓存数据
@@ -151,6 +176,7 @@ public class SysServerService extends AbstractBaseService<SysServerDao, SysServe
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysServerService.class.getName()));
 	}
 
+	@Override
 	@Transactional(readOnly = false)
 	public void deleteByLogic(SysServer sysServer) {
 		//清除记录缓存数据

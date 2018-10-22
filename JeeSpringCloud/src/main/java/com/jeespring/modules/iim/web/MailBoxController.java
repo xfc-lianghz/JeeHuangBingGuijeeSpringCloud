@@ -88,7 +88,7 @@ public class MailBoxController extends AbstractBaseController {
 
 	@RequestMapping(value = "detail")
 	public String detail(MailBox mailBox, Model model) {
-		if(mailBox.getReadstatus().equals("0")){//更改未读状态为已读状态
+		if("0".equals(mailBox.getReadstatus())){//更改未读状态为已读状态
 			mailBox.setReadstatus("1");//1表示已读
 			mailBoxService.save(mailBox);
 		}
@@ -143,7 +143,7 @@ public class MailBoxController extends AbstractBaseController {
 	 */
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			mailBoxService.delete(mailBoxService.get(id));
 		}

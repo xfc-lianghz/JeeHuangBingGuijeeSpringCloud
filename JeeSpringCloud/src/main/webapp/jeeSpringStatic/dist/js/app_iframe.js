@@ -2497,6 +2497,7 @@ $(function () {
         var target=$(this).attr("target");
        if(!href) return false;
         if(href.indexOf("javascript")>=0) return false;
+        if(title.indexOf("演示版不开放")>0) return false;
         if(target=="_blank") {
             window.open(href);
             return false;

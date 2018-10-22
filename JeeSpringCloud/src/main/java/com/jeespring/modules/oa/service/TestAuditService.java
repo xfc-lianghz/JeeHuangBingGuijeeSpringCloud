@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.modules.oa.service;
 
@@ -34,7 +34,8 @@ public class TestAuditService extends AbstractBaseService<TestAuditDao, TestAudi
 		return dao.getByProcInsId(procInsId);
 	}
 	
-	public Page<TestAudit> findPage(Page<TestAudit> page, TestAudit testAudit) {
+	@Override
+    public Page<TestAudit> findPage(Page<TestAudit> page, TestAudit testAudit) {
 		testAudit.setPage(page);
 		page.setList(dao.findList(testAudit));
 		return page;
@@ -44,7 +45,8 @@ public class TestAuditService extends AbstractBaseService<TestAuditDao, TestAudi
 	 * 审核新增或编辑
 	 * @param testAudit
 	 */
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(TestAudit testAudit) {
 		
 		// 申请发起

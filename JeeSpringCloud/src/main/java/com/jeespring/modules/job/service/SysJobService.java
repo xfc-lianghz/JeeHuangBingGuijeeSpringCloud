@@ -39,7 +39,8 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 	@Autowired
 	private RedisUtils redisUtils;
 
-	public SysJob get(String id) {
+	@Override
+    public SysJob get(String id) {
 		//获取数据库数据
 		SysJob  sysJob=super.get(id);
 		return sysJob;
@@ -48,7 +49,9 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 	public SysJob getCache(String id) {
 		//获取缓存数据
 		SysJob sysJob=(SysJob)redisUtils.get(RedisUtils.getIdKey(SysJobService.class.getName(),id));
-		if( sysJob!=null) return  sysJob;
+		if( sysJob!=null) {
+            return sysJob;
+        }
 		//获取数据库数据
 		sysJob=super.get(id);
 		//设置缓存数据
@@ -56,7 +59,8 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		return sysJob;
 	}
 
-	public List<SysJob> total(SysJob sysJob) {
+	@Override
+    public List<SysJob> total(SysJob sysJob) {
 		//获取数据库数据
 		List<SysJob> sysJobList=super.total(sysJob);
 		return sysJobList;
@@ -66,7 +70,9 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		//获取缓存数据
 		String totalKey = RedisUtils.getTotalKey(SysJobService.class.getName(),JSON.toJSONString(sysJob));
 		List<SysJob> sysJobList=(List<SysJob>)redisUtils.get(totalKey);
-		if(sysJobList!=null) return sysJobList;
+		if(sysJobList!=null) {
+            return sysJobList;
+        }
 		//获取数据库数据
 		sysJobList=super.total(sysJob);
 		//设置缓存数据
@@ -74,7 +80,8 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		return sysJobList;
 	}
 
-	public List<SysJob> findList(SysJob sysJob) {
+	@Override
+    public List<SysJob> findList(SysJob sysJob) {
 		//获取数据库数据
 		List<SysJob> sysJobList=super.findList(sysJob);
 		//设置缓存数据
@@ -85,7 +92,9 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		//获取缓存数据
 		String findListKey = RedisUtils.getFindListKey(SysJobService.class.getName(),JSON.toJSONString(sysJob));
 		List<SysJob> sysJobList=(List<SysJob>)redisUtils.get(findListKey);
-		if(sysJobList!=null) return sysJobList;
+		if(sysJobList!=null) {
+            return sysJobList;
+        }
 		//获取数据库数据
 		sysJobList=super.findList(sysJob);
 		//设置缓存数据
@@ -96,7 +105,9 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 	public SysJob findListFirst(SysJob sysJob) {;
 		//获取数据库数据
 		List<SysJob> sysJobList=super.findList(sysJob);
-		if(sysJobList.size()>0) sysJob=sysJobList.get(0);
+		if(sysJobList.size()>0) {
+            sysJob = sysJobList.get(0);
+        }
 		return sysJob;
 	}
 
@@ -104,17 +115,23 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		//获取缓存数据
 		String findListFirstKey = RedisUtils.getFindListFirstKey(SysJobService.class.getName(),JSON.toJSONString(sysJob));
 		SysJob sysJobRedis=(SysJob)redisUtils.get(findListFirstKey);
-		if(sysJobRedis!=null) return sysJobRedis;
+		if(sysJobRedis!=null) {
+            return sysJobRedis;
+        }
 		//获取数据库数据
 		List<SysJob> sysJobList=super.findList(sysJob);
-		if(sysJobList.size()>0) sysJob=sysJobList.get(0);
-		else sysJob=new SysJob();
+		if(sysJobList.size()>0) {
+            sysJob = sysJobList.get(0);
+        } else {
+            sysJob = new SysJob();
+        }
 		//设置缓存数据
 		redisUtils.set(findListFirstKey,sysJob);
 		return sysJob;
 	}
 
-	public Page<SysJob> findPage(Page<SysJob> page, SysJob sysJob) {
+	@Override
+    public Page<SysJob> findPage(Page<SysJob> page, SysJob sysJob) {
 		//获取数据库数据
 		Page<SysJob> pageReuslt=super.findPage(page, sysJob);
 		return pageReuslt;
@@ -124,7 +141,9 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		//获取缓存数据
 		String findPageKey =  RedisUtils.getFindPageKey(SysJobService.class.getName(),JSON.toJSONString(page)+JSON.toJSONString(sysJob));
 		Page<SysJob> pageReuslt=(Page<SysJob>)redisUtils.get(findPageKey);
-		if(pageReuslt!=null) return pageReuslt;
+		if(pageReuslt!=null) {
+            return pageReuslt;
+        }
 		//获取数据库数据
 		pageReuslt=super.findPage(page, sysJob);
 		//设置缓存数据
@@ -132,16 +151,19 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		return pageReuslt;
 	}
 
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(SysJob sysJob) {
-		if(sysJob.getIsNewRecord())
-			sysJob.setStatus(ScheduleConstants.Status.PAUSE.getValue());
+		if(sysJob.getIsNewRecord()) {
+            sysJob.setStatus(ScheduleConstants.Status.PAUSE.getValue());
+        }
 		//保存数据库记录
 		super.save(sysJob);
-		if(sysJob.getIsNewRecord())
-			ScheduleUtils.createScheduleJob(scheduler, sysJob);
-		else
-			ScheduleUtils.updateScheduleJob(scheduler, sysJob);
+		if(sysJob.getIsNewRecord()) {
+            ScheduleUtils.createScheduleJob(scheduler, sysJob);
+        } else {
+            ScheduleUtils.updateScheduleJob(scheduler, sysJob);
+        }
 
 		/*if (ScheduleConstants.Status.NORMAL.getValue().equals(sysJob.getStatus()))
 		{
@@ -159,7 +181,8 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysJobService.class.getName()));
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(SysJob sysJob) {
 		//清除记录缓存数据
 		redisUtils.remove(RedisUtils.getIdKey(SysJobService.class.getName(),sysJob.getId()));
@@ -171,7 +194,8 @@ public class SysJobService extends AbstractBaseService<SysJobDao, SysJob> {
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysJobService.class.getName()));
 	}
 
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void deleteByLogic(SysJob sysJob) {
 		//清除记录缓存数据
 		redisUtils.remove(RedisUtils.getIdKey(SysJobService.class.getName(),sysJob.getId()));

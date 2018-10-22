@@ -22,24 +22,29 @@ import com.jeespring.modules.echarts.dao.PieClassDao;
 @Transactional(readOnly = true)
 public class PieClassService extends AbstractBaseService<PieClassDao, PieClass> {
 
-	public PieClass get(String id) {
+	@Override
+    public PieClass get(String id) {
 		return super.get(id);
 	}
 	
-	public List<PieClass> findList(PieClass pieClass) {
+	@Override
+    public List<PieClass> findList(PieClass pieClass) {
 		return super.findList(pieClass);
 	}
 	
-	public Page<PieClass> findPage(Page<PieClass> page, PieClass pieClass) {
+	@Override
+    public Page<PieClass> findPage(Page<PieClass> page, PieClass pieClass) {
 		return super.findPage(page, pieClass);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(PieClass pieClass) {
 		super.save(pieClass);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(PieClass pieClass) {
 		super.delete(pieClass);
 	}

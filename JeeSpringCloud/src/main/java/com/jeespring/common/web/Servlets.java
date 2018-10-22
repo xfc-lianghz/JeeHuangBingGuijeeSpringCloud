@@ -239,8 +239,9 @@ public class Servlets {
      * @throws Exception
      */
     public static boolean isStaticFile(String uri) {
-        if (staticFiles == null)
+        if (staticFiles == null) {
             staticFiles = StringUtils.split(Global.getConfig("web.staticFile"), ",");
+        }
         return StringUtils.endsWithAny(uri, staticFiles) && !StringUtils.endsWithAny(uri, ".html")
                 && !StringUtils.endsWithAny(uri, ".jsp") && !StringUtils.endsWithAny(uri, ".java");
     }

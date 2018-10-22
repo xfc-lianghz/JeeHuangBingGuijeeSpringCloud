@@ -28,7 +28,8 @@ public class OaNotifyService extends AbstractBaseService<OaNotifyDao, OaNotify> 
 	@Autowired
 	private OaNotifyRecordDao oaNotifyRecordDao;
 
-	public OaNotify get(String id) {
+	@Override
+    public OaNotify get(String id) {
 		OaNotify entity = dao.get(id);
 		return entity;
 	}
@@ -58,7 +59,8 @@ public class OaNotifyService extends AbstractBaseService<OaNotifyDao, OaNotify> 
 		return dao.findCount(oaNotify);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(OaNotify oaNotify) {
 		super.save(oaNotify);
 		

@@ -28,6 +28,7 @@ public class WebInterceptorConfigurer extends WebMvcConfigurerAdapter{
     @Autowired
     private LogThread logThread;
 
+    @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(logInterceptor).addPathPatterns("/**");
         super.addInterceptors(registry);

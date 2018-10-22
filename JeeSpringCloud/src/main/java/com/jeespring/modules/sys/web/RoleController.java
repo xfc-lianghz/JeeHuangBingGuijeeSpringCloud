@@ -150,7 +150,7 @@ public class RoleController extends AbstractBaseController {
 			addMessage(redirectAttributes,sysConfigService.isDemoModeDescription());
 			return "redirect:" + adminPath + "/sys/role/?repage";
 		}
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		StringBuffer msg = new StringBuffer();
 		for(String id : idArray){
 			Role role = systemService.getRole(id);

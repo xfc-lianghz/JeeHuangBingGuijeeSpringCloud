@@ -145,7 +145,7 @@ public class FormLeavemController extends AbstractBaseController {
 	//RequiresPermissions("mvvmoa:formLeavem:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			formLeavemService.delete(formLeavemService.get(id));
 		}

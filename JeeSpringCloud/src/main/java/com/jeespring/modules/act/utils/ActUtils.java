@@ -1,5 +1,5 @@
 /**
- * Copyright &copy; 2012-2016 <a href="https://github.com/thinkgem/jeesite">JeeSite</a> All rights reserved.
+ * Copyright &copy; 2012-2016 <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud">JeeSpring</a> All rights reserved.
  */
 package com.jeespring.modules.act.utils;
 
@@ -27,7 +27,7 @@ import com.jeespring.modules.sys.entity.User;
 
 /**
  * 流程工具
- * @author ThinkGem
+ * @author JeeSpring
  * @version 2013-11-03
  */
 public class ActUtils {
@@ -94,7 +94,7 @@ public class ActUtils {
 					}else{
 						chinesName.add("");
 					}
-					if (m.getName().equals("getAct")){
+					if ("getAct".equals(m.getName())){
 						Object act = m.invoke(entity, new Object[]{});
 						Method actMet = act.getClass().getMethod("getTaskId");
 						map.put("taskId", ObjectUtils.toString(m.invoke(act, new Object[]{}), ""));

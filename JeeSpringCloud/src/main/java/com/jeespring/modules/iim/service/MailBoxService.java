@@ -26,11 +26,13 @@ public class MailBoxService extends AbstractBaseService<MailBoxDao, MailBox> {
 
 	@Autowired
 	private MailBoxDao mailBoxDao;
-	public MailBox get(String id) {
+	@Override
+    public MailBox get(String id) {
 		return super.get(id);
 	}
 	
-	public List<MailBox> findList(MailBox mailBox) {
+	@Override
+    public List<MailBox> findList(MailBox mailBox) {
 		return super.findList(mailBox);
 	}
 	
@@ -38,12 +40,14 @@ public class MailBoxService extends AbstractBaseService<MailBoxDao, MailBox> {
 		return super.findPage(page, mailBox);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(MailBox mailBox) {
 		super.save(mailBox);
 	}
 	
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(MailBox mailBox) {
 		super.delete(mailBox);
 	}

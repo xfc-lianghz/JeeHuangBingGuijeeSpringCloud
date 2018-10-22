@@ -159,8 +159,9 @@ public class SysUserOnlineController extends AbstractBaseController {
 	public String form(SysUserOnline sysUserOnline, Model model, HttpServletRequest request, HttpServletResponse response) {
 		model.addAttribute("action", request.getParameter("action"));
 		model.addAttribute("sysUserOnline", sysUserOnline);
-		if(request.getParameter("ViewFormType")!=null && request.getParameter("ViewFormType").equals("FormTwo"))
-			return "modules/sys/sysUserOnlineFormTwo";
+		if(request.getParameter("ViewFormType")!=null && "FormTwo".equals(request.getParameter("ViewFormType"))) {
+            return "modules/sys/sysUserOnlineFormTwo";
+        }
 		return "modules/sys/sysUserOnlineForm";
 	}
 
@@ -206,7 +207,7 @@ public class SysUserOnlineController extends AbstractBaseController {
 	@RequiresPermissions("sys:sysUserOnline:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserOnlineService.delete(sysUserOnlineService.get(id));
 		}
@@ -220,7 +221,7 @@ public class SysUserOnlineController extends AbstractBaseController {
 	@RequiresPermissions(value={"sys:sysUserOnline:del","sys:sysUserOnline:delByLogic"},logical=Logical.OR)
 	@RequestMapping(value = "deleteAllByLogic")
 	public String deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserOnlineService.deleteByLogic(sysUserOnlineService.get(id));
 		}

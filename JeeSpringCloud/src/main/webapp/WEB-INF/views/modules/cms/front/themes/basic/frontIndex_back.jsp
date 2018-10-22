@@ -5,8 +5,8 @@
 <head>
 	<title>首页</title>
 	<meta name="decorator" content="cms_default_${site.theme}"/>
-	<meta name="description" content="JeeSite ${site.description}" />
-	<meta name="keywords" content="JeeSite ${site.keywords}" />
+	<meta name="description" content="JeeSpring ${site.description}" />
+	<meta name="keywords" content="JeeSpring ${site.keywords}" />
     <%@include file="/WEB-INF/views/modules/cms/front/include/head.jsp" %>
     <link href="${ctxStaticView}/cms/front/theme.css" type="text/css" rel="stylesheet" />
 </head>

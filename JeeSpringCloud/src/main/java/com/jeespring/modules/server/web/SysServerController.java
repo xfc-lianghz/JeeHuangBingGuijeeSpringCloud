@@ -166,8 +166,9 @@ public class SysServerController extends AbstractBaseController {
 	public String form(SysServer sysServer, Model model, HttpServletRequest request, HttpServletResponse response) {
 		model.addAttribute("action", request.getParameter("action"));
 		model.addAttribute("sysServer", sysServer);
-		if(request.getParameter("ViewFormType")!=null && request.getParameter("ViewFormType").equals("FormTwo"))
-			return "modules/sys/sysServerFormTwo";
+		if(request.getParameter("ViewFormType")!=null && "FormTwo".equals(request.getParameter("ViewFormType"))) {
+            return "modules/sys/sysServerFormTwo";
+        }
 		return "modules/sys/sysServerForm";
 	}
 
@@ -229,7 +230,7 @@ public class SysServerController extends AbstractBaseController {
 			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
 			return "redirect:" + adminPath + "/sys/sysServer/?repage";
 		}
-		String idArray[] =ids.split(",");
+		String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysServerService.delete(sysServerService.get(id));
 		}
@@ -247,7 +248,7 @@ public class SysServerController extends AbstractBaseController {
 			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
 			return "redirect:" + adminPath + "/sys/sysServer/?repage";
 		}
-		String idArray[] =ids.split(",");
+		String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysServerService.deleteByLogic(sysServerService.get(id));
 		}

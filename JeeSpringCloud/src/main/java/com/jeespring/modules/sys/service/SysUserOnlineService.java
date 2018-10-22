@@ -50,7 +50,8 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 	 */
 	private static final String LAST_SYNC_DB_TIMESTAMP = SysUserOnlineService.class.getName() + "LAST_SYNC_DB_TIMESTAMP";
 
-	public SysUserOnline get(String id) {
+	@Override
+    public SysUserOnline get(String id) {
 		//获取数据库数据
 		SysUserOnline  sysUserOnline=super.get(id);
 		return sysUserOnline;
@@ -59,7 +60,9 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 	public SysUserOnline getCache(String id) {
 		//获取缓存数据
 		SysUserOnline sysUserOnline=(SysUserOnline)redisUtils.get(RedisUtils.getIdKey(SysUserOnlineService.class.getName(),id));
-		if( sysUserOnline!=null) return  sysUserOnline;
+		if( sysUserOnline!=null) {
+            return sysUserOnline;
+        }
 		//获取数据库数据
 		sysUserOnline=super.get(id);
 		//设置缓存数据
@@ -67,7 +70,8 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		return sysUserOnline;
 	}
 
-	public List<SysUserOnline> total(SysUserOnline sysUserOnline) {
+	@Override
+    public List<SysUserOnline> total(SysUserOnline sysUserOnline) {
 		//获取数据库数据
 		List<SysUserOnline> sysUserOnlineList=super.total(sysUserOnline);
 		return sysUserOnlineList;
@@ -77,7 +81,9 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		//获取缓存数据
 		String totalKey = RedisUtils.getTotalKey(SysUserOnlineService.class.getName(),JSON.toJSONString(sysUserOnline));
 		List<SysUserOnline> sysUserOnlineList=(List<SysUserOnline>)redisUtils.get(totalKey);
-		if(sysUserOnlineList!=null) return sysUserOnlineList;
+		if(sysUserOnlineList!=null) {
+            return sysUserOnlineList;
+        }
 		//获取数据库数据
 		sysUserOnlineList=super.total(sysUserOnline);
 		//设置缓存数据
@@ -85,7 +91,8 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		return sysUserOnlineList;
 	}
 
-	public List<SysUserOnline> findList(SysUserOnline sysUserOnline) {
+	@Override
+    public List<SysUserOnline> findList(SysUserOnline sysUserOnline) {
 		//获取数据库数据
 		List<SysUserOnline> sysUserOnlineList=super.findList(sysUserOnline);
 		//设置缓存数据
@@ -96,7 +103,9 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		//获取缓存数据
 		String findListKey = RedisUtils.getFindListKey(SysUserOnlineService.class.getName(),JSON.toJSONString(sysUserOnline));
 		List<SysUserOnline> sysUserOnlineList=(List<SysUserOnline>)redisUtils.get(findListKey);
-		if(sysUserOnlineList!=null) return sysUserOnlineList;
+		if(sysUserOnlineList!=null) {
+            return sysUserOnlineList;
+        }
 		//获取数据库数据
 		sysUserOnlineList=super.findList(sysUserOnline);
 		//设置缓存数据
@@ -107,7 +116,9 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 	public SysUserOnline findListFirst(SysUserOnline sysUserOnline) {;
 		//获取数据库数据
 		List<SysUserOnline> sysUserOnlineList=super.findList(sysUserOnline);
-		if(sysUserOnlineList.size()>0) sysUserOnline=sysUserOnlineList.get(0);
+		if(sysUserOnlineList.size()>0) {
+            sysUserOnline = sysUserOnlineList.get(0);
+        }
 		return sysUserOnline;
 	}
 
@@ -115,17 +126,23 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		//获取缓存数据
 		String findListFirstKey = RedisUtils.getFindListFirstKey(SysUserOnlineService.class.getName(),JSON.toJSONString(sysUserOnline));
 		SysUserOnline sysUserOnlineRedis=(SysUserOnline)redisUtils.get(findListFirstKey);
-		if(sysUserOnlineRedis!=null) return sysUserOnlineRedis;
+		if(sysUserOnlineRedis!=null) {
+            return sysUserOnlineRedis;
+        }
 		//获取数据库数据
 		List<SysUserOnline> sysUserOnlineList=super.findList(sysUserOnline);
-		if(sysUserOnlineList.size()>0) sysUserOnline=sysUserOnlineList.get(0);
-		else sysUserOnline=new SysUserOnline();
+		if(sysUserOnlineList.size()>0) {
+            sysUserOnline = sysUserOnlineList.get(0);
+        } else {
+            sysUserOnline = new SysUserOnline();
+        }
 		//设置缓存数据
 		redisUtils.set(findListFirstKey,sysUserOnline);
 		return sysUserOnline;
 	}
 
-	public Page<SysUserOnline> findPage(Page<SysUserOnline> page, SysUserOnline sysUserOnline) {
+	@Override
+    public Page<SysUserOnline> findPage(Page<SysUserOnline> page, SysUserOnline sysUserOnline) {
 		//获取数据库数据
 		Page<SysUserOnline> pageReuslt=super.findPage(page, sysUserOnline);
 		return pageReuslt;
@@ -136,12 +153,14 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		//获取缓存数据
 		String findPageKey =  RedisUtils.getFindPageKey(SysUserOnlineService.class.getName(),JSON.toJSONString(page)+JSON.toJSONString(sysUserOnline));
 		Page<SysUserOnline> pageReuslt=(Page<SysUserOnline>)redisUtils.get(findPageKey);
-		if(pageReuslt!=null) return pageReuslt;
+		if(pageReuslt!=null) {
+            return pageReuslt;
+        }
 		//获取数据库数据
 		pageReuslt=super.findPage(page, sysUserOnline);
 
 		for (SysUserOnline item: pageReuslt.getList()) {
-			if(redisRun.equals("true")){
+			if("true".equals(redisRun)){
 				try{
 					if(!redisUtils.exists(RedisUtils.SHIRO_REDIS+":"+item.getId())){
 						item.setStatus(OnlineSession.OnlineStatus.off_line.toString());
@@ -155,7 +174,8 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		return pageReuslt;
 	}
 
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void save(SysUserOnline sysUserOnline) {
 		//保存数据库记录
 		super.save(sysUserOnline);
@@ -166,7 +186,8 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysUserOnlineService.class.getName()));
 	}
 
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void delete(SysUserOnline sysUserOnline) {
 		//清除记录缓存数据
 		redisUtils.remove(RedisUtils.getIdKey(SysUserOnlineService.class.getName(),sysUserOnline.getId()));
@@ -177,7 +198,8 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 		redisUtils.removePattern(RedisUtils.getFinPageKeyPattern(SysUserOnlineService.class.getName()));
 	}
 
-	@Transactional(readOnly = false)
+	@Override
+    @Transactional(readOnly = false)
 	public void deleteByLogic(SysUserOnline sysUserOnline) {
 		//清除记录缓存数据
 		redisUtils.remove(RedisUtils.getIdKey(SysUserOnlineService.class.getName(),sysUserOnline.getId()));
@@ -233,12 +255,13 @@ public class SysUserOnlineService extends AbstractBaseService<SysUserOnlineDao, 
 			}
 			if(StringUtils.isEmpty(sysUserOnline.getDeptName())){
 				User user=UserUtils.getByLoginName(sysUserOnline.getLoginName());
-				if(user.getCompany()!=null && user.getOffice()!=null)
-					sysUserOnline.setDeptName(user.getCompany().getName()+"-"+user.getOffice().getName());
-				else if(user.getCompany()!=null)
-					sysUserOnline.setDeptName(user.getCompany().getName());
-				else if(user.getOffice()!=null)
-					sysUserOnline.setDeptName(user.getOffice().getName());
+				if(user.getCompany()!=null && user.getOffice()!=null) {
+                    sysUserOnline.setDeptName(user.getCompany().getName() + "-" + user.getOffice().getName());
+                } else if(user.getCompany()!=null) {
+                    sysUserOnline.setDeptName(user.getCompany().getName());
+                } else if(user.getOffice()!=null) {
+                    sysUserOnline.setDeptName(user.getOffice().getName());
+                }
 			}
 			this.save(sysUserOnline);
 		} catch (Exception e){

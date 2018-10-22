@@ -47,10 +47,11 @@ public class GenTableController extends AbstractBaseController
 
     public GenTable get(GenTable genTable)
     {
-        if(StringUtils.isNotBlank(genTable.getId()))
+        if(StringUtils.isNotBlank(genTable.getId())) {
             return genTableService.get(genTable.getId());
-        else
+        } else {
             return genTable;
+        }
     }
 
     @RequiresPermissions(value={"gen:genTable:list"})
@@ -59,8 +60,9 @@ public class GenTableController extends AbstractBaseController
     {
         genTable = get(genTable);
         User user = UserUtils.getUser();
-        if(!user.isAdmin())
+        if(!user.isAdmin()) {
             genTable.setCreateBy(user);
+        }
         Page page = genTableService.find(new Page(request, response), genTable);
         model.addAttribute("page", page);
         return "modules/gen/genTableList";
@@ -202,7 +204,7 @@ public class GenTableController extends AbstractBaseController
         for(Iterator iterator = getTableColumnList.iterator(); iterator.hasNext();)
         {
             GenTableColumn column = (GenTableColumn)iterator.next();
-            if(column.getIsPk().equals("1"))
+            if("1".equals(column.getIsPk()))
             {
                 sql.append((new StringBuilder("  ")).append(column.getName()).append(" ").append(column.getJdbcType()).append(" comment '").append(column.getComments()).append("',").toString());
                 pk = (new StringBuilder(String.valueOf(pk))).append(column.getName()).append(",").toString();
@@ -223,11 +225,13 @@ public class GenTableController extends AbstractBaseController
     @RequestMapping(value={"genCodeForm"})
     public String genCodeForm(GenScheme genScheme, Model model, RedirectAttributes redirectAttributes)
     {
-        if(StringUtils.isBlank(genScheme.getPackageName()))
+        if(StringUtils.isBlank(genScheme.getPackageName())) {
             genScheme.setPackageName("com.company.project.modules");
+        }
         GenScheme oldGenScheme = genSchemeService.findUniqueByProperty("gen_table_id", genScheme.getGenTable().getId());
-        if(oldGenScheme != null)
+        if(oldGenScheme != null) {
             genScheme = oldGenScheme;
+        }
         model.addAttribute("genScheme", genScheme);
         model.addAttribute("config", GenUtils.getConfig());
         model.addAttribute("tableList", genTableService.findAll());
@@ -251,7 +255,7 @@ public class GenTableController extends AbstractBaseController
         }else{
             href="/"+genScheme.getModuleName()+"/"+StringUtils.toCamelCase(genScheme.getGenTable().getName());
         }
-        if(genScheme.getCategory().equals("tree")){
+        if("tree".equals(genScheme.getCategory())){
             href=href+"Tree";
         }
         genMenu(genScheme,href);

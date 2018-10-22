@@ -14,6 +14,7 @@ import com.jeespring.common.persistence.dialect.Dialect;
  */
 public class SQLServerDialect implements Dialect {
 
+    @Override
     public boolean supportsLimit() {
         return true;
     }
@@ -24,6 +25,7 @@ public class SQLServerDialect implements Dialect {
         return selectIndex + (selectDistinctIndex == selectIndex ? 15 : 6);
     }
 
+    @Override
     public String getLimitString(String sql, int offset, int limit) {
         return getLimit(sql, offset, limit);
     }

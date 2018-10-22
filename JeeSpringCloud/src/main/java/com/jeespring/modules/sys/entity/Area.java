@@ -33,11 +33,13 @@ public class Area extends TreeEntity<Area> {
 	
 //	@JsonBackReference
 //	@NotNull
-	public Area getParent() {
+	@Override
+    public Area getParent() {
 		return parent;
 	}
 
-	public void setParent(Area parent) {
+	@Override
+    public void setParent(Area parent) {
 		this.parent = parent;
 	}
 //

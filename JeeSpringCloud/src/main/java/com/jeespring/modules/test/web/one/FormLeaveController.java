@@ -164,8 +164,9 @@ public class FormLeaveController extends AbstractBaseController {
 	public String form(FormLeave formLeave, Model model, HttpServletRequest request, HttpServletResponse response) {
 		model.addAttribute("action", request.getParameter("action"));
 		model.addAttribute("formLeave", formLeave);
-		if(request.getParameter("ViewFormType")!=null && request.getParameter("ViewFormType").equals("FormTwo"))
-			return "modules/test/one/formLeaveFormTwo";
+		if(request.getParameter("ViewFormType")!=null && "FormTwo".equals(request.getParameter("ViewFormType"))) {
+            return "modules/test/one/formLeaveFormTwo";
+        }
 		return "modules/test/one/formLeaveForm";
 	}
 
@@ -211,7 +212,7 @@ public class FormLeaveController extends AbstractBaseController {
 	@RequiresPermissions("test:one:formLeave:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+		String[] idArray = ids.split(",");
 		for(String id : idArray){
 			formLeaveService.delete(formLeaveService.get(id));
 		}
@@ -225,7 +226,7 @@ public class FormLeaveController extends AbstractBaseController {
 	@RequiresPermissions(value={"test:one:formLeave:del","test:one:formLeave:delByLogic"},logical=Logical.OR)
 	@RequestMapping(value = "deleteAllByLogic")
 	public String deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+		String[] idArray = ids.split(",");
 		for(String id : idArray){
 			formLeaveService.deleteByLogic(formLeaveService.get(id));
 		}

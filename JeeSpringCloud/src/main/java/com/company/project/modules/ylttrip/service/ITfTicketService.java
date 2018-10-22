@@ -10,7 +10,7 @@ import com.company.project.modules.ylttrip.entity.TfTicket;
 /**
  * I订单Service
  * @author JeeSpring
- * @version 2018-10-12
+ * @version 2018-10-15
  */
 public interface ITfTicketService extends InterfaceBaseService<TfTicket> {
 }

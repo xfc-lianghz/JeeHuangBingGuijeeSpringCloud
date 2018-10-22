@@ -52,7 +52,9 @@ public void setName(String name)
 
 public String getPk()
 {
-    if(this.pk=="" || this.pk == null) this.pk="id";
+    if(this.pk=="" || this.pk == null) {
+        this.pk = "id";
+    }
     return this.pk;
 }
 
@@ -165,15 +167,17 @@ public List<String> getImportList()
      for(Iterator iterator = getColumnList().iterator(); iterator.hasNext();)
      {
          GenTableColumn column = (GenTableColumn)iterator.next();
-         if((column.getIsNotBaseField().booleanValue() || "1".equals(column.getIsQuery()) && "between".equals(column.getQueryType()) && ("createDate".equals(column.getSimpleJavaField()) || "updateDate".equals(column.getSimpleJavaField()))) && StringUtils.indexOf(column.getJavaType(), ".") != -1 && !importList.contains(column.getJavaType()))
+         if((column.getIsNotBaseField().booleanValue() || "1".equals(column.getIsQuery()) && "between".equals(column.getQueryType()) && ("createDate".equals(column.getSimpleJavaField()) || "updateDate".equals(column.getSimpleJavaField()))) && StringUtils.indexOf(column.getJavaType(), ".") != -1 && !importList.contains(column.getJavaType())) {
              importList.add(column.getJavaType());
+         }
          if(column.getIsNotBaseField().booleanValue())
          {
              for(Iterator iterator1 = column.getAnnotationList().iterator(); iterator1.hasNext();)
              {
                  String ann = (String)iterator1.next();
-                 if(!importList.contains(StringUtils.substringBeforeLast(ann, "(")))
+                 if(!importList.contains(StringUtils.substringBeforeLast(ann, "("))) {
                      importList.add(StringUtils.substringBeforeLast(ann, "("));
+                 }
              }
 
          }
@@ -181,10 +185,12 @@ public List<String> getImportList()
 
      if(getChildList() != null && getChildList().size() > 0)
      {
-         if(!importList.contains("java.util.List"))
+         if(!importList.contains("java.util.List")) {
              importList.add("java.util.List");
-         if(!importList.contains("com.google.common.collect.Lists"))
+         }
+         if(!importList.contains("com.google.common.collect.Lists")) {
              importList.add("com.google.common.collect.Lists");
+         }
      }
      return importList;
 }

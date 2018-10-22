@@ -76,20 +76,24 @@ public class SysConfigTree extends TreeEntity<SysConfigTree> {
 	}
 
 	//@JsonBackReference
-	public SysConfigTree getParent() {
+	@Override
+    public SysConfigTree getParent() {
 		return parent;
 	}
 
-	public void setParent(SysConfigTree parent) {
+	@Override
+    public void setParent(SysConfigTree parent) {
 		this.parent = parent;
 	}
 	
-	@Length(min=0, max=2000, message="所有父级编号长度必须介于 0 和 2000 之间")
+	@Override
+    @Length(min=0, max=2000, message="所有父级编号长度必须介于 0 和 2000 之间")
 	public String getParentIds() {
 		return parentIds;
 	}
 
-	public void setParentIds(String parentIds) {
+	@Override
+    public void setParentIds(String parentIds) {
 		this.parentIds = parentIds;
 	}
 	
@@ -134,7 +138,8 @@ public class SysConfigTree extends TreeEntity<SysConfigTree> {
 		this.endUpdateDate = endUpdateDate;
 	}
 		
-	public String getParentId() {
+	@Override
+    public String getParentId() {
 		return parent != null && parent.getId() != null ? parent.getId() : "0";
 	}
 }

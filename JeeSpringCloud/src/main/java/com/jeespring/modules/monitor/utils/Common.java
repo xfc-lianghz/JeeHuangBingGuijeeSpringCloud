@@ -424,8 +424,9 @@ public class Common {
 	 * @version 1.0
 	 */
 	public static <T extends Object> T flushObject(T t, Map<String, Object> params) {
-		if (params == null || t == null)
+		if (params == null || t == null) {
 			return t;
+		}
 
 		Class<?> clazz = t.getClass();
 		for (; clazz != Object.class; clazz = clazz.getSuperclass()) {
@@ -459,8 +460,9 @@ public class Common {
 	 * @version 1.0
 	 */
 	public static String htmltoString(String content) {
-		if (content == null)
+		if (content == null) {
 			return "";
+		}
 		String html = content;
 		html = html.replace("'", "&apos;");
 		html = html.replaceAll("&", "&amp;");
@@ -484,8 +486,9 @@ public class Common {
 	 * @version 1.0
 	 */
 	public static String stringtohtml(String content) {
-		if (content == null)
+		if (content == null) {
 			return "";
+		}
 		String html = content;
 		html = html.replace("&apos;", "'");
 		html = html.replaceAll("&amp;", "&");
@@ -620,6 +623,7 @@ public class Common {
 		// 如果存在 就获取包下的所有文件 包括目录
 		File[] dirfiles = dir.listFiles(new FileFilter() {
 			// 自定义过滤规则 如果可以循环(包含子目录) 或则是以.class结尾的文件(编译好的java类文件)
+			@Override
 			public boolean accept(File file) {
 				return (recursive && file.isDirectory()) || (file.getName().endsWith(".class"));
 			}

@@ -36,7 +36,7 @@
                     <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files" target="_blank">JeeSpringCloud中级培训文档.docx</a><br><br>
                     <video id="vid1" loop="loop" width="100%" height="100%" onended=""  muted="muted" autobuffer="autobuffer" preload="auto" oncontextmenu="return false" data-hasaudio=""
                            style="background-color: white;opacity: 1;visibility: visible;height: 100%;width: 100%;object-fit:cover;object-position: center center;"
-                           src="../static/common/login/images/flat-avatar1.mp4" controls></video>
+                           src="../staticViews/index/images/flat-avatar1.mp4" controls></video>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                     <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files" target="_blank">JeeSpringCloud部署高级.docx</a><br><br>
                     <video id="vid2" loop="loop" width="100%" height="100%" onended="" muted="muted" autobuffer="autobuffer" preload="auto" oncontextmenu="return false" data-hasaudio=""
                            style="background-color: white;opacity: 1;visibility: visible;height: 100%;width: 100%;object-fit:cover;object-position: center center;"
-                           src="../static/document/JeeSpring部署初级.mp4" controls></video>
+                           src="../staticViews/index/images/flat-avatar1.mp4" controls></video>
                     <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files" target="_blank">JeeSpring部署初级.mp4</a><br><br>
                     <a href="https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files" target="_blank">JeeSpring部署高级.mp4</a><br><br>
                 </div>
@@ -66,7 +66,7 @@
                 <div class="ibox-content">
                     <video id="vid3" loop="loop" width="100%" height="100%" onended=""  muted="muted" autobuffer="autobuffer" preload="auto" oncontextmenu="return false" data-hasaudio=""
                            style="background-color: white;opacity: 1;visibility: visible;height: 100%;width: 100%;object-fit:cover;object-position: center center;"
-                           src="../static/common/login/images/flat-avatar113.mp4" controls></video>
+                           src="../staticViews/index/images/flat-avatar1.mp4" controls></video>
                 </div>
             </div>
         </div>

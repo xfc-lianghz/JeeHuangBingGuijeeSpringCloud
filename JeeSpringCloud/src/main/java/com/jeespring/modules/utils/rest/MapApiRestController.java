@@ -58,8 +58,12 @@ public class MapApiRestController extends AbstractBaseController {
             @ApiImplicitParam(name = "lng", value = "纬度", required = false, dataType = "String",paramType="query"),
     })
     public ModelAndView getMap(@RequestParam(required=false) String lat, @RequestParam(required=false) String lng, HttpServletRequest request, HttpServletResponse response, Model model){
-        if(lat=="" || lat == null) lng="113.24712";
-        if(lng=="" || lng == null) lat="23.098878";
+        if(lat=="" || lat == null) {
+            lng = "113.24712";
+        }
+        if(lng=="" || lng == null) {
+            lat = "23.098878";
+        }
         model.addAttribute("lat", lat);
         model.addAttribute("lng", lng);
         ModelAndView mv = new ModelAndView("modules/utils/map");
@@ -88,19 +92,27 @@ public class MapApiRestController extends AbstractBaseController {
         }catch (Exception e){}
         List<SysUserCenter> sysUserCenterList=sysUserCenterService.findList(sysUserCenter);
         for (SysUserCenter item:sysUserCenterList) {
-			if(item.getUserName()==null) continue;
-            if(item.getUserPhone()==null) item.setUserPhone("");
-			if(item.getUserName().indexOf("\"")>0) item.setUserName(item.getUserName().replaceAll("\"",""));
+			if(item.getUserName()==null) {
+                continue;
+            }
+            if(item.getUserPhone()==null) {
+                item.setUserPhone("");
+            }
+			if(item.getUserName().indexOf("\"")>0) {
+                item.setUserName(item.getUserName().replaceAll("\"", ""));
+            }
             if(item.getLat()==null || item.getAddress()==null) {
                 item.setLat("0");
                 item.setLng("0");
                 item.setAddress("-");
                 item.setCity("-");
             }
-            if(item.getLat().indexOf(".")<=0 || item.getAddress().length()<=6) continue;
+            if(item.getLat().indexOf(".")<=0 || item.getAddress().length()<=6) {
+                continue;
+            }
             if(item.getLat().substring(item.getLat().indexOf(".")).length()<=10 && item.getAddress().length()>6){
                 Result result=mapApiService.getLocation("","",item.getAddress(),item.getCity());
-                if(result.getResultCoe().toString().equals("0")){
+                if("0".equals(result.getResultCoe().toString())){
                     int index=result.getResultObject().toString().indexOf("|");
                     int size=result.getResultObject().toString().length();
                     if(index>0){

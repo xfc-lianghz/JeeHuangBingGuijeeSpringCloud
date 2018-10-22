@@ -63,9 +63,12 @@ public class SysConfigTreeController extends AbstractBaseController {
 	public String list(SysConfigTree sysConfig, HttpServletRequest request, HttpServletResponse response, Model model) {
 		List<SysConfigTree> list = sysConfigTreeService.findList(sysConfig);
 		for(SysConfigTree item:list){
-			if(item.getDescription()==null) item.setDescription("");
-			if(item.getDescription().length()>20)
-				item.setDescription(item.getDescription().substring(0,20));
+			if(item.getDescription()==null) {
+                item.setDescription("");
+            }
+			if(item.getDescription().length()>20) {
+                item.setDescription(item.getDescription().substring(0, 20));
+            }
 		}
 		model.addAttribute("list", list);
 		return "modules/sys/sysConfigTreeList";

@@ -51,6 +51,7 @@ public class OrderProperties extends Properties {
 		return context;
 	}
 
+	@Override
 	public synchronized void load(InputStream inStream) throws IOException {
 
 		BufferedReader in;
@@ -61,21 +62,25 @@ public class OrderProperties extends Properties {
 			String line = in.readLine();
 			// intract property/comment string
 			String intactLine = line;
-			if (line == null)
-				return;
+			if (line == null) {
+                return;
+            }
 
 			if (line.length() > 0) {
 
 				// Find start of key
 				int len = line.length();
 				int keyStart;
-				for (keyStart = 0; keyStart < len; keyStart++)
-					if (whiteSpaceChars.indexOf(line.charAt(keyStart)) == -1)
-						break;
+				for (keyStart = 0; keyStart < len; keyStart++) {
+                    if (whiteSpaceChars.indexOf(line.charAt(keyStart)) == -1) {
+                        break;
+                    }
+                }
 
 				// Blank lines are ignored
-				if (keyStart == len)
-					continue;
+				if (keyStart == len) {
+                    continue;
+                }
 
 				// Continue lines that end in slashes if they are not comments
 				char firstChar = line.charAt(keyStart);
@@ -84,14 +89,17 @@ public class OrderProperties extends Properties {
 					while (continueLine(line)) {
 						String nextLine = in.readLine();
 						intactLine = intactLine + "\n" + nextLine;
-						if (nextLine == null)
-							nextLine = "";
+						if (nextLine == null) {
+                            nextLine = "";
+                        }
 						String loppedLine = line.substring(0, len - 1);
 						// Advance beyond whitespace on new line
 						int startIndex;
-						for (startIndex = 0; startIndex < nextLine.length(); startIndex++)
-							if (whiteSpaceChars.indexOf(nextLine.charAt(startIndex)) == -1)
-								break;
+						for (startIndex = 0; startIndex < nextLine.length(); startIndex++) {
+                            if (whiteSpaceChars.indexOf(nextLine.charAt(startIndex)) == -1) {
+                                break;
+                            }
+                        }
 						nextLine = nextLine.substring(startIndex, nextLine.length());
 						line = loppedLine + nextLine;
 						len = line.length();
@@ -101,27 +109,33 @@ public class OrderProperties extends Properties {
 					int separatorIndex;
 					for (separatorIndex = keyStart; separatorIndex < len; separatorIndex++) {
 						char currentChar = line.charAt(separatorIndex);
-						if (currentChar == '\\')
-							separatorIndex++;
-						else if (keyValueSeparators.indexOf(currentChar) != -1)
-							break;
+						if (currentChar == '\\') {
+                            separatorIndex++;
+                        } else if (keyValueSeparators.indexOf(currentChar) != -1) {
+                            break;
+                        }
 					}
 
 					// Skip over whitespace after key if any
 					int valueIndex;
-					for (valueIndex = separatorIndex; valueIndex < len; valueIndex++)
-						if (whiteSpaceChars.indexOf(line.charAt(valueIndex)) == -1)
-							break;
+					for (valueIndex = separatorIndex; valueIndex < len; valueIndex++) {
+                        if (whiteSpaceChars.indexOf(line.charAt(valueIndex)) == -1) {
+                            break;
+                        }
+                    }
 
 					// Skip over one non whitespace key value separators if any
-					if (valueIndex < len)
-						if (strictKeyValueSeparators.indexOf(line.charAt(valueIndex)) != -1)
-							valueIndex++;
+					if (valueIndex < len) {
+                        if (strictKeyValueSeparators.indexOf(line.charAt(valueIndex)) != -1) {
+                            valueIndex++;
+                        }
+                    }
 
 					// Skip over white space after other separators if any
 					while (valueIndex < len) {
-						if (whiteSpaceChars.indexOf(line.charAt(valueIndex)) == -1)
-							break;
+						if (whiteSpaceChars.indexOf(line.charAt(valueIndex)) == -1) {
+                            break;
+                        }
 						valueIndex++;
 					}
 					String key = line.substring(keyStart, separatorIndex);
@@ -196,12 +210,11 @@ public class OrderProperties extends Properties {
 					}
 					outBuffer.append((char) value);
 				} else {
-					if (aChar == 't')
-						outBuffer.append('\t'); /* ibm@7211 */
-
-					else if (aChar == 'r')
-						outBuffer.append('\r'); /* ibm@7211 */
-					else if (aChar == 'n') {
+					if (aChar == 't') {
+                        outBuffer.append('\t'); /* ibm@7211 */
+                    } else if (aChar == 'r') {
+                        outBuffer.append('\r'); /* ibm@7211 */
+                    } else if (aChar == 'n') {
 						/*
 						 * ibm@8897 do not convert a \n to a line.separator
 						 * because on some platforms line.separator is a String
@@ -212,23 +225,27 @@ public class OrderProperties extends Properties {
 						 *
 						 */
 						outBuffer.append('\n'); /* ibm@8897 ibm@7211 */
-					} else if (aChar == 'f')
-						outBuffer.append('\f'); /* ibm@7211 */
-					else
-						/* ibm@7211 */
-						outBuffer.append(aChar); /* ibm@7211 */
+					} else if (aChar == 'f') {
+                        outBuffer.append('\f'); /* ibm@7211 */
+                    } else
+						/* ibm@7211 */ {
+                        outBuffer.append(aChar); /* ibm@7211 */
+                    }
 				}
-			} else
-				outBuffer.append(aChar);
+			} else {
+                outBuffer.append(aChar);
+            }
 		}
 		return outBuffer.toString();
 	}
 
+	@Override
 	public synchronized void store(OutputStream out, String header) throws IOException {
 		BufferedWriter awriter;
 		awriter = new BufferedWriter(new OutputStreamWriter(out, "8859_1"));
-		if (header != null)
-			writeln(awriter, "#" + header);
+		if (header != null) {
+            writeln(awriter, "#" + header);
+        }
 		@SuppressWarnings("rawtypes")
 		List entrys = context.getCommentOrEntrys();
 		for (Object obj : entrys) {
@@ -242,8 +259,9 @@ public class OrderProperties extends Properties {
 	private boolean continueLine(String line) {
 		int slashCount = 0;
 		int index = line.length() - 1;
-		while ((index >= 0) && (line.charAt(index--) == '\\'))
-			slashCount++;
+		while ((index >= 0) && (line.charAt(index--) == '\\')) {
+            slashCount++;
+        }
 		return (slashCount % 2 == 1);
 	}
 
@@ -259,8 +277,9 @@ public class OrderProperties extends Properties {
 			char aChar = theString.charAt(x);
 			switch (aChar) {
 				case ' ':
-					if (x == 0 || escapeSpace)
-						outBuffer.append('\\');
+					if (x == 0 || escapeSpace) {
+                        outBuffer.append('\\');
+                    }
 
 					outBuffer.append(' ');
 					break;
@@ -293,8 +312,9 @@ public class OrderProperties extends Properties {
 						outBuffer.append(toHex((aChar >> 4) & 0xF));
 						outBuffer.append(toHex(aChar & 0xF));
 					} else {
-						if (specialSaveChars.indexOf(aChar) != -1)
-							outBuffer.append('\\');
+						if (specialSaveChars.indexOf(aChar) != -1) {
+                            outBuffer.append('\\');
+                        }
 						outBuffer.append(aChar);
 					}
 			}
@@ -302,6 +322,7 @@ public class OrderProperties extends Properties {
 		return outBuffer.toString();
 	}
 
+	@Override
 	public synchronized Object put(Object key, Object value) {
 		context.putOrUpdate(key.toString(), value.toString());
 		return super.put(key, value);
@@ -312,6 +333,7 @@ public class OrderProperties extends Properties {
 		return super.put(key, value);
 	}
 
+	@Override
 	public synchronized Object remove(Object key) {
 		context.remove(key.toString());
 		return super.remove(key);
@@ -419,6 +441,7 @@ public class OrderProperties extends Properties {
 				this.value = value;
 			}
 
+			@Override
 			public String toString() {
 				if (line != null) {
 					return line;

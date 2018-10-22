@@ -181,7 +181,7 @@ public class UserController extends AbstractBaseController {
 	@RequiresPermissions("sys:user:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			User user = systemService.getUser(id);
 			if(sysConfigService.isDemoMode()){
@@ -341,16 +341,21 @@ public class UserController extends AbstractBaseController {
 				model.addAttribute("message", sysConfigService.isDemoModeDescription());
 				return "modules/sys/userInfo";
 			}
-			if(user.getName() !=null )
-				currentUser.setName(user.getName());
-			if(user.getEmail() !=null )
-				currentUser.setEmail(user.getEmail());
-			if(user.getPhone() !=null )
-				currentUser.setPhone(user.getPhone());
-			if(user.getMobile() !=null )
-				currentUser.setMobile(user.getMobile());
-			if(user.getRemarks() !=null )
-				currentUser.setRemarks(user.getRemarks());
+			if(user.getName() !=null ) {
+                currentUser.setName(user.getName());
+            }
+			if(user.getEmail() !=null ) {
+                currentUser.setEmail(user.getEmail());
+            }
+			if(user.getPhone() !=null ) {
+                currentUser.setPhone(user.getPhone());
+            }
+			if(user.getMobile() !=null ) {
+                currentUser.setMobile(user.getMobile());
+            }
+			if(user.getRemarks() !=null ) {
+                currentUser.setRemarks(user.getRemarks());
+            }
 //			if(user.getPhoto() !=null )
 //				currentUser.setPhoto(user.getPhoto());
 			systemService.updateUserInfo(currentUser);
@@ -386,8 +391,9 @@ public class UserController extends AbstractBaseController {
 				model.addAttribute("message", sysConfigService.isDemoModeDescription());
 				return "modules/sys/userInfo";
 			}
-			if(user.getPhoto() !=null )
-				currentUser.setPhoto(user.getPhoto());
+			if(user.getPhoto() !=null ) {
+                currentUser.setPhoto(user.getPhoto());
+            }
 			systemService.updateUserInfo(currentUser);
 			if(__ajax){//手机访问
 				AjaxJson j = new AjaxJson();
@@ -558,7 +564,7 @@ public class UserController extends AbstractBaseController {
 			//SystemConfig config = systemConfigService.get("1");//获取短信配置的用户名和密码
 			//UserUtils.sendPass(config.getSmsName(), config.getSmsPassword(), mobile, newPassword);
 			String result = SMSUtils.sendPass(mobile, newPassword);
-			if (!result.equals("100")) {
+			if (!"100".equals(result)) {
 				j.setSuccess(false);
 				j.setErrorCode("2");
 				j.setMsg("短信发送失败，密码重置失败，错误代码："+result+"，请联系管理员。");

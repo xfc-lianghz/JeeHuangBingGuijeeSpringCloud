@@ -125,7 +125,7 @@ public class PieClassController extends AbstractBaseController {
 	@RequiresPermissions("echarts:pieClass:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			pieClassService.delete(pieClassService.get(id));
 		}

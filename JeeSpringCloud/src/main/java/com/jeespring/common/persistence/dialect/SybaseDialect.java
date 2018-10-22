@@ -15,6 +15,7 @@ import com.jeespring.common.persistence.dialect.Dialect;
  */
 public class SybaseDialect implements Dialect {
 
+    @Override
     public boolean supportsLimit() {
         return false;
     }

@@ -159,8 +159,9 @@ public class SysJobController extends AbstractBaseController {
 	public String form(SysJob sysJob, Model model, HttpServletRequest request, HttpServletResponse response) {
 		model.addAttribute("action", request.getParameter("action"));
 		model.addAttribute("sysJob", sysJob);
-		if(request.getParameter("ViewFormType")!=null && request.getParameter("ViewFormType").equals("FormTwo"))
-			return "modules/job/sysJobFormTwo";
+		if(request.getParameter("ViewFormType")!=null && "FormTwo".equals(request.getParameter("ViewFormType"))) {
+            return "modules/job/sysJobFormTwo";
+        }
 		return "modules/job/sysJobForm";
 	}
 
@@ -247,7 +248,7 @@ public class SysJobController extends AbstractBaseController {
 			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
 			return "redirect:" + adminPath + "/job/sysJob/?repage";
 		}
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysJobService.delete(sysJobService.get(id));
 		}
@@ -265,7 +266,7 @@ public class SysJobController extends AbstractBaseController {
 			addMessage(redirectAttributes, sysConfigService.isDemoModeDescription());
 			return "redirect:" + adminPath + "/job/sysJob/?repage";
 		}
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysJobService.deleteByLogic(sysJobService.get(id));
 		}

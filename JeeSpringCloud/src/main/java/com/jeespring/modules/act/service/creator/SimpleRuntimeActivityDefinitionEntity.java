@@ -20,19 +20,23 @@ public class SimpleRuntimeActivityDefinitionEntity implements RuntimeActivityDef
 		_properties = properties;
 	}
 
-	public void setFactoryName(String factoryName) {
+	@Override
+    public void setFactoryName(String factoryName) {
 		_factoryName = factoryName;
 	}
 
-	public void setProcessDefinitionId(String processDefinitionId) {
+	@Override
+    public void setProcessDefinitionId(String processDefinitionId) {
 		_processDefinitionId = processDefinitionId;
 	}
 
-	public void setProcessInstanceId(String processInstanceId) {
+	@Override
+    public void setProcessInstanceId(String processInstanceId) {
 		_processInstanceId = processInstanceId;
 	}
 
-	public void setPropertiesText(String propertiesText) {
+	@Override
+    public void setPropertiesText(String propertiesText) {
 		_propertiesText = propertiesText;
 	}
 

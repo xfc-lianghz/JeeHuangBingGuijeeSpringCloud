@@ -257,7 +257,7 @@ public class SysServerRestController extends AbstractBaseController {
 	}
 
 	private Result deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysServerService.delete(sysServerService.get(id));
 		}
@@ -286,7 +286,7 @@ public class SysServerRestController extends AbstractBaseController {
 	}
 
 	private Result deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysServerService.deleteByLogic(sysServerService.get(id));
 		}

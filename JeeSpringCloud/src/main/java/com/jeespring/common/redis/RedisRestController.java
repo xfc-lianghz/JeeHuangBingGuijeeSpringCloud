@@ -87,10 +87,11 @@ public class RedisRestController {
     @RequestMapping(value ="/exists",method ={RequestMethod.POST,RequestMethod.GET})
     @ApiOperation(value="Redis exists接口(Content-Type为text/html)", notes="Redis exists接口(Content-Type为text/html)")
     public Result exists(@RequestParam(required=false) String key) {
-        if(redisUtils.exists(key))
+        if(redisUtils.exists(key)) {
             return ResultFactory.getSuccessResult("存在！");
-        else
+        } else {
             return ResultFactory.getErrorResult("不存在！");
+        }
     }
 
     /**
@@ -105,8 +106,9 @@ public class RedisRestController {
         if(redisUtils.exists(key)){
             Result result = ResultFactory.getSuccessResult();
             Object obj=redisUtils.get(key);
-            if(obj!=null)
+            if(obj!=null) {
                 result.setResultObject(obj.toString());
+            }
             return result;
         }else{
             return ResultFactory.getErrorResult("不存在！");

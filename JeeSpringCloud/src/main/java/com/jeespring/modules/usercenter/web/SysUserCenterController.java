@@ -126,7 +126,7 @@ public class SysUserCenterController extends AbstractBaseController {
 	//RequiresPermissions("usercenter:sysUserCenter:del")
 	@RequestMapping(value = "deleteAll")
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserCenterService.delete(sysUserCenterService.get(id));
 		}
@@ -140,7 +140,7 @@ public class SysUserCenterController extends AbstractBaseController {
 	//RequiresPermissions("usercenter:sysUserCenter:delByLogic")
 	@RequestMapping(value = "deleteAllByLogic")
 	public String deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
-		String idArray[] =ids.split(",");
+        String[] idArray = ids.split(",");
 		for(String id : idArray){
 			sysUserCenterService.deleteByLogic(sysUserCenterService.get(id));
 		}
