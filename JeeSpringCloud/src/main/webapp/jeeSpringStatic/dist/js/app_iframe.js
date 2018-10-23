@@ -2492,12 +2492,15 @@ $(function () {
     })
 
     $(document).on('click','.sidebar-menu a', function () {
-       var href=$(this).attr("href");
-       var title=$(this).attr("title");
-        var target=$(this).attr("target");
-       if(!href) return false;
-        if(href.indexOf("javascript")>=0) return false;
-        if(title.indexOf("演示版不开放")>0) return false;
+        var href = $(this).attr("href");
+        var title = $(this).attr("title");
+        var target = $(this).attr("target");
+        if (!href) return false;
+        if (href.indexOf("javascript") >= 0) return false;
+        if ($("title").html().indexOf("演示版") >= 0 && href.indexOf("swagger-ui.html") >= 0) {
+            $(this).find("span").html("接口文档(演示版不开放)");
+            return false;
+        }
         if(target=="_blank") {
             window.open(href);
             return false;
