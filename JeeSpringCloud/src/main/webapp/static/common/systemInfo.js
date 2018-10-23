@@ -479,7 +479,7 @@ $(function() {
 		$.ajax({
 			type : "POST",
 			url : locat + '/monitor/usage',
-			async : false,
+			/*async : false,*/
 			dataType : 'json',
 			success : function(json) {
 				$("#td_jvmUsage").html(json.jvmUsage);
@@ -535,7 +535,7 @@ $(function() {
 				main_three.setOption(one_option, true);
 			}
 		});
-	}, 3000);
+	}, 10000);
     var timeTicketMin = setInterval(function() {
         now=new Date();
         axisData =  now.getHours()+":"+now.getMinutes();
@@ -545,7 +545,7 @@ $(function() {
         $.ajax({
             type : "POST",
             url : locat + '/monitor/usage',
-            async : false,
+            /*async : false,*/
             dataType : 'json',
             success : function(json) {
                 jvm.push(json.jvmUsage);
@@ -578,7 +578,7 @@ $(function() {
         $.ajax({
             type : "POST",
             url : locat + '/monitor/usage',
-            async : false,
+            /*async : false,*/
             dataType : 'json',
             success : function(json) {
                 jvm.push(json.jvmUsage);
