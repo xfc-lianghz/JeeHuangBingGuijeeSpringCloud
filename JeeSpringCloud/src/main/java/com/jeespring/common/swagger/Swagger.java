@@ -1,6 +1,8 @@
 package com.jeespring.common.swagger;
 
 import com.google.common.base.Predicates;
+import com.jeespring.common.web.AbstractBaseController;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -24,11 +26,11 @@ public class Swagger {
         return new Docket(DocumentationType.SWAGGER_2)
         .apiInfo(apiInfo())
         .select()
-        .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))                         //这里采用包含注解的方式来确定要显示的接口
-        //.apis(RequestHandlerSelectors.basePackage("com.jeespring.modules.*"))    //这里采用包扫描的方式来确定要显示的接口
+        //.apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))                         //这里采用包含注解的方式来确定要显示的接口
+        //.apis(RequestHandlerSelectors.basePackage("com.jeespring.modules"))    //这里采用包扫描的方式来确定要显示的接口
+        .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
         .paths(PathSelectors.any())
         .build();
-
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
