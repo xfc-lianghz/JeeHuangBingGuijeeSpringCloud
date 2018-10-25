@@ -19,7 +19,6 @@
 			<template>curd/viewListJS.xml</template>
 			<template>curd/viewListVue.xml</template>
 			<template>curd/viewSelect.xml</template>
-			<template>curd/viewTotal.xml</template>
 			<template>curd/viewTotalCSS.xml</template>
 			<template>curd/viewTotalJS.xml</template>
 			<template>curd/viewTotalMap.xml</template>
