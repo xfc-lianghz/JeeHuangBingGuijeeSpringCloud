@@ -39,8 +39,8 @@
 <script src="/jeeSpringStatic/plugs/metisMenu/jquery.metisMenu.js"></script>
 <!-- 引入dataTables插件 -->
 <link href="/jeeSpringStatic/plugs/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
-<script src="/jeeSpringStatic/plugs/dataTables/jquery.dataTables.js"></script>
+<script src="/jeeSpringStatic/plugs/dataTables/jquery.dataTables.min.js"></script>
 <script src="/jeeSpringStatic/plugs/dataTables/dataTables.bootstrap.js"></script>
 <!-- jquery ui -->
 <script src="/jeeSpringStatic/plugs/jquery-ui/jquery-ui.min.js"></script>
-
+<script type="text/javascript">var ctx = '${ctx}', ctxStatic='${ctxStatic}';</script>
