@@ -31,10 +31,8 @@ RedisMQ队列、代码生成(单表、主附表、树表、列表和表单、增
 
 二、平台功能
 -----------------------------------
-我的			   
---我的信息	   
---我的通告	   	   
---文件		     
+我的    --我的信息    --我的通告    -文件		 
+    
 会员		   
 --用户中心   
 --用户地图   
@@ -95,6 +93,7 @@ RedisMQ队列、代码生成(单表、主附表、树表、列表和表单、增
 三、系统截图
 -----------------------------------
 ### JeeSpringCloudV3.0-互联网云快速开发框架（后台）
+<img alt="微服务" class="md_relative_url" src="./document/All.gif">
 <img alt="微服务" class="md_relative_url" src="./document/001.png">
 <img alt="微服务" class="md_relative_url" src="./document/RepositoryService.jpg">
 <img alt="微服务" class="md_relative_url" src="./document/login6.png">
