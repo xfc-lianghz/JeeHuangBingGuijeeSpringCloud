@@ -9,7 +9,7 @@ JeeSpringCloudV3.0-互联网云快速开发框架
 -----------------------------------
 帮忙标星、点赞，集1000个星,谢谢帮帮忙。<br>
 演示版地址：http://yocity.imwork.net:10858/admin/login<br>
-"2018年度最受欢迎中国开源软件评选":帮忙点收藏，要集150个收藏，还差***18***个,谢谢帮帮忙。<br>
+"2018年度最受欢迎中国开源软件评选":帮忙点收藏，要集150个收藏，还差***12***个,谢谢帮帮忙。<br>
 中国开源jeeSpringCloud：https://www.oschina.net/p/jeeSpringCloud<br>
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
 开源中国地址：https://www.oschina.net/p/jeeSpringCloud<br>
