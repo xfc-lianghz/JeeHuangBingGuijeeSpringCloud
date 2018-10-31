@@ -97,6 +97,7 @@
 .skin-blue .sidebar-menu .treeview-menu > li.active > a,
 .skin-blue .sidebar-menu .treeview-menu > li > a:hover {
   color: #ffffff;
+  background-color: transparent;
 }
 .skin-blue .sidebar-form {
   border-radius: 3px;
@@ -422,6 +423,7 @@
 .skin-black .sidebar-menu .treeview-menu > li.active > a,
 .skin-black .sidebar-menu .treeview-menu > li > a:hover {
   color: #ffffff;
+  background-color: transparent;
 }
 .skin-black .sidebar-form {
   border-radius: 3px;
@@ -734,6 +736,7 @@
 .skin-green .sidebar-menu .treeview-menu > li.active > a,
 .skin-green .sidebar-menu .treeview-menu > li > a:hover {
   color: #ffffff;
+  background-color: transparent;
 }
 .skin-green .sidebar-form {
   border-radius: 3px;
@@ -1020,6 +1023,7 @@
 .skin-red .sidebar-menu .treeview-menu > li.active > a,
 .skin-red .sidebar-menu .treeview-menu > li > a:hover {
   color: #ffffff;
+  background-color: transparent;
 }
 .skin-red .sidebar-form {
   border-radius: 3px;
@@ -1306,6 +1310,7 @@
 .skin-yellow .sidebar-menu .treeview-menu > li.active > a,
 .skin-yellow .sidebar-menu .treeview-menu > li > a:hover {
   color: #ffffff;
+  background-color: transparent;
 }
 .skin-yellow .sidebar-form {
   border-radius: 3px;
@@ -1592,6 +1597,7 @@
 .skin-purple .sidebar-menu .treeview-menu > li.active > a,
 .skin-purple .sidebar-menu .treeview-menu > li > a:hover {
   color: #ffffff;
+  background-color: transparent;
 }
 .skin-purple .sidebar-form {
   border-radius: 3px;
