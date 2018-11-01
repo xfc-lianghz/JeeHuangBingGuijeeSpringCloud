@@ -50,7 +50,7 @@ import org.springframework.web.bind.annotation.*;
 public class TfTicketRestController extends AbstractBaseController {
 
 	@Autowired
-	private ITfTicketService tfTicketService;
+	private ITfTicketService tfTicketServiceImpl;
 
 	/**
 	 * 订单信息
