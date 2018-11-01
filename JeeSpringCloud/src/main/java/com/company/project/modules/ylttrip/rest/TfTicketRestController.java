@@ -49,8 +49,10 @@ import org.springframework.web.bind.annotation.*;
 @Api(value="订单接口", description="订单接口")
 public class TfTicketRestController extends AbstractBaseController {
 
+	//调用dubbo服务器是，要去Reference注解,注解Autowired
+	//@Reference(version = "1.0.0")
 	@Autowired
-	private ITfTicketService tfTicketService;
+	private ITfTicketService tfTicketServiceImpl;
 
 	/**
 	 * 订单信息
@@ -72,7 +74,7 @@ public class TfTicketRestController extends AbstractBaseController {
 	private Result get(String id) {
 		TfTicket entity = null;
 		if (StringUtils.isNotBlank(id)){
-			entity = tfTicketService.getCache(id);
+			entity = tfTicketServiceImpl.getCache(id);
 			//entity = tfTicketService.get(id);
 		}
 		if (entity == null){
@@ -102,7 +104,7 @@ public class TfTicketRestController extends AbstractBaseController {
 	}
 
 	private Result findList(TfTicket tfTicket, Model model) {
-		List<TfTicket> list = tfTicketService.findListCache(tfTicket);
+		List<TfTicket> list = tfTicketServiceImpl.findListCache(tfTicket);
 		//List<TfTicket> list = tfTicketService.findList(tfTicket);
 		Result result = ResultFactory.getSuccessResult();
 		result.setResultObject(list);
@@ -128,7 +130,7 @@ public class TfTicketRestController extends AbstractBaseController {
 	}
 
 	private Result list(TfTicket tfTicket, Model model) {
-		Page<TfTicket> page = tfTicketService.findPageCache(new Page<TfTicket>(tfTicket.getPageNo(),tfTicket.getPageSize(),tfTicket.getOrderBy()), tfTicket);
+		Page<TfTicket> page = tfTicketServiceImpl.findPageCache(new Page<TfTicket>(tfTicket.getPageNo(),tfTicket.getPageSize(),tfTicket.getOrderBy()), tfTicket);
 		//Page<TfTicket> page = tfTicketService.findPage(new Page<TfTicket>(tfTicket.getPageNo(),tfTicket.getPageSize(),tfTicket.getOrderBy()), tfTicket);
 		Result result = ResultFactory.getSuccessResult();
 		result.setResultObject(page);
@@ -154,7 +156,7 @@ public class TfTicketRestController extends AbstractBaseController {
 	}
 
 	private Result listFrist(TfTicket tfTicket, Model model) {
-		Page<TfTicket> page = tfTicketService.findPageCache(new Page<TfTicket>(tfTicket.getPageNo(),tfTicket.getPageSize(),tfTicket.getOrderBy()), tfTicket);
+		Page<TfTicket> page = tfTicketServiceImpl.findPageCache(new Page<TfTicket>(tfTicket.getPageNo(),tfTicket.getPageSize(),tfTicket.getOrderBy()), tfTicket);
 		//Page<TfTicket> page = tfTicketService.findPage(new Page<TfTicket>(tfTicket.getPageNo(),tfTicket.getPageSize(),tfTicket.getOrderBy()), tfTicket);
 		Result result = ResultFactory.getSuccessResult();
 		if(page.getList().size()>0){
@@ -187,7 +189,7 @@ public class TfTicketRestController extends AbstractBaseController {
 		if (!beanValidator(model, tfTicket)){
 			Result result = ResultFactory.getErrorResult("数据验证失败");
 		}
-		tfTicketService.save(tfTicket);
+		tfTicketServiceImpl.save(tfTicket);
 		Result result = ResultFactory.getSuccessResult("保存订单成功");
 		return result;
 	}
@@ -211,7 +213,7 @@ public class TfTicketRestController extends AbstractBaseController {
 	}
 
 	private Result delete(TfTicket tfTicket, RedirectAttributes redirectAttributes) {
-		tfTicketService.delete(tfTicket);
+		tfTicketServiceImpl.delete(tfTicket);
 		Result result = ResultFactory.getSuccessResult("删除订单成功");
 		return result;
 	}
@@ -237,7 +239,7 @@ public class TfTicketRestController extends AbstractBaseController {
 	}
 
 	private Result deleteByLogic(TfTicket tfTicket, RedirectAttributes redirectAttributes) {
-		tfTicketService.deleteByLogic(tfTicket);
+		tfTicketServiceImpl.deleteByLogic(tfTicket);
 		Result result = ResultFactory.getSuccessResult("删除订单成功");
 		return result;
 	}
@@ -263,7 +265,7 @@ public class TfTicketRestController extends AbstractBaseController {
 	private Result deleteAll(String ids, RedirectAttributes redirectAttributes) {
 		String idArray[] =ids.split(",");
 		for(String id : idArray){
-			tfTicketService.delete(tfTicketService.get(id));
+			tfTicketServiceImpl.delete(tfTicketServiceImpl.get(id));
 		}
         Result result = ResultFactory.getSuccessResult("删除订单成功");
 		return result;
@@ -292,7 +294,7 @@ public class TfTicketRestController extends AbstractBaseController {
 	private Result deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
 		String idArray[] =ids.split(",");
 		for(String id : idArray){
-			tfTicketService.deleteByLogic(tfTicketService.get(id));
+			tfTicketServiceImpl.deleteByLogic(tfTicketServiceImpl.get(id));
 		}
         Result result = ResultFactory.getSuccessResult("删除订单成功");
 		return result;

@@ -46,13 +46,13 @@ public class TfTicketController extends AbstractBaseController {
 	//调用dubbo服务器是，要去Reference注解,注解Autowired
 	//@Reference(version = "1.0.0")
 	@Autowired
-	private ITfTicketService tfTicketService;
+	private ITfTicketService tfTicketServiceImpl;
 
 	@ModelAttribute
 	public TfTicket get(@RequestParam(required=false) String id) {
 		TfTicket entity = null;
 		if (StringUtils.isNotBlank(id)){
-			entity = tfTicketService.getCache(id);
+			entity = tfTicketServiceImpl.getCache(id);
 			//entity = tfTicketService.get(id);
 		}
 		if (entity == null){
@@ -86,7 +86,7 @@ public class TfTicketController extends AbstractBaseController {
 		if(tfTicket.getOrderBy()==""){
 			tfTicket.setOrderBy("totalDate");
 		}
-		List<TfTicket> list = tfTicketService.totalCache(tfTicket);
+		List<TfTicket> list = tfTicketServiceImpl.totalCache(tfTicket);
 		//List<TfTicket> list = tfTicketService.total(tfTicket);
 		model.addAttribute("list", list);
 		for(TfTicket tfTicketItem:list){
@@ -142,7 +142,7 @@ public class TfTicketController extends AbstractBaseController {
 		if(StringUtils.isEmpty(tfTicket.getTotalType())){
 			tfTicket.setTotalType("%Y-%m-%d");
 		}
-		List<TfTicket> list = tfTicketService.totalCache(tfTicket);
+		List<TfTicket> list = tfTicketServiceImpl.totalCache(tfTicket);
 		//List<TfTicket> list = tfTicketService.total(tfTicket);
 		model.addAttribute("sumTotalCount", list.stream().mapToInt(TfTicket::getTotalCount).sum());
 		model.addAttribute("sumGoodsNum", list.stream().mapToDouble(TfTicket::getSumGoodsNum).sum());
@@ -158,7 +158,7 @@ public class TfTicketController extends AbstractBaseController {
 	@RequiresPermissions("ylttrip:tfTicket:list")
 	@RequestMapping(value = {"list", ""})
 	public String list(TfTicket tfTicket, HttpServletRequest request, HttpServletResponse response, Model model) {
-		Page<TfTicket> page = tfTicketService.findPageCache(new Page<TfTicket>(request, response), tfTicket);
+		Page<TfTicket> page = tfTicketServiceImpl.findPageCache(new Page<TfTicket>(request, response), tfTicket);
 		//Page<TfTicket> page = tfTicketService.findPage(new Page<TfTicket>(request, response), tfTicket);
 		model.addAttribute("page", page);
 		tfTicket.setOrderBy("totalDate");
@@ -172,7 +172,7 @@ public class TfTicketController extends AbstractBaseController {
 	@RequiresPermissions("ylttrip:tfTicket:list")
 	@RequestMapping(value = {"listVue"})
 	public String listVue(TfTicket tfTicket, HttpServletRequest request, HttpServletResponse response, Model model) {
-		Page<TfTicket> page = tfTicketService.findPageCache(new Page<TfTicket>(request, response), tfTicket);
+		Page<TfTicket> page = tfTicketServiceImpl.findPageCache(new Page<TfTicket>(request, response), tfTicket);
 		//Page<TfTicket> page = tfTicketService.findPage(new Page<TfTicket>(request, response), tfTicket);
 		model.addAttribute("page", page);
 		return "modules/ylttrip/tfTicketListVue";
@@ -184,7 +184,7 @@ public class TfTicketController extends AbstractBaseController {
 	//RequiresPermissions("ylttrip:tfTicket:select")
 	@RequestMapping(value = {"select"})
 	public String select(TfTicket tfTicket, HttpServletRequest request, HttpServletResponse response, Model model) {
-		Page<TfTicket> page = tfTicketService.findPageCache(new Page<TfTicket>(request, response), tfTicket);
+		Page<TfTicket> page = tfTicketServiceImpl.findPageCache(new Page<TfTicket>(request, response), tfTicket);
 		//Page<TfTicket> page = tfTicketService.findPage(new Page<TfTicket>(request, response), tfTicket);
 		model.addAttribute("page", page);
 		return "modules/ylttrip/tfTicketSelect";
@@ -213,7 +213,7 @@ public class TfTicketController extends AbstractBaseController {
 		if (!beanValidator(model, tfTicket)){
 			return form(tfTicket, model,request,response);
 		}
-		tfTicketService.save(tfTicket);
+		tfTicketServiceImpl.save(tfTicket);
 		addMessage(redirectAttributes, "保存订单成功");
 		return "redirect:"+Global.getAdminPath()+"/ylttrip/tfTicket/?repage";
 	}
@@ -224,7 +224,7 @@ public class TfTicketController extends AbstractBaseController {
 	@RequiresPermissions("ylttrip:tfTicket:del")
 	@RequestMapping(value = "delete")
 	public String delete(TfTicket tfTicket, RedirectAttributes redirectAttributes) {
-		tfTicketService.delete(tfTicket);
+		tfTicketServiceImpl.delete(tfTicket);
 		addMessage(redirectAttributes, "删除订单成功");
 		return "redirect:"+Global.getAdminPath()+"/ylttrip/tfTicket/?repage";
 	}
@@ -235,7 +235,7 @@ public class TfTicketController extends AbstractBaseController {
 	@RequiresPermissions(value={"ylttrip:tfTicket:del","ylttrip:tfTicket:delByLogic"},logical=Logical.OR)
 	@RequestMapping(value = "deleteByLogic")
 	public String deleteByLogic(TfTicket tfTicket, RedirectAttributes redirectAttributes) {
-		tfTicketService.deleteByLogic(tfTicket);
+		tfTicketServiceImpl.deleteByLogic(tfTicket);
 		addMessage(redirectAttributes, "逻辑删除订单成功");
 		return "redirect:"+Global.getAdminPath()+"/ylttrip/tfTicket/?repage";
 	}
@@ -248,7 +248,7 @@ public class TfTicketController extends AbstractBaseController {
 	public String deleteAll(String ids, RedirectAttributes redirectAttributes) {
 		String[] idArray = ids.split(",");
 		for(String id : idArray){
-			tfTicketService.delete(tfTicketService.get(id));
+			tfTicketServiceImpl.delete(tfTicketServiceImpl.get(id));
 		}
 		addMessage(redirectAttributes, "删除订单成功");
 		return "redirect:"+Global.getAdminPath()+"/ylttrip/tfTicket/?repage";
@@ -262,7 +262,7 @@ public class TfTicketController extends AbstractBaseController {
 	public String deleteAllByLogic(String ids, RedirectAttributes redirectAttributes) {
 		String[] idArray = ids.split(",");
 		for(String id : idArray){
-			tfTicketService.deleteByLogic(tfTicketService.get(id));
+			tfTicketServiceImpl.deleteByLogic(tfTicketServiceImpl.get(id));
 		}
 		addMessage(redirectAttributes, "删除订单成功");
 		return "redirect:"+Global.getAdminPath()+"/ylttrip/tfTicket/?repage";
@@ -276,7 +276,7 @@ public class TfTicketController extends AbstractBaseController {
     public String exportFile(TfTicket tfTicket, HttpServletRequest request, HttpServletResponse response, RedirectAttributes redirectAttributes) {
 		try {
             String fileName = "订单"+DateUtils.getDate("yyyyMMddHHmmss")+".xlsx";
-            Page<TfTicket> page = tfTicketService.findPage(new Page<TfTicket>(request, response, -1), tfTicket);
+            Page<TfTicket> page = tfTicketServiceImpl.findPage(new Page<TfTicket>(request, response, -1), tfTicket);
     		new ExportExcel("订单", TfTicket.class).setDataList(page.getList()).write(response, fileName).dispose();
     		return null;
 		} catch (Exception e) {
@@ -297,7 +297,7 @@ public class TfTicketController extends AbstractBaseController {
 			ImportExcel ei = new ImportExcel(file, 1, 0);
 			List<TfTicket> list = ei.getDataList(TfTicket.class);
 			for (TfTicket tfTicket : list){
-				tfTicketService.save(tfTicket);
+				tfTicketServiceImpl.save(tfTicket);
 			}
 			addMessage(redirectAttributes, "已成功导入 "+successNum+" 条订单记录");
 		} catch (Exception e) {
