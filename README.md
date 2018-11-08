@@ -16,6 +16,7 @@ JeeSpringCloudV3.0-互联网云快速开发框架
 一、平台简介
 -----------------------------------
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
+视频和文档下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
 开源中国地址：https://www.oschina.net/p/jeeSpringCloud<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
  JeeSpring官方QQ群：<br><a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=b07802df867a4047251ac62b35698ed2d94b31f95599609eff4eabcbe361c402"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="open-capacity-platform交流" title="open-capacity-platform交流">一群：328910546已满（群内领资料）</a><br>
