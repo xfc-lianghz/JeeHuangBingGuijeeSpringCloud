@@ -28,6 +28,7 @@ $("#btnExport").click(function(){
 });
 //导入excel
 $("#btnImport").click(function(){
+	if($(this).data("events")["click"]){return;}
     var url=$(this).attr("url");
     top.layer.open({
         type: 1,
