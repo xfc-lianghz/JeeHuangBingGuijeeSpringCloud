@@ -12,11 +12,13 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#btnImport").click(function(){
+	    var importBoxHtml=$("#importBox").html();
+        $("#importBox").remove();
 		top.layer.open({
 		    type: 1,
 		    area: [500, 300],
 		    title:"导入数据",
-		    content:$("#importBox").html() ,
+		    content:importBoxHtml ,
 		    btn: ['下载模板','确定', '关闭'],
 			    btn1: function(index, layero){
 				  window.location.href='${url}/template';
