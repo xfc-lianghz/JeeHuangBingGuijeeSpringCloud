@@ -12,20 +12,19 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#btnImport").click(function(){
-	    var importBoxHtml=$("#importBox").html();
-        $("#importBox").remove();
-		top.layer.open({
+		layer.open({
 		    type: 1,
 		    area: [500, 300],
 		    title:"导入数据",
-		    content:importBoxHtml ,
+		    content:$("#importBox").html() ,
 		    btn: ['下载模板','确定', '关闭'],
 			    btn1: function(index, layero){
 				  window.location.href='${url}/template';
 			  },
 		    btn2: function(index, layero){
-    	       		$("#importForm").submit();
-				    //top.layer.close(index);
+			    $("#importBox").remove();
+    	       	$("#importForm").submit();
+				//top.layer.close(index);
 			  },
 
 			  btn3: function(index){
