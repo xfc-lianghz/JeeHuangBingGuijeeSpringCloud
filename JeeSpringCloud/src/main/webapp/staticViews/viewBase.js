@@ -28,13 +28,15 @@ $("#btnExport").click(function(){
 });
 //导入excel
 $("#btnImport").click(function(){
-	if($(this).data("events")["click"]){return;}
+    if($(this).data("events")["click"]){return;}
     var url=$(this).attr("url");
+    var importBoxHtml=$("#importBox").html();
+    $("#importBox").remove();
     top.layer.open({
         type: 1,
         area: [500, 300],
         title:"导入数据",
-        content:$("#importBox").html() ,
+        content:importBoxHtml,
         btn: ['下载模板','确定', '关闭'],
         btn1: function(index, layero){
             window.location.href=url+'/template';
