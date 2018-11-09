@@ -17,6 +17,7 @@
     <link href="${ctxStatic}/common/jeespring.css" type="text/css" rel="stylesheet" />
     <link href="${ctxStatic}/bootstrap/3.3.4/css_default/bootstrap.min.css" type="text/css" rel="stylesheet" />
     <link href="${ctxStatic}/common/css/style.css?v=3.2.0" type="text/css" rel="stylesheet" />
+    <link href="${ctxStatic}/awesome/4.4/css/font-awesome.min.css" rel="stylesheet">
     <!--script type="text/javascript">
         $(document).ready(function() {WinMove();});
     </script-->
