@@ -54,9 +54,13 @@ spring:
       #url: http://localhost:8999
   #数据库的配置
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    #mysql
+    driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/jeespring?useUnicode=true&characterEncoding=utf-8
+    #oracle
+    #driverClassName: oracle.jdbc.driver.OracleDriver
+    #jdbc:oracle:thin:@127.0.0.1:1521:orcl
     username: root
     password: root
     # 下面为连接池的补充设置，应用到上面所有数据源中
