@@ -7,7 +7,7 @@ https://www.oschina.net/project/top_cn_2018?origin=zhzd<br>
 <br>
 演示版地址：http://yocity.imwork.net:10858/admin/login<br>
 JeeSpringV3.1.1-2018-11-12 增加模块化，修复了导入功能bug.<br>
-
+单项目：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
 JeeSpringCloudV3.0-互联网云快速开发框架
 ===============
 
