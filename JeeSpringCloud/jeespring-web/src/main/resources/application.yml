@@ -1,5 +1,5 @@
 server:
-  port: 9993
+  port: 9999
   tomcat:
     uri-encoding: UTF-8
     basedir: /data/jeespring/tomcat
@@ -21,7 +21,7 @@ server:
   #启动热部署
   jsp-servlet.init-parameters.development: true
 http:
-  port: 8883
+  port: 8888
 logging:
   level:
     root: INFO
