@@ -1,6 +1,6 @@
 年度评选 | 2018 最受欢迎中国开源软件<br>
 https://www.oschina.net/project/top_cn_2018?origin=zhzd<br>
-请为JeeSpringCloud项目投一你宝贵一票(开源不易)<br>
+请为JeeSpringCloud项目投一你宝贵一票(开源不易！)<br>
 <br>
 帮忙标star和watch，集1000个星,谢谢帮帮忙。<br>
 码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
