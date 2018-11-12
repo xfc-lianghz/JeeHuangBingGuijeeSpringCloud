@@ -6,8 +6,8 @@ JeeSpringCloudV3.1.1-互联网云快速开发框架
 ===============
 
   （一款免费开源的JAVA互联网云快速开发平台）
-微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块和监控、服务模块。<br>
-帮忙标star和watch，集1000个星,谢谢帮帮忙。<br>
+微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块和监控、服务模块。<br><br>
+帮忙标star集1000个星,上今日热门,谢谢帮帮忙。<br>
 码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
 演示版地址：http://yocity.imwork.net:10858/admin/login<br>
 JeeSpringV3.1.1-2018-11-12 增加模块化，修复了导入功能bug.<br>
