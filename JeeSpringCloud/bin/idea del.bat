@@ -9,33 +9,34 @@ cd ..\
 
 if exist .\jeespring-web\target (  
 	rmdir /s/q .\jeespring-web\target
-	del .\jeespring-web\*.iml
 	echo [info] del .\jeespring-web\target
 )
+del .\jeespring-web\*.iml
+
 
 if exist .\jeespring-mq\target (  
 	rmdir /s/q .\jeespring-mq\target
-	del .\jeespring-mq\*.iml
 	echo [info] del .\jeespring-mq\target
 )
+del .\jeespring-mq\*.iml
 
 if exist .\jeespring-framework\target (
 	rmdir /s/q .\jeespring-framework\target
-	del .\jeespring-framework\*.iml
 	echo [info] del .\jeespring-mq\target
 )
+del .\jeespring-framework\*.iml
 
 if exist .\jeespring-company\target (
 	rmdir /s/q .\jeespring-company\target
-	del .\jeespring-company\*.iml
 	echo [info] del .\jeespring-company\target
 )
+del .\jeespring-company\*.iml
 
 if exist .\jeespring-cms\target (
 	rmdir /s/q .\jeespring-cms\target
-	del .\jeespring-cms\*.iml
 	echo [info] del .\jeespring-cms\target
 )
+del .\jeespring-cms\*.iml
 
 if exist .\projectFilesBackup (
 	rmdir /s/q .\projectFilesBackup
