@@ -1,7 +1,8 @@
 年度评选 | 2018 最受欢迎中国开源软件<br>
 ===============
 https://www.oschina.net/project/top_cn_2018?origin=zhzd<br>
-JeeSpringCloud项目，帮忙投一下票谢谢<br>
+===============
+请为JeeSpringCloud项目投一你宝贵一票(开源不易)<br>
 ===============
 
 
