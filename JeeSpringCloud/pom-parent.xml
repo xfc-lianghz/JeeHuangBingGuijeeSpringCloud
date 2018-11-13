@@ -469,6 +469,7 @@
 					<target>1.8</target>
 					<compilerArguments>
 						<verbose/>
+						<!-- windows下使用分号（;）分隔，linux/mac下使用冒号（:）分隔 -->
 						<bootclasspath>${java.home}/lib/rt.jar;${java.home}/lib/jce.jar</bootclasspath>
 					</compilerArguments>
 				</configuration>
