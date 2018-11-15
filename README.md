@@ -30,6 +30,8 @@ JeeSpringV3.0.1-2018-10-22
 JeeSpringV3.0.0-2018-10-12
 提供了全新界面、工作流、CMS
 
+发布计划：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages?title=%E5%8F%91%E7%89%88%E7%89%88%E6%9C%AC%E8%AE%A1%E5%88%92&parent=
+
 一、平台简介
 -----------------------------------
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
