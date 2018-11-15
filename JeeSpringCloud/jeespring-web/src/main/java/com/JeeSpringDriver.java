@@ -42,6 +42,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableAutoConfiguration
 @Configuration
 //部署开发异常处理在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis
+//开发文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files  （JeeSpringCloud中级培训文档.docx）
 public class JeeSpringDriver {
 
     @Value("${http.port}")
