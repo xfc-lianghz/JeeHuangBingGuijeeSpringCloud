@@ -1,15 +1,16 @@
-1¡¢¹ÙÍøÏÂÔØdubboÔ´Âë
+ï»¿1ã€å®˜ç½‘ä¸‹è½½dubboæºç 
 
 https://github.com/alibaba/dubbo
 
-2¡¢±àÒëdubbo-admin¹¤³Ì£¬´ò³Éwar°ü     dubbo-admin-2.5.8.war
+2ã€ç¼–è¯‘dubbo-adminå·¥ç¨‹ï¼Œæ‰“æˆwaråŒ…     dubbo-admin-2.5.8.war
 
-3¡¢½øÈë WEB-INF Ä¿Â¼ĞŞ¸ÄÎÄ¼ş dubbo.properties 
+3ã€è¿›å…¥ WEB-INF ç›®å½•ä¿®æ”¹æ–‡ä»¶ dubbo.properties 
 
 dubbo.registry.address=zookeeper://127.0.0.1:2181
 dubbo.admin.root.password=root
 dubbo.admin.guest.password=guest
-4¡¢ÔÚtomcat ÖĞ²¿Êğdubbo-admin-2.5.8.war
+4ã€åœ¨tomcat ä¸­éƒ¨ç½²dubbo-admin-2.5.8.war
 
-5¡¢ÓÃ»§ÃÜÂë¶¼root/root
+5ã€ç”¨æˆ·å¯†ç éƒ½root/root
+
 
