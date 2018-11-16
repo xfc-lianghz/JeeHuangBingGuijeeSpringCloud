@@ -1,20 +1,20 @@
-1.°ÑJeeSpringCloudÏîÄ¿Áí´æÎªJeeSpringDubboProviderÏîÄ¿
+ï»¿1.æŠŠJeeSpringCloudé¡¹ç›®å¦å­˜ä¸ºJeeSpringDubboProvideré¡¹ç›®
 
-1.1¿ªÆôapplication.ymlµÄdubbo·şÎñÅäÖÃÏî£»×¢½âdubbo¿Í»§¶ËÅäÖÃÏî
+1.1å¼€å¯application.ymlçš„dubboæœåŠ¡é…ç½®é¡¹ï¼›æ³¨è§£dubboå®¢æˆ·ç«¯é…ç½®é¡¹
 1.2
-ÔÚJeeSpringDubboProviderÏîÄ¿ÄÚµÄ
-provider¶Ë·şÎñ²ã
-¿ªÆô×¢½â:@com.alibaba.dubbo.config.annotation.Service(interfaceClass = IXXXXService.class,version = "1.0.0", timeout = 60000)
-ÔÚJeeSpringCloudÏîÄ¿ÄÚµÄ
-consumer¶Ë¿ØÖÆ²ã
-¿ªÆô×¢½â:@Reference(version = "1.0.0")
+åœ¨JeeSpringDubboProvideré¡¹ç›®å†…çš„
+providerç«¯æœåŠ¡å±‚
+å¼€å¯æ³¨è§£:@com.alibaba.dubbo.config.annotation.Service(interfaceClass = IXXXXService.class,version = "1.0.0", timeout = 60000)
+åœ¨JeeSpringCloudé¡¹ç›®å†…çš„
+consumerç«¯æ§åˆ¶å±‚
+å¼€å¯æ³¨è§£:@Reference(version = "1.0.0")
 
-2.application.yml(·şÎñ¶ËºÍµ÷ÓÃ¶ËµÄÅäÖÃ²»Ò»Ñù)
+2.application.yml(æœåŠ¡ç«¯å’Œè°ƒç”¨ç«¯çš„é…ç½®ä¸ä¸€æ ·)
 
-3.Æô¶¯zookeeper
+3.å¯åŠ¨zookeeper
 
-4.Æô¶¯dubbo provider
+4.å¯åŠ¨dubbo provider
 
-5.Æô¶¯dubbo consumer
+5.å¯åŠ¨dubbo consumer
 
-6.Ê¹ÓÃserverÄ£¿é²âÊÔ¡£
+6.ä½¿ç”¨serveræ¨¡å—æµ‹è¯•ã€‚
