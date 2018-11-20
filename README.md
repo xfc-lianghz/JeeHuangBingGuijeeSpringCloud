@@ -3,6 +3,7 @@ https://www.oschina.net/project/top_cn_2018?origin=zhzd<br>
 请为JeeSpringCloud项目投你宝贵一票(开源不易！)<br>
 
 ![输入图片说明](https://images.gitee.com/uploads/images/2018/1120/092242_39dfd5b5_132236.png "屏幕截图.png")<br>
+文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
 帮忙标star、watch集星和fork,谢谢帮帮忙,开源不易！<br>
 
