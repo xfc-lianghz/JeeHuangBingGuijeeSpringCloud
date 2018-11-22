@@ -2,9 +2,6 @@
 https://www.oschina.net/project/top_cn_2018?origin=zhzd<br>
 请为JeeSpringCloud项目投你宝贵一票(开源不易！)<br>
 
-
-文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
-在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
 帮忙标star、watch集星和fork,谢谢帮帮忙,开源不易！<br>
 
 JeeSpringCloudV3.1.1-互联网云快速开发框架<br>
@@ -20,6 +17,9 @@ JeeSpringCloud	1k+Star项目<br>
 JeeSpringV3.1.1-2018-11-12 增加模块化，修复了导入功能bug.<br>
 单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
 <br>
+文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
+在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
+开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
 
 版本日志
 -----------------------------------
