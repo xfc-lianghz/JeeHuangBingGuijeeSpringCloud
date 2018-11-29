@@ -17,7 +17,7 @@ JeeSpringV3.1.1-2018-11-12 增加模块化，修复了导入功能bug.<br>
 单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
 <br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
-在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
+在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
 开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
 
 版本日志
@@ -36,7 +36,7 @@ JeeSpringV3.0.0-2018-10-12
 
 一、平台简介
 -----------------------------------
-在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages<br>
+在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
 视频和文档下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
 开源中国地址：https://www.oschina.net/p/jeeSpringCloud<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
