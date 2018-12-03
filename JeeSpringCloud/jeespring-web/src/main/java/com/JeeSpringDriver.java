@@ -49,6 +49,9 @@ public class JeeSpringDriver {
     @Value("${http.port}")
     private Integer port;
 
+	//部署开发在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis
+	//部署开发异常处理在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis
+	//开发文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files
     public static void main(String[] args) {
         //Spring boot run
         new SpringApplicationBuilder(JeeSpringDriver.class).web(true).run(args);
