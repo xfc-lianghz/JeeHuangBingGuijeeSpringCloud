@@ -123,7 +123,9 @@ Redis分布式高速缓存:代码生成直接生成Redis对接代码。<br>
 <td><img alt="微服务" class="md_relative_url" src="./document/904.png"></td>
 </tr><tr>
 <td><img alt="微服务" class="md_relative_url" src="./document/905.png"></td>
-<td><img alt="微服务" class="md_relative_url" src="./document/906.png"></td>
+<td><img alt="微服务" class="md_relative_url" src="./document/906.png">
+<img alt="微服务" class="md_relative_url" src="./document/sart.html">
+</td>
 </tr>
 </table></tbody>
 
