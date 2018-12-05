@@ -3,6 +3,7 @@
 微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块和监控、服务模块。<br>
 JeeSpringCloud	GVP项目<br>
 JeeSpringCloud	1k+Star项目<br>
+JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 帮忙标star、watch集星和fork,谢谢帮帮忙,开源不易！<br>
 
 JeeSpringCloudV3.1.1-互联网云快速开发框架<br>
