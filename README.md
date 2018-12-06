@@ -1,5 +1,3 @@
-【JeeSpringCloud支付宝红包】打开支付宝首页搜“598352815”领红包每天可领取，领到大红包的小伙伴赶紧使用哦！
-
   （一款免费开源的JAVA互联网云快速开发平台）
 微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块和监控、服务模块。<br>
 JeeSpringCloud	GVP项目<br>
@@ -9,6 +7,8 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
 JeeSpringCloudV3.1.1-互联网云快速开发框架<br>
 ===============
+【JeeSpringCloud支付宝红包】打开支付宝首页搜“598352815”领红包每天可领取，领到大红包的小伙伴赶紧使用哦！<br>
+![输入图片说明](https://images.gitee.com/uploads/images/2018/1206/183122_78bcfa61_132236.jpeg "1544091715885.jpg")
 
 码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
 演示版地址：http://yocity.imwork.net:10858/admin/login<br>
