@@ -241,7 +241,6 @@ JeeSpringV3.0.0-2018-10-12
 
 ### 请作者喝杯茶。(开源不易！)
 【JeeSpringCloud支付宝红包】打开支付宝首页搜“598352815”领红包每天可领取，领到大红包的小伙伴赶紧使用哦！<br>
-
 <table><tbody>
 <tr>
 <td><img src="https://images.gitee.com/uploads/images/2018/1024/095334_ba74dce3_132236.jpeg"></td>
