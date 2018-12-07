@@ -3,10 +3,10 @@
 JeeSpringCloud	GVP项目<br>
 JeeSpringCloud	1k+Star项目<br>
 JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
-帮忙标star、watch集星和fork,谢谢帮帮忙,开源不易！<br>
 
 JeeSpringCloudV3.1.1-互联网云快速开发框架<br>
 ===============
+### 帮忙标star集星,谢谢帮帮忙！
 ### 请作者喝杯茶。(开源不易！)
 【JeeSpringCloud支付宝红包】打开支付宝首页搜“598352815”领红包每天可领取，领到大红包的小伙伴赶紧使用哦！<br>
 <table><tbody>
