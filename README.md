@@ -1,4 +1,4 @@
-JeeSpringCloudV3.1.1-互联网云快速开发框架<br>
+JeeSpringCloudV3.2.1-互联网云快速开发框架<br>
 ===============
   （一款免费开源的JAVA互联网云快速开发平台）微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块和监控、服务模块。<br>
 JeeSpringCloud	GVP项目、1k+Star项目<br>
@@ -16,6 +16,13 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
 码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
 演示版地址：http://yocity.imwork.net:10858/admin/login<br>
+JeeSpringV3.2.1-2018-12-13
+开源版、企业版：
+增加gencode/act/webDubboProvider模块化；
+springboot从1.5升级到2.0.4；
+修复了上传文件控制bug；
+修复了JeeSpringV3.1.1打包war运行报错.
+
 JeeSpringV3.1.1-2018-11-12 增加模块化，修复了导入功能bug.<br>
 单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
 <br>
