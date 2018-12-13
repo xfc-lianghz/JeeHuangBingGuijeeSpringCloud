@@ -1,4 +1,11 @@
-﻿JeeSpringV3.1.1-2018-11-12
+﻿JeeSpringV3.2.1-2018-12-13
+开源版、企业版：
+增加gencode/act/webDubboProvider模块化；
+springboot从1.5升级到2.0.4；
+修复了上传文件控制bug；
+修复了JeeSpringV3.1.1打包war运行报错.
+
+JeeSpringV3.1.1-2018-11-12
 开源版、企业版：增加模块化，修复了导入功能bug.
 
 JeeSpringV3.0.1-2018-10-22
