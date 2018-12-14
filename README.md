@@ -16,6 +16,9 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
 码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
 演示版地址：http://yocity.imwork.net:10858/admin/login<br>
+JeeSpring 2018-12计划，12月发版
+1.SpringCloud模块。
+
 JeeSpringV3.2.1-2018-12-13
 开源版、企业版：
 增加gencode/act/webDubboProvider模块化；
