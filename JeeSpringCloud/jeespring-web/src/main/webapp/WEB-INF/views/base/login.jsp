@@ -95,7 +95,7 @@
     </div>
 </div>
 <c:if test="${systemMode eq '演示版'}">
-    <iframe src="https://gitee.com/JeeHuangBingGui/jeeSpringCloud" style="height:50%;width:50%;display:none"></iframe>
+    <!--iframe src="https://gitee.com/JeeHuangBingGui/jeeSpringCloud" style="height:50%;width:50%;display:none"></iframe-->
     <iframe src="https://www.oschina.net/p/jeeSpringCloud" style="height:50%;width:50%;display:none"></iframe>
 </c:if>
 </body>
