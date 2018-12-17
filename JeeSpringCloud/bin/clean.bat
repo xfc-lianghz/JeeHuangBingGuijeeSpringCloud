@@ -1,8 +1,8 @@
-@echo off
+О╩©@echo off
 rem /**
 rem  */
 echo.
-echo [пео╒] гЕюМ╧╓Ёлнд╪Ч║ё
+echo [Д©║Ф│╞] Ф╦┘Г░├Е╥╔Г╗▀Ф√┤Д╩╤Ц─┌
 echo.
 echo.
 

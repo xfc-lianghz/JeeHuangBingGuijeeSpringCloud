@@ -1,8 +1,8 @@
-@echo off
+ï»¿@echo off
 rem /**
 rem  */
 echo.
-echo [ĞÅÏ¢] ¸´ÖÆÄ£¿éµÄwebappµ½jeespring-web¡£
+echo [ä¿¡æ¯] å¤åˆ¶æ¨¡å—çš„webappåˆ°jeespring-webã€‚
 echo.
 
 pause

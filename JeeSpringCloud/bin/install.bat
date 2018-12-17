@@ -1,8 +1,8 @@
-@echo off
+Ôªø@echo off
 rem /**
 rem  */
 echo.
-echo [–≈œ¢] install°£
+echo [‰ø°ÊÅØ] install„ÄÇ
 echo.
 
 cd /d %~dp0

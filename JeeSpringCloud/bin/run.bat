@@ -1,8 +1,8 @@
-@echo off
+О╩©@echo off
 rem /**
 rem  */
 echo.
-echo [пео╒] ткпп╧╓Ёлнд╪Ч║ё
+echo [Д©║Ф│╞] Х©░Х║▄Е╥╔Г╗▀Ф√┤Д╩╤Ц─┌
 echo.
 
 cd /d %~dp0
