@@ -17,8 +17,8 @@ springboot从1.5升级到2.0.4；
 修复了JeeSpringV3.1.1打包war运行报错.
 
 JeeSpringV3.1.1-2018-11-12 增加模块化，修复了导入功能bug.<br>
+
 单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
-<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
 开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
