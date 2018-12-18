@@ -44,7 +44,7 @@ JeeSpringV3.0.0-2018-10-12
 开源中国地址：https://www.oschina.net/p/jeeSpringCloud<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
  JeeSpring官方QQ群：<br><a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=b07802df867a4047251ac62b35698ed2d94b31f95599609eff4eabcbe361c402"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="open-capacity-platform交流" title="open-capacity-platform交流">一群：328910546已满（群内领资料）</a><br>
-<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=c22bb08a809d458e50b6e21f1a3f2845755fca5984895c5538292fceab1655b2"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JeeSpringCloud官方(2)群" title="JeeSpringCloud官方(2)群">二群：756355483（群内领资料）</a>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=c22bb08a809d458e50b6e21f1a3f2845755fca5984895c5538292fceab1655b2"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JeeSpringCloud官方(2)群" title="JeeSpringCloud官方(2)群">二群：756355483已满（群内领资料）</a>
 <br>
 <a href="#"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JeeSpringCloud官方(3)群" title="JeeSpringCloud官方(3)群">三群：103470850</a><br>
 JeeSpringCloudV3.0-互联网云快速开发框架模块包含定时任务调度、服务器监控、平台监控、异常邮件监控、服务器Down机邮件监控、平台设置、开发平台、邮件监控、图表监控、地图监控、单点登录、Redis分布式高速缓存、<br>
@@ -199,7 +199,7 @@ RepositoryService仓库,提供Service接口和多种实现,可进行配置实现
 
 JeeSpringCloud官方QQ群：<br>
 一群：328910546 (已满)<br>
-二群：756355483（群内领资料）
+二群：756355483 已满（群内领资料）
 
 官方提供：
 
