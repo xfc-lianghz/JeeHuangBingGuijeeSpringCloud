@@ -17,7 +17,8 @@ server:
       request-attributes-enabled: true
       rename-on-rotate: true
   #启动热部署
-  jsp-servlet.init-parameters.development: true
+  #jsp-servlet.init-parameters.development: true
+  servlet.jsp.init-parameters.development: true
 logging:
   level:
     root: INFO
