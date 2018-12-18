@@ -6,6 +6,14 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
 码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
 演示版地址：http://yocity.imwork.net:10858/admin/login<br>
+
+单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
+文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
+在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
+开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
+
+版本日志
+-----------------------------------
 JeeSpring 2018-12计划，12月发版
 1.SpringCloud模块。
 
@@ -16,15 +24,6 @@ springboot从1.5升级到2.0.4；
 修复了上传文件控制bug；
 修复了JeeSpringV3.1.1打包war运行报错.
 
-JeeSpringV3.1.1-2018-11-12 增加模块化，修复了导入功能bug.<br>
-
-单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
-文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
-在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
-开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
-
-版本日志
------------------------------------
 JeeSpringV3.1.1-2018-11-12
 增加模块化，修复了导入功能bug.
 
