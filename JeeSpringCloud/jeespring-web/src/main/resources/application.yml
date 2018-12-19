@@ -86,6 +86,8 @@ spring:
     # 配置一个连接在池中最小生存的时间，单位是毫秒
     minEvictableIdleTimeMillis: 30000
     validationQuery: SELECT 'x' FROM DUAL
+    #SqlServer要配置为 select 1
+    #validationQuery: select 1
     testWhileIdle: true
     testOnBorrow: false
     testOnReturn: false
