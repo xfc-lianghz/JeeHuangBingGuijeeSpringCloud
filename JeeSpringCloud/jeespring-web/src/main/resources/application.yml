@@ -69,6 +69,9 @@ spring:
     #oracle
     #driverClassName: oracle.jdbc.driver.OracleDriver
     #jdbc:oracle:thin:@127.0.0.1:1521:orcl
+    #SqlServer
+    #driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    #url: jdbc:sqlserver://localhost:1433;DatabaseName=jeespring
     username: root
     password: root
     # 下面为连接池的补充设置，应用到上面所有数据源中
