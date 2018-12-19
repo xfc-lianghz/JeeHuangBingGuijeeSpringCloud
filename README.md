@@ -4,14 +4,6 @@ JeeSpringCloudV3.2.1-互联网云快速开发框架<br>
 JeeSpringCloud	GVP项目、1k+Star项目<br>
 JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
-码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
-演示版地址：http://yocity.imwork.net:10858/admin/login<br>
-
-单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
-文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
-在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
-开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
-
 ### 请作者喝杯茶。(开源不易！)
 【JeeSpringCloud支付宝红包】打开支付宝首页搜“598352815”领红包每天可领取，领到大红包的小伙伴赶紧使用哦！<br>
 <table><tbody>
@@ -20,6 +12,14 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 <td><img src="https://images.gitee.com/uploads/images/2018/1206/183734_c54e3a3b_132236.jpeg"></td>
 </tr><tr>
 </tbody></table>
+
+码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
+演示版地址：http://yocity.imwork.net:10858/admin/login<br>
+
+单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
+文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
+在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
+开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
 
 版本日志
 -----------------------------------
