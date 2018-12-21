@@ -43,8 +43,10 @@ public class LogInterceptor extends AbstractService implements HandlerIntercepto
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response,
                                 Object handler, Exception ex) throws Exception {
         if(!"/error".equals(request.getRequestURI())) {
-            logger.info("URI: {},耗时：{}   ", request.getRequestURI() + "-" + request.getMethod()
-                    , DateUtils.formatDateTime(System.currentTimeMillis() - startTimeThreadLocal.get()));
+            try {
+                logger.info("URI: {},耗时：{}   ", request.getRequestURI() + "-" + request.getMethod()
+                        , DateUtils.formatDateTime(System.currentTimeMillis() - startTimeThreadLocal.get()));
+            }catch (Exception e){ e.toString(); }
         }
         //删除线程变量中的数据，防止内存泄漏
         startTimeThreadLocal.remove();
