@@ -2059,12 +2059,12 @@ function refreshTabById(pageId) {
         $iframe[0].contentWindow.location.reload(true);//带参数刷新
     }
 
-    App.blockUI({
+    /*App.blockUI({
         target: '#tab-content',
         boxed: true,
         message: '加载中......'//,
         // animate: true
-    });
+    });*/
 }
 
 var refreshTab = function () {
