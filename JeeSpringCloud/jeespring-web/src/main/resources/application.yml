@@ -1,3 +1,6 @@
+JeeSpringVersion: 3.2.2
+demoMode: false
+demoModeDescription: 演示版启用，为系统能正常演示，暂时不允许操作！系统配置可开启正式版！功能全开源！每周周一再更新！
 server:
   port: 8888
   tomcat:
@@ -165,8 +168,6 @@ email:
   fromName: jeespring
   username: 516821420xx2@qq.com
   password: ywaytlglrrgybjce22
-demoMode: false
-demoModeDescription: 演示版启用，为系统能正常演示，暂时不允许操作！系统配置可开启正式版！功能全开源！每周周一再更新！
 # Shiro权限配置
 shiro:
   redis: false #启动shiro redis缓存，单点登录,##单点登录性能有带提升##
