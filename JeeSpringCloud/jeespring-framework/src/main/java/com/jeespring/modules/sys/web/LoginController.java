@@ -367,27 +367,27 @@ public class LoginController extends AbstractBaseController {
 	@RequestMapping(value = "${adminPath}/home")
 	public String home(HttpServletRequest request, HttpServletResponse response, Model model,RedirectAttributes redirectAttributes) throws IOException {
 		SysConfig sysConfig = new SysConfig(); //new一个新的xxx对象
-		sysConfig.setType("homePageAboveInfomation");//传值
-		List<SysConfig> indexSysConfig= sysConfigService.findList(sysConfig);//查询系统配置项
-		sysConfig.setType("homePageTechnical");//传值
-		SysConfig homePageTechnicalSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
-		sysConfig.setType("homePageAuthorization");//传值
-		SysConfig homePageAuthorizationSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
-		sysConfig.setType("homePageContactInfo");//传值
-		SysConfig homePageContactInfoSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
-		sysConfig.setType("homePageInfomation");//传值
-		SysConfig homePageInfomationSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
+		//sysConfig.setType("homePageAboveInfomation");//传值
+		//List<SysConfig> indexSysConfig= sysConfigService.findList(sysConfig);//查询系统配置项
+		//sysConfig.setType("homePageTechnical");//传值
+		//SysConfig homePageTechnicalSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
+		//sysConfig.setType("homePageAuthorization");//传值
+		//SysConfig homePageAuthorizationSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
+		//sysConfig.setType("homePageContactInfo");//传值
+		//SysConfig homePageContactInfoSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
+		//sysConfig.setType("homePageInfomation");//传值
+		//SysConfig homePageInfomationSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
 		sysConfig.setType("version");//传值
 		SysConfig versionSysConfig= sysConfigService.findListFirstCache(sysConfig);//查询系统配置项
-		model.addAttribute("homePageTechnical",homePageTechnicalSysConfig.getDescription().toString());
-		model.addAttribute("homePageAuthorization",homePageAuthorizationSysConfig.getDescription().toString());
-		model.addAttribute("homePageContactInfo",homePageContactInfoSysConfig.getDescription().toString());
-		model.addAttribute("homePageInfomation",homePageInfomationSysConfig.getDescription().toString());
+		//model.addAttribute("homePageTechnical",homePageTechnicalSysConfig.getDescription().toString());
+		//model.addAttribute("homePageAuthorization",homePageAuthorizationSysConfig.getDescription().toString());
+		//model.addAttribute("homePageContactInfo",homePageContactInfoSysConfig.getDescription().toString());
+		//model.addAttribute("homePageInfomation",homePageInfomationSysConfig.getDescription().toString());
 		model.addAttribute("version",versionSysConfig.getValue());
 
-		if(indexSysConfig.size() == 0 ) {
-			indexSysConfig.add(new SysConfig());
-		}
+		//if(indexSysConfig.size() == 0 ) {
+		//	indexSysConfig.add(new SysConfig());
+		//}
 
 		OaNotify oaNotify = new OaNotify();
 		Dict dict = new Dict();
@@ -428,7 +428,7 @@ public class LoginController extends AbstractBaseController {
 		Page<OaNotify>  pageOaNotifyTechnology = oaNotifyService.find(new Page<OaNotify>(request, response), oaNotify);
 		model.addAttribute("pageOaNotifyTechnology",pageOaNotifyTechnology);
 
-		model.addAttribute("indexSysConfig",indexSysConfig.get(0));
+		//model.addAttribute("indexSysConfig",indexSysConfig.get(0));
 		//return "modules/sys/sysHome";
 		return "base/home";
 	}
