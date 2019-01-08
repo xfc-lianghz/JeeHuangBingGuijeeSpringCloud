@@ -1,7 +1,8 @@
 $(document).ready(function(){
-    getCount();
 });
-
+setTimeout(function () {
+    getCount();
+}, 3000);
 $(function () {
     App.setbasePath("../");
     App.setGlobalImgPath("dist/img/");
