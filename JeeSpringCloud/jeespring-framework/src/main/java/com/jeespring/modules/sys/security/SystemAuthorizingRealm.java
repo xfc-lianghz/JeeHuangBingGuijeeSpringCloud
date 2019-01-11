@@ -54,6 +54,7 @@ public class SystemAuthorizingRealm extends AuthorizingRealm {
 
 	/**
 	 * 认证回调函数, 登录时调用
+	 * /admin/login
 	 */
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authcToken) {

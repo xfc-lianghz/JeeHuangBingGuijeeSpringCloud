@@ -13,10 +13,10 @@
 		<result property="isShow" column="isShow" />
 		<result property="permission" column="permission" />
 		<!-- 查询父模块-->  
-        <association property="parent" column="parent_id" select="getParent" />   
+        <!--association property="parent" column="parent_id" select="getParent" /-->
           
         <!-- 查询子模块 -->  
-        <collection property="children" column="id" select="getChildren" />  
+        <!--collection property="children" column="id" select="getChildren" /-->
 	</resultMap>
     
 	<sql id="menuColumns">

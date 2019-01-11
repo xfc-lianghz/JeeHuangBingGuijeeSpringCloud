@@ -180,6 +180,7 @@ public class UserUtils {
 	 * @return
 	 */
 	public static Menu getTopMenu(){
+		Menu.setAllMenu(UserUtils.getMenuList());
 		@SuppressWarnings("unchecked")
 		Menu topMenu =  menuDao.findUniqueByProperty("parent_id", "'0'");
 		return topMenu;
