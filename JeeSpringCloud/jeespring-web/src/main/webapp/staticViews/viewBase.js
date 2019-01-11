@@ -111,7 +111,7 @@ $("#btnDeleteAll").click(function(){
     }
     top.layer.confirm('确认要彻底删除数据吗?', {icon: 3, title:'系统提示'}, function(index){
         window.location = url+"?ids="+ids;
-        //top.layer.close(index);
+        top.layer.close(index);
     });
     if($(this).attr("href")) return false;
 });
