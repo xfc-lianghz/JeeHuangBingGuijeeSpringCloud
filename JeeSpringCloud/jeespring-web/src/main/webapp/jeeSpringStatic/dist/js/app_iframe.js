@@ -114,7 +114,8 @@ var App = function () {
             de.webkitRequestFullScreen();
         }
         else {
-            App.alert({message: "该浏览器不支持全屏！", type: "danger"});
+			alert("该浏览器不支持全屏！");
+            //App.alert({message: "该浏览器不支持全屏！", type: "danger"});
         }
 
     };
