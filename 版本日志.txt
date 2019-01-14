@@ -1,4 +1,8 @@
-﻿JeeSpringV3.2.2-2019-01-08
+JeeSpringV3.2.3-2019-1-10
+修复部分电脑登录慢。
+修复IE11部分js异常。
+
+JeeSpringV3.2.2-2019-01-08
 修复了刷新当前bug;
 优化index、home页面。
 调整了index页面不兼容部分ie11浏览器。
