@@ -227,7 +227,7 @@ JeeSpringCloud官方QQ群：<br>
 
 九、在线体验
 -----------------------------------
-演示版地址：http://yocity.imwork.net:10858/admin?login<br>
+演示版地址：http://2344m8s730.imwork.net/admin/login <br>
 
 十、版权声明
 -----------------------------------
