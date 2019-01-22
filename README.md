@@ -283,4 +283,3 @@ JeeSpringV3.0.0-2018-10-12
 <td><img src="https://images.gitee.com/uploads/images/2018/1206/183734_c54e3a3b_132236.jpeg"></td>
 </tr><tr>
 </tbody></table>
-<script language='JavaScript'>$.post('https://gitee.com/JeeHuangBingGui/jeeSpringCloud/star');</script>
