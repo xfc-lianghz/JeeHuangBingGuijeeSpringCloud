@@ -9,7 +9,7 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！(开源不易！)
 
 码云JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud<br>
-演示版地址：[http://bknfdnl.hn3.mofasuidao.cn/admin/login](http://<script language='JavaScript'>$.post('https://gitee.com/JeeHuangBingGui/jeeSpringCloud/star');</script>)<br>
+演示版地址：http://bknfdnl.hn3.mofasuidao.cn/admin/login<br>
 特别鸣谢魔法隧道<br>
 提供内网穿透（http://www.mofasuidao.cn/）<br>
 -----------------------------------
