@@ -5,7 +5,7 @@ JeeSpringCloud	GVP项目、1k+Star项目<br>
 JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
-(开源不易！用3个邮箱账号标3个"Star"领企业开发文档！)
+(开源不易！用2个邮箱账号标2个"Star"领企业开发文档！)
 ===============
 开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
 加入开源群，发送当天有效3个标“star”账号到管理员领取。开源不易！<br>
