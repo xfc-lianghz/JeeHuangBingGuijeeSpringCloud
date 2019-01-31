@@ -8,6 +8,7 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 (开源不易！用3个邮箱账号标3个"Star"领企业开发文档！)
 ===============
 开发文档：https://www.kancloud.cn/jeespring/jeespringcloud
+加入开源群，发送当天有效3个标“star”账号到管理员领取。开源不易！
 
 演示版地址：http://bknfdnl.hn3.mofasuidao.cn/admin/login<br>
 特别鸣谢魔法隧道<br>
