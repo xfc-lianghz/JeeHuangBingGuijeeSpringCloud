@@ -7,6 +7,8 @@
 控制层
 开启注解:@Reference(version = "1.0.0")
 
+实例：ISysServerService.java、SysServerService.java提供消费者和提供者代码。
+
 2.启动zookeeper
 
 3.启动dubbo provider(JeeSpring-webDubboProvider)
