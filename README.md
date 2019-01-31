@@ -4,7 +4,8 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 JeeSpringCloud	GVP项目、1k+Star项目<br>
 JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
-如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！(开源不易！)
+如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
+(开源不易！用3邮箱账号标3个"Star"领开发文档！)
 ===============
 
 
