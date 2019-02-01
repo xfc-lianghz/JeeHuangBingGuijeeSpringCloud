@@ -19,7 +19,7 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
-开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
+企业开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
 
 版本日志
 -----------------------------------
