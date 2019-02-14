@@ -7,6 +7,10 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
 (开源不易！用3个邮箱账号标3个"Star"领企业开发文档！)
 ===============
+QQ邮箱：https://mail.qq.com/
+网易163注册：https://email.163.com/
+网易126邮箱：https://mail.126.com/
+outlook邮箱注册：https://outlook.live.com/owa/
 企业开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
 加入开源群，发送当天有效3个标“star”账号到管理员领取。开源不易！<br>
 
