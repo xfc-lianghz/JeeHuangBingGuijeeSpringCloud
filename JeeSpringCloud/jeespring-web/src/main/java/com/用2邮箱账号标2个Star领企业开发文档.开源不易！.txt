@@ -1,4 +1,4 @@
-﻿一、标“Star”免费获取
+一、标“Star”免费获取
 JeeSpringCloud:https://gitee.com/JeeHuangBingGui/jeeSpringCloud
 
 QQ邮箱：https://mail.qq.com/
@@ -6,7 +6,7 @@ QQ邮箱：https://mail.qq.com/
 网易126邮箱：https://mail.126.com/
 outlook邮箱注册：https://outlook.live.com/owa/
 链接：https://pan.baidu.com/s/1YIFFsUXjKaDwUd9c0bzQRw 
-密码：加入开源群，发送当天有效3个标“star”码云用户名到管理员领取，开源不易。
+密码：加入开源群，发送当天有效2个标“star”码云用户名到管理员领取，开源不易。
 文件包括：
 JeeSpring部署详细视频.mp4
 JeeSpring部署初级.mp4
