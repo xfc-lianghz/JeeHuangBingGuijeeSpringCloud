@@ -1,8 +1,6 @@
 JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 ===============
-  （一款免费开源的JAVA互联网云快速开发平台）微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块和监控、服务模块。<br>
-JeeSpringCloud	GVP项目、1k+Star项目<br>
-JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
+  （一款免费开源的JAVA互联网云快速开发平台）微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块和监控、服务模块。JeeSpringCloud GVP项目、1k+Star项目。JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
 
@@ -12,45 +10,11 @@ JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 -----------------------------------
 
 
-单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
-文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
-在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
-企业开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
-
-版本日志
------------------------------------
-JeeSpringV3.2.3-2019-1-10
-开源版、企业版：
-修复部分电脑登录慢。
-修复IE11部分js异常。
-
-JeeSpringV3.2.2-2019-01-08
-修复了刷新当前bug;
-优化index、home页面。
-调整了index页面不兼容部分ie11浏览器。
-
-JeeSpringV3.2.1-2018-12-13
-开源版、企业版：
-增加gencode/act/webDubboProvider模块化；
-springboot从1.5升级到2.0.4；
-修复了上传文件控制bug；
-修复了JeeSpringV3.1.1打包war运行报错.
-
-JeeSpringV3.1.1-2018-11-12
-增加模块化，修复了导入功能bug.
-
-JeeSpringV3.0.1-2018-10-22
-新增工作流、CMS、dubbo、增删改查云接口、图表统计、地图统计、vue.js
-修复了代码生成未知数据类型bug。
-
-JeeSpringV3.0.0-2018-10-12
-提供了全新界面、工作流、CMS
-
-发布计划：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages?title=%E5%8F%91%E7%89%88%E7%89%88%E6%9C%AC%E8%AE%A1%E5%88%92&parent=
-
 一、平台简介
 -----------------------------------
+单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
+企业开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
 视频和文档下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
 开源中国地址：https://www.oschina.net/p/jeeSpringCloud<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
@@ -59,8 +23,11 @@ JeeSpringV3.0.0-2018-10-12
 <br>
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=0e52b7c6641e55db4eb4cc1a9e075b72b9ac0d23c4bb8ebd3d500aeb4391fa9b"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JeeSpringCloud官方(3)群" title="JeeSpringCloud官方(3)群"> 三群：103470850已满（群内领资料）</a><br>
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=22134e54d5dba5f70180fb25a6c38c0babc8053f80c2fcfdd2a6d886069966e2"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JeeSpringCloud官方(4)群" title="JeeSpringCloud官方(4)群">
-四群：632483993（群内领资料）（群内领资料）
+四群：632483993（群内领资料）
 </a><br>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=3951492a03c40506d4fa26007de6acfabe6862f805ed99c255f85e09abebe498"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JeeSpringCloud学生交流群" title="JeeSpringCloud学生交流群">
+JeeSpringCloud学生交流群（群内领资料）</a><br>
+<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=9d1a06b22011b3901f0c202c0f5a6cbf9571199c0120236e3fb5401448123385"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JeeSpringCloud项目外包服" title="JeeSpringCloud项目外包服">JeeSpringCloud项目外包服</a><br>
 JeeSpringCloudV3.0-互联网云快速开发框架模块包含定时任务调度、服务器监控、平台监控、异常邮件监控、服务器Down机邮件监控、平台设置、开发平台、邮件监控、图表监控、地图监控、单点登录、Redis分布式高速缓存、<br>
 ActiveMQ队列、会员、营销、在线用户、日志、在线人数、访问次数、调用次数、直接集群、接口文档、生成模块、代码实例、安装视频、教程文档、dubbo、springCloud、SpringBoot、mybatis、springmvc、IOC、AOP、定时任务、切面缓存、MVC、事务管理。<br>
 RedisMQ队列、代码生成(单表、主附表、树表、列表和表单、增删改查云接口、redis高速缓存对接代码、图表统计、地图统计、vue.js)、工作流、模块化<br>代码生成前端控件包括单行文本、富文本、下拉选项、复选框、日期选择、文件上传选择、树选择控件、单选按钮、多行文本….。<br>
@@ -265,6 +232,35 @@ MIT 也是对商业应用友好的许可。使用者也可以在需要的时候�
 
 十一、版本日志
 -----------------------------------
+JeeSpringV3.2.3-2019-1-10
+开源版、企业版：
+修复部分电脑登录慢。
+修复IE11部分js异常。
+
+JeeSpringV3.2.2-2019-01-08
+修复了刷新当前bug;
+优化index、home页面。
+调整了index页面不兼容部分ie11浏览器。
+
+JeeSpringV3.2.1-2018-12-13
+开源版、企业版：
+增加gencode/act/webDubboProvider模块化；
+springboot从1.5升级到2.0.4；
+修复了上传文件控制bug；
+修复了JeeSpringV3.1.1打包war运行报错.
+
+JeeSpringV3.1.1-2018-11-12
+增加模块化，修复了导入功能bug.
+
+JeeSpringV3.0.1-2018-10-22
+新增工作流、CMS、dubbo、增删改查云接口、图表统计、地图统计、vue.js
+修复了代码生成未知数据类型bug。
+
+JeeSpringV3.0.0-2018-10-12
+提供了全新界面、工作流、CMS
+
+发布计划：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/pages?title=%E5%8F%91%E7%89%88%E7%89%88%E6%9C%AC%E8%AE%A1%E5%88%92&parent=
+
 JeeSpringV3.1.1-2018-11-12
 增加模块化，修复了导入功能bug.
 
