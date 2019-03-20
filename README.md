@@ -5,9 +5,9 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
 
 演示版地址：http://bknfdnl.hn3.mofasuidao.cn/admin/login<br>
-演示版流量捐献：5G/10元，现有流量为0G，暂时不提供演示.<br>
+演示版流量捐献：5G/10元，现有流量已不多.<br>
 演示版流量捐献:https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/%E6%BC%94%E7%A4%BA%E7%89%88%E6%B5%81%E9%87%8F%E6%8D%90%E7%8C%AE?sort_id=1388091<br>
-流量捐献：魔法隧道100G已用完。<br>
+流量捐献：魔法隧道200G。<br>
 特别鸣谢魔法隧道<br>
 提供内网穿透（http://www.mofasuidao.cn/）<br>
 -----------------------------------
