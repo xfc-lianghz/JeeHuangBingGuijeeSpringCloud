@@ -14,6 +14,7 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0<br>
 在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis<br>
 企业开发文档：https://www.kancloud.cn/jeespring/jeespringcloud<br>
+企业版：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608<br>
 视频和文档下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
 开源中国地址：https://www.oschina.net/p/jeeSpringCloud<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
