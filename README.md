@@ -18,6 +18,13 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 视频和文档下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
 开源中国地址：https://www.oschina.net/p/jeeSpringCloud<br>
 文档视频下载：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files<br>
+
+### 请作者喝杯茶。(开源不易！)
+捐献领取企业在线开发文档：<br>
+https://www.kancloud.cn/jeespring/jeespringcloud<br>
+捐献99元领取企业版本：<br>
+https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608<br>
+
  JeeSpring官方QQ群：<br><a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=b07802df867a4047251ac62b35698ed2d94b31f95599609eff4eabcbe361c402"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="open-capacity-platform交流" title="open-capacity-platform交流">一群：328910546已满（群内领资料）</a><br>
 <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=c22bb08a809d458e50b6e21f1a3f2845755fca5984895c5538292fceab1655b2"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="JeeSpringCloud官方(2)群" title="JeeSpringCloud官方(2)群">二群：756355483已满（群内领资料）</a>
 <br>
