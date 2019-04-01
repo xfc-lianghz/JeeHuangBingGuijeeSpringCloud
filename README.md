@@ -23,7 +23,7 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 捐献领取企业在线开发文档：<br>
 https://www.kancloud.cn/jeespring/jeespringcloud<br>
 https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/%E6%BC%94%E7%A4%BA%E6%B5%81%E9%87%8F%E6%8D%90%E7%8C%AE%E8%8E%B7%E5%8F%96%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3?sort_id=1388091<br>
-捐献99元领取企业版本：<br>
+捐献领取企业版本：<br>
 https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608<br>
 
  JeeSpring官方QQ群：<br><a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=b07802df867a4047251ac62b35698ed2d94b31f95599609eff4eabcbe361c402"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="open-capacity-platform交流" title="open-capacity-platform交流">一群：328910546已满（群内领资料）</a><br>
@@ -303,7 +303,7 @@ JeeSpringV3.0.0-2018-10-12
 捐献领取企业在线开发文档：<br>
 https://www.kancloud.cn/jeespring/jeespringcloud<br>
 https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/%E6%BC%94%E7%A4%BA%E6%B5%81%E9%87%8F%E6%8D%90%E7%8C%AE%E8%8E%B7%E5%8F%96%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3?sort_id=1388091<br>
-捐献99元领取企业版本：<br>
+捐献领取企业版本：<br>
 https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608<br>
 
 <!--【JeeSpringCloud支付宝红包】打开支付宝首页搜“598352815”领"早餐红包、捐献红包"每天可领取，领到大红包的小伙伴赶紧使用哦！<br>-->
