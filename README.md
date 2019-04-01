@@ -22,6 +22,7 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 ### 请作者喝杯茶。(开源不易！)
 捐献领取企业在线开发文档：<br>
 https://www.kancloud.cn/jeespring/jeespringcloud<br>
+https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/%E6%BC%94%E7%A4%BA%E6%B5%81%E9%87%8F%E6%8D%90%E7%8C%AE%E8%8E%B7%E5%8F%96%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3?sort_id=1388091<br>
 捐献99元领取企业版本：<br>
 https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608<br>
 
@@ -301,6 +302,7 @@ JeeSpringV3.0.0-2018-10-12
 ### 请作者喝杯茶。(开源不易！)
 捐献领取企业在线开发文档：<br>
 https://www.kancloud.cn/jeespring/jeespringcloud<br>
+https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/%E6%BC%94%E7%A4%BA%E6%B5%81%E9%87%8F%E6%8D%90%E7%8C%AE%E8%8E%B7%E5%8F%96%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3?sort_id=1388091<br>
 捐献99元领取企业版本：<br>
 https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608<br>
 
