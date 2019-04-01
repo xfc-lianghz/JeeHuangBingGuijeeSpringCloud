@@ -292,10 +292,10 @@ JeeSpringV3.0.0-2018-10-12
 </tbody></table>
 
 ### 请作者喝杯茶。(开源不易！)
-捐献领取企业在线开发文档：
-https://www.kancloud.cn/jeespring/jeespringcloud
-捐献99元领取企业版本：
-https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608
+捐献领取企业在线开发文档：<br>
+https://www.kancloud.cn/jeespring/jeespringcloud<br>
+捐献99元领取企业版本：<br>
+https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608<br>
 
 <!--【JeeSpringCloud支付宝红包】打开支付宝首页搜“598352815”领"早餐红包、捐献红包"每天可领取，领到大红包的小伙伴赶紧使用哦！<br>-->
 <table><tbody>
