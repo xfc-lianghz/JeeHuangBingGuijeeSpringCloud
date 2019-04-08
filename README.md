@@ -3,6 +3,7 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
   （一款免费开源的JAVA互联网云快速开发平台）微服务分布式代码生成的敏捷开发系统架构。项目代码简洁,注释丰富,上手容易,还同时集中分布式、微服务,同时包含许多基础模块和监控、服务模块。JeeSpringCloud GVP项目、1k+Star项目。JeeSpringCloud	2018年度最受欢迎中国开源软件项目<br>
 
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
+-----------------------------------
 
 演示版地址：http://bknfdnl.hn3.mofasuidao.cn/admin/login<br>
 特别鸣谢魔法隧道<br>
