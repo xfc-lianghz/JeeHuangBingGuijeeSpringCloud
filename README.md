@@ -435,20 +435,4 @@ JeeSpringV3.0.0-2018-10-12
                                           千锤百炼飞冲天，辉煌有为戏人间；                
                                           谈笑风生社会圈，享天福天下归心。   
 
-### 请作者喝杯茶。(开源不易！)
-捐献领取企业在线开发文档：<br>
-https://www.kancloud.cn/jeespring/jeespringcloud<br>
-https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/%E6%BC%94%E7%A4%BA%E6%B5%81%E9%87%8F%E6%8D%90%E7%8C%AE%E8%8E%B7%E5%8F%96%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3?sort_id=1388091<br>
-捐献领取企业版本：<br>
-https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis/JeeSpringCloud-%E4%BC%81%E4%B8%9A%E7%89%88?sort_id=848608<br>
-捐献请备注邮箱，会发到你的邮箱！<br>
-
-<!--【JeeSpringCloud支付宝红包】打开支付宝首页搜“598352815”领"早餐红包、捐献红包"每天可领取，领到大红包的小伙伴赶紧使用哦！<br>-->
-<table><tbody>
-<tr>
-<!--td><img src="https://images.gitee.com/uploads/images/2018/1024/095334_ba74dce3_132236.jpeg"></td-->
-<!--td><img src="https://images.gitee.com/uploads/images/2018/1206/183734_c54e3a3b_132236.jpeg"></td-->
-<!--td><img src="https://images.gitee.com/uploads/images/2019/0308/143130_dca5f7e7_132236.png"></td-->
-</tr><tr>
-</tbody></table>
 
