@@ -5,7 +5,6 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
 -----------------------------------
 
-演示版地址(花生壳)：http://yocity.imwork.net/admin/login<br>
 演示版地址(魔法隧道)：http://bknfdnl.hn3.mofasuidao.cn/admin/login<br>
 特别鸣谢魔法隧道<br>
 提供内网穿透 http://www.mofasuidao.cn<br>
