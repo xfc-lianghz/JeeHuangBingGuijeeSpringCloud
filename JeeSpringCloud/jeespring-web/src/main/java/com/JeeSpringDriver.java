@@ -43,7 +43,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 //单项目版本：https://gitee.com/JeeHuangBingGui/JeeSpringCloudV3.0
 public class JeeSpringDriver extends SpringBootServletInitializer
 {
-
     //部署开发在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis
     //部署开发异常处理在线文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/wikis
     //开发文档：https://gitee.com/JeeHuangBingGui/jeeSpringCloud/attach_files
