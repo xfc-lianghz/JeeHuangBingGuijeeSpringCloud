@@ -6,6 +6,7 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 -----------------------------------
 
 演示版地址(魔法隧道)：http://bknfdnl.hn3.mofasuidao.cn/admin/login<br>
+演示地址的流量用完了。现在暂时不开放演示。
 特别鸣谢魔法隧道<br>
 提供内网穿透 http://www.mofasuidao.cn<br>
 -----------------------------------
