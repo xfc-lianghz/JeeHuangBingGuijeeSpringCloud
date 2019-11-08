@@ -1,4 +1,4 @@
 http://www.51testing.com/zhuanti/jmeter.html
 
-ÈÃÄãµÄ JMeter Ïñ LoadRunner ÄÇÑùÊµÊ±²é¿´Ã¿ÃëÊÂÎñÊı(TPS)¡¢ÊÂÎñÏìÓ¦Ê±¼ä(TRT)
+è®©ä½ çš„ JMeter åƒ LoadRunner é‚£æ ·å®æ—¶æŸ¥çœ‹æ¯ç§’äº‹åŠ¡æ•°(TPS)ã€äº‹åŠ¡å“åº”æ—¶é—´(TRT)
 https://blog.csdn.net/defonds/article/details/54576604
