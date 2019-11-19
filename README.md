@@ -246,17 +246,17 @@ MIT 也是对商业应用友好的许可。使用者也可以在需要的时候�
 
 十一、版本日志
 -----------------------------------
-JeeSpringV3.2.3-2019-1-10
+JeeSpringV3.2.4-2019-8-10
 开源版、企业版：
 修复部分电脑登录慢。
 修复IE11部分js异常。
 
-JeeSpringV3.2.2-2019-01-08
+JeeSpringV3.2.3-2019-06-08
 修复了刷新当前bug;
 优化index、home页面。
 调整了index页面不兼容部分ie11浏览器。
 
-JeeSpringV3.2.1-2018-12-13
+JeeSpringV3.2.2-2019-03-13
 开源版、企业版：
 增加gencode/act/webDubboProvider模块化；
 springboot从1.5升级到2.0.4；
