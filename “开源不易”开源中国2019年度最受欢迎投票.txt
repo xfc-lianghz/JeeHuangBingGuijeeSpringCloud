@@ -3,4 +3,4 @@ https://gitee.com/JeeHuangBingGui/jeeSpringCloud
 
 “开源不易”
 开源中国2019年度最受欢迎投票 开发框架、库类-JeeSpringCloud投票。
-“开源不易” https://www.oschina.net/project/top_cn_2019
+“开源不易” https://www.oschina.net/project/top_cn_2019#jeeSpringCloud
