@@ -1,3 +1,8 @@
+JsonSqlV3.0.0.0
+介绍JsonSql，可以处理对象、Json、数组的筛选、统计、分组等功能，支持方法或sql语句。
+https://gitee.com/JeeHuangBingGui/JsonSql
+
+
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！(开源不易！)
 https://gitee.com/JeeHuangBingGui/jeeSpringCloud
 
