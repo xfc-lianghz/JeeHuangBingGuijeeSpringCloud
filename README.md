@@ -16,7 +16,7 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 提供内网穿透 http://www.mofasuidao.cn<br>
 -----------------------------------
 
-JsonSqlV3.0.0.0<br>
+JsonSqlV3.0<br>
 介绍JsonSql，可以处理对象、Json、数组的筛选、统计、分组等功能，支持方法或sql语句。<br>
 https://gitee.com/JeeHuangBingGui/JsonSql<br>
 -----------------------------------
@@ -192,7 +192,7 @@ RepositoryService仓库,提供Service接口和多种实现,可进行配置实现
 5.	RepositoryRedis仓库,提供Redis接口和多种实现,可进行配置实现。可以配置调用单机、redis、云redis对接。
 
 6.	RepositoryService仓库,提供Service接口和多种实现,可进行配置实现。可以配置调用dubbo、微服务、基础服务器对接接口和实现。
-7.      JsonSqlV3.0.0.0<br>介绍JsonSql，可以处理对象、Json、数组的筛选、统计、分组等功能，支持方法或sql语句。<br>https://gitee.com/JeeHuangBingGui/JsonSql<br>
+7.      JsonSqlV3.0<br>介绍JsonSql，可以处理对象、Json、数组的筛选、统计、分组等功能，支持方法或sql语句。<br>https://gitee.com/JeeHuangBingGui/JsonSql<br>
 -----------------------------------
 
 六、代码生成器
