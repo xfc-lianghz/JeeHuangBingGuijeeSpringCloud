@@ -19,6 +19,7 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 JsonSqlV3.0<br>
 介绍JsonSql，可以处理对象、Json、数组的筛选、统计、分组等功能，支持方法或sql语句。<br>
 https://gitee.com/JeeHuangBingGui/JsonSql<br>
+如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
 -----------------------------------
 
 一、平台简介
