@@ -10,6 +10,7 @@ JeeSpringCloudV3.2.3-互联网云快速开发框架<br>
 如果对您有帮助，您可以点右上角 "Star" 支持一下 谢谢！<br>
 -----------------------------------
 
+最新演示版地址：http://119.147.184.69:8881/admin/login<br>
 演示版地址(魔法隧道)：http://bknfdnl.hn3.mofasuidao.cn/admin/login<br>
 演示地址的流量用完了。现在暂时不开放演示。<br>
 特别鸣谢魔法隧道<br>
@@ -244,7 +245,7 @@ JeeSpringCloud官方QQ群：<br>
 
 九、在线体验
 -----------------------------------
-演示版地址：http://bknfdnl.hn3.mofasuidao.cn/admin/login <br>
+演示版地址：http://119.147.184.69:8881/admin/login <br>
 
 十、版权声明
 -----------------------------------
